@@ -1,0 +1,17 @@
+<svg id="logo_kotc" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="86.876" height="22" viewBox="0 0 86.876 22">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.11" y1="0.677" x2="1.066" y2="0.384" gradientUnits="objectBoundingBox">
+      <stop offset="0.03" stop-color="#fde2c9"/>
+      <stop offset="0.13" stop-color="#facba2"/>
+      <stop offset="0.53" stop-color="#ec843a"/>
+      <stop offset="0.91" stop-color="#e8651c"/>
+    </linearGradient>
+  </defs>
+  <rect id="사각형_1" data-name="사각형 1" width="6.857" height="22" transform="translate(0 0)" fill="#4e78ba"/>
+  <rect id="사각형_2" data-name="사각형 2" width="6.857" height="20.272" transform="translate(56.547 1.728)" fill="#4e78ba"/>
+  <path id="패스_1" data-name="패스 1" d="M23.469,0H16.612L7.7,10.893H7.66l.018.025-.018.025H7.7L16.612,22h6.857L14.535,10.918Z" transform="translate(-0.803 0)" fill="#4e78ba"/>
+  <rect id="사각형_3" data-name="사각형 3" width="22.174" height="6.777" transform="translate(48.538 0)" fill="#4e78ba"/>
+  <path id="패스_2" data-name="패스 2" d="M95.258,15.559a4.8,4.8,0,0,1-5-4.577,4.8,4.8,0,0,1,5-4.577,5.262,5.262,0,0,1,3.33,1.165l4.95-4.536A12.572,12.572,0,0,0,95.267,0C88.651,0,83.28,4.921,83.28,10.982s5.371,10.982,11.987,10.982a12.5,12.5,0,0,0,8.272-3.043l-4.95-4.536a5.243,5.243,0,0,1-3.33,1.165Z" transform="translate(-16.662 0)" fill="#4e78ba"/>
+  <path id="패스_3" data-name="패스 3" d="M49.568.4A12.013,12.013,0,0,0,39.21,6a8.064,8.064,0,0,1,0,10.436,12.024,12.024,0,0,0,10.358,5.6c6.526,0,11.826-4.841,11.826-10.821S56.1.4,49.568.4Zm0,15.318a4.722,4.722,0,0,1-4.915-4.5,4.934,4.934,0,0,1,9.829,0A4.722,4.722,0,0,1,49.568,15.718Z" transform="translate(-7.944 -0.042)" fill="#4e78ba"/>
+  <circle id="타원_1" data-name="타원 1" cx="5.201" cy="5.201" r="5.201" transform="translate(18.946 5.951)" stroke="#e8651c" stroke-miterlimit="10" stroke-width="0.5" fill="url(#linear-gradient)"/>
+</svg>

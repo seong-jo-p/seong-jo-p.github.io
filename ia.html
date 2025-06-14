@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <title>웹작업 현황판</title>
+    </head>
+    <body>
+        <h1>퍼블리싱 현황판</h1>
+        <div class="summary">
+            <span>작업 토탈: <span id="totalCount">0</span></span>
+            <span>작업 완료: <span id="doneCount">0</span></span>
+            <span>완료율: <span id="percent" class="percent">0%</span></span>
+            <progress id="progressBar" value="0" max="100"></progress>
+        </div>
+        <table id="statusTable">
+            <thead>
+                <tr>
+                    <th>1depth</th>
+                    <th>2depth</th>
+                    <th>3depth</th>
+                    <th>4depth</th>
+                    <th>path</th>
+                    <th>file name</th>
+                    <th title="△ :대기 / ○ :부분완료 / ● :완료">state</th>
+                    <th>date</th>
+                    <th>note</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>공통</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>/</td>
+                    <td>sub.html</td>
+                    <td class="state-done">●</td>
+                    <td class="date"></td>
+                    <td>헤더, 푸터, 퀵메뉴 및 기본 컴포넌트들 예시가 있는 페이지 / 상시 업데이트</td>
+                </tr>
+                <tr>
+                    <td>메인</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>/</td>
+                    <td>index.html</td>
+                    <td class="state-done">●</td>
+                    <td class="date">25-06-12</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <style>
+            @font-face {
+                font-family: "Pretendard-Regular";
+                src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+                    format("woff");
+                font-weight: 400;
+                font-style: normal;
+            }
+            body {
+                font-family: "Pretendard-Regular", sans-serif;
+                background: #f7f8fa;
+                margin: 30px;
+                color: #333;
+            }
+            h1 {
+                margin-bottom: 18px;
+            }
+            .summary {
+                margin-bottom: 14px;
+                padding: 10px 14px 8px 14px;
+                background: #fff;
+                border-radius: 7px;
+                box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+                display: flex;
+                align-items: center;
+                gap: 16px;
+            }
+            .summary span {
+                font-size: 14px;
+            }
+            .summary .percent {
+                font-weight: bold;
+                color: #2563eb;
+                font-size: 15px;
+            }
+            .summary progress {
+                width: 110px;
+                height: 12px;
+                margin-left: 10px;
+                vertical-align: middle;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                background: #fff;
+                box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+                font-size: 14px;
+            }
+            th,
+            td {
+                padding: 8px 7px;
+                border: 1px solid #e5e7eb;
+            }
+            th {
+                background: #60a5fa; /* 연한 파랑 */
+                color: #fff;
+                font-weight: normal;
+                letter-spacing: 0.3px;
+                text-align: center;
+            }
+            tr:nth-child(even) {
+                background: #f5f7fa;
+            }
+            tr:hover {
+                background: #dbeafe;
+            }
+            .state-waiting {
+                color: #f59e0b;
+                font-size: 16px;
+                font-weight: 700;
+            }
+            .state-partial {
+                color: #3b82f6;
+                font-size: 16px;
+                font-weight: 700;
+            }
+            .state-done {
+                color: #10b981;
+                font-size: 16px;
+                font-weight: 700;
+                text-align: center;
+            }
+            th[title] {
+                cursor: help;
+                position: relative;
+            }
+            /* 링크 스타일 */
+            .file-link {
+                color: #2563eb;
+                text-decoration: underline;
+                font-weight: 500;
+            }
+            .file-link:hover {
+                color: #1d4ed8;
+                text-decoration: underline;
+            }
+
+            .date {
+                text-align: center;
+            }
+
+        </style>
+        <script src="/public/assets/js/vendor/jquery-3.7.1.min.js"></script>
+        <script>
+            $(function () {
+                // 상태 요약 업데이트
+                function updateSummary() {
+                    var $rows = $("#statusTable tbody tr");
+                    var total = $rows.length;
+                    var done = $rows.filter(function () {
+                        return $(this).find("td").eq(6).text().trim() === "●";
+                    }).length;
+                    var percent = total === 0 ? 0 : Math.round((done / total) * 100);
+
+                    $("#totalCount").text(total);
+                    $("#doneCount").text(done);
+                    $("#percent").text(percent + "%");
+                    $("#progressBar").val(percent);
+                }
+
+                // file name에 링크 적용 (빈칸은 그대로 둠)
+                function applyFileLinks() {
+                    $("#statusTable tbody tr").each(function () {
+                        var $tds = $(this).find("td");
+                        var path = $tds.eq(4).text().trim(); // 5번째 컬럼: path
+                        var file = $tds.eq(5).text().trim(); // 6번째 컬럼: file name
+
+                        if (path && file) {
+                            // file이 빈칸이 아니면 링크 적용
+                            var link = "pages" + path + file;
+                            $tds.eq(5).html(
+                                '<a class="file-link" href="' +
+                                    link +
+                                    '" target="_blank">' +
+                                    file +
+                                    "</a>"
+                            );
+                        }
+                        // file이 빈칸이면 아무 처리하지 않음 (빈칸 그대로)
+                    });
+                }
+
+                // 실행
+                updateSummary();
+                applyFileLinks();
+            });
+        </script>
+    </body>
+</html>

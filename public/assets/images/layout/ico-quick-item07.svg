@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32.887" height="22.26" viewBox="0 0 32.887 22.26">
+  <g id="그룹_38242" data-name="그룹 38242" transform="translate(-7.687 -9.746)">
+    <text id="BB" transform="translate(23.172 30.006)" fill="#66676a" font-size="10" font-family="Pretendard-Bold, Pretendard" font-weight="700" letter-spacing="-0.01em"><tspan x="-6.31" y="0">BB</tspan></text>
+    <g id="logo_kotc" transform="translate(7.687 9.746)">
+      <rect id="사각형_1" data-name="사각형 1" width="2.379" height="8.328" transform="translate(0 0)" fill="#66676a"/>
+      <rect id="사각형_2" data-name="사각형 2" width="2.379" height="7.729" transform="translate(21.559 0.599)" fill="#66676a"/>
+      <path id="패스_1" data-name="패스 1" d="M13.144,0H10.765L7.672,4.124H7.66l.006.009-.006.009h.012l3.093,4.186h2.379l-3.1-4.2Z" transform="translate(-5.281 0)" fill="#66676a"/>
+      <rect id="사각형_3" data-name="사각형 3" width="7.692" height="2.351" transform="translate(18.901 0)" fill="#66676a"/>
+      <path id="패스_2" data-name="패스 2" d="M87.435,5.891A1.733,1.733,0,1,1,88.59,2.866l1.717-1.717a4.159,4.159,0,1,0,0,6.015L88.59,5.446a1.727,1.727,0,0,1-1.155.441Z" transform="translate(-57.42 0)" fill="#66676a"/>
+      <path id="패스_3" data-name="패스 3" d="M42.8.4A4.1,4.1,0,0,0,39.21,2.524a3.276,3.276,0,0,1,0,3.956A4.1,4.1,0,1,0,42.8.4Zm0,5.807a1.7,1.7,0,1,1,1.7-1.7A1.706,1.706,0,0,1,42.8,6.207Z" transform="translate(-27.035 -0.276)" fill="#66676a"/>
+      <ellipse id="타원_1" data-name="타원 1" cx="1.804" cy="1.804" rx="1.804" ry="1.804" transform="translate(7.254 2.422)" fill="#66676a" stroke="#5a5a5a" stroke-miterlimit="10" stroke-width="0.5"/>
+    </g>
+  </g>
+</svg>
