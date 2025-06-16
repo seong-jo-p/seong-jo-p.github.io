@@ -197,6 +197,19 @@ body.bg-on {
     overflow: hidden;
 }
 
+body.search-on {
+    padding-right: 16px;
+    overflow: hidden;
+}
+
+body.search-on #header .logo {
+    margin-left: -7px;
+}
+
+body.search-on .header-wrap {
+    padding-right: 8px;
+}
+
 #container {
     min-height: 863px;
 }

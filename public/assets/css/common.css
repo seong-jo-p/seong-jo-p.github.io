@@ -182,20 +182,22 @@ header .gnb-bg {
 }
 
 .header-saerch .header-saerch-wrap {
-    display: none;
     position: absolute;
     top: 0;
     left: 50%;
     width: 100vw;
     min-width: 1440px;
     height: 337px;
-    transform: translateX(-50%);
+    transform: translate(-50%, -100%);
     background-color: var(--color-white);
     z-index: 10;
+    transition: 0.4s ease-in-out;
+    visibility: hidden;
 }
 
 .header-saerch.on .header-saerch-wrap {
-    display: block;
+    transform: translate(-50%, 0);
+    visibility: visible;
 }
 
 .header-saerch form {
@@ -407,7 +409,7 @@ header .gnb-bg {
 }
 
 .footer-utils .more-info button.on::before {
-    transform: translateY(-50%) rotate(-45deg);
+    transform: translateY(-50%) rotate(360deg);
 }
 
 .footer-utils .info-list {

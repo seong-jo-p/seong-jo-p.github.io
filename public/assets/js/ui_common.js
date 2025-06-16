@@ -81,17 +81,17 @@ $(function () {
 
         $headerSearchOpen.on("click", function () {
             $headerSearch.addClass("on");
-            $("body").css("overflow", "hidden");
+            $("body").addClass("search-on");
         });
 
         $headerSearchClose.on("click", function () {
             $headerSearch.removeClass("on");
-            $("body").css("overflow", "");
+            $("body").removeClass("search-on");
         });
 
         $headerSearchBg.on("click", function () {
             $headerSearch.removeClass("on");
-            $("body").css("overflow", "");
+            $("body").removeClass("search-on");
         });
     }
 
@@ -159,7 +159,7 @@ $(function () {
             $btn.on("click", function (e) {
                 e.stopPropagation();
 
-                $utils.find("button").removeClass("on");
+                $utils.not($util).find("button").removeClass("on");
                 $(this).toggleClass("on");
 
                 $utils.not($util).find(".info-list").slideUp(200);
