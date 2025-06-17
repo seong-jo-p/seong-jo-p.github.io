@@ -16,37 +16,31 @@ $(function () {
         const $depth1Li = $gnb.find(".depth1 > li");
         const $gnbBg = $(".gnb-bg");
 
-        // 초기너비 저장 및 설정
-        // 초기너비 미지정시 width변경 이벤트에 transition이 적용 안됨
-        const depth1LiWidth = $depth1Li.map((_, el) => $(el).outerWidth());
-        $depth1Li.each(function (idx) {
-            $(this).css("width", `${depth1LiWidth[idx] + 1}px`);
-        });
+        // 초기너비 설정
+        // transition 효과를 위해서 초기 width를 설정해줘야함
+        const depth1LiWidth = $depth1Li.map((_, el) => $(el).outerWidth() + 70).get(); // js배열로 변경 .get()
+        let gnbWidth = depth1LiWidth.reduce((sum, width) => sum + width, 0);
 
-        const gnbWidth = $gnb.outerWidth();
-        $gnb.css("width", `${gnbWidth}px`);
+        $gnb.css({ width: `${gnbWidth}px` }); // gnb 전체 너비 설정
+        $depth1Li.each(function () {
+            $(this).css("width", `calc(100% / ${$depth1Li.length})`); // 각 depth1 너비 설정
+        });
 
         // 이벤트 핸들러 등록
         $gnb.on("mouseenter focusin", function () {
             $(this).css("width", "100%");
-            $depth1Li.each(function () {
-                $(this).css("width", `calc(100% / ${$depth1Li.length})`);
-            });
 
             $header.addClass("on");
-            $depth2.stop().slideDown();
-            $gnbBg.stop().slideDown();
+            $depth2.stop().slideDown(800);
+            $gnbBg.stop().slideDown(800);
         });
 
         $gnb.on("mouseleave focusout", function () {
             $(this).css("width", `${gnbWidth}px`);
-            $depth1Li.each(function (idx) {
-                $(this).css("width", `${depth1LiWidth[idx] + 1}px`);
-            });
 
             $header.removeClass("on");
-            $depth2.stop().slideUp();
-            $gnbBg.stop().slideUp();
+            $depth2.stop().slideUp(800);
+            $gnbBg.stop().slideUp(800);
         });
 
         // .depth2, .gnb-bg 높이 맞추기
@@ -95,13 +89,16 @@ $(function () {
         });
     }
 
+    /* ===============================
+        퀵메뉴 위치 조정
+    =============================== */
     function quickMenuPosition() {
         const $quick = $("#quick-menu");
 
         $(window)
             .on("scroll resize", function () {
                 const scrollTop = $(window).scrollTop();
-                $quick.css("transform", `translateY(${scrollTop}px)`);
+                $quick.css("margin-top", `${scrollTop}px`);
             })
             .trigger("scroll");
     }
