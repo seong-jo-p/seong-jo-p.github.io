@@ -272,7 +272,7 @@ header .gnb-bg {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 7%);
     z-index: 1;
-    transition: margin-top 0s;
+    transition: transform 0.1s;
 }
 
 #quick-menu ul li {
@@ -289,7 +289,7 @@ header .gnb-bg {
     font-size: 10px;
     line-height: 11px;
     text-align: center;
-    transition: 0.5s;
+    transition: color 0.5s;
 }
 #quick-menu ul li:hover a {
     color: var(--color-primary-blue);

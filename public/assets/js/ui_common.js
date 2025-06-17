@@ -8,6 +8,20 @@ $(function () {
     $header.addClass($("#container").hasClass("sub") ? "sub-head" : "");
 
     /* ===============================
+        브라우저 스크롤 부드럽게 움직이기
+    =============================== */
+    const lenis = new Lenis({
+        duration: 2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    });
+
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    /* ===============================
         Header 네비게이션 GNB
     =============================== */
     function gnb() {
@@ -76,16 +90,20 @@ $(function () {
         $headerSearchOpen.on("click", function () {
             $headerSearch.addClass("on");
             $("body").addClass("search-on");
+
+            lenis.stop(); // 스크롤 막기
         });
 
         $headerSearchClose.on("click", function () {
             $headerSearch.removeClass("on");
             $("body").removeClass("search-on");
+            lenis.start(); // 스크롤 막기
         });
 
         $headerSearchBg.on("click", function () {
             $headerSearch.removeClass("on");
             $("body").removeClass("search-on");
+            lenis.start(); // 스크롤 막기
         });
     }
 
@@ -98,7 +116,7 @@ $(function () {
         $(window)
             .on("scroll resize", function () {
                 const scrollTop = $(window).scrollTop();
-                $quick.css("margin-top", `${scrollTop}px`);
+                $quick.css("transform", `translateY(${scrollTop}px)`);
             })
             .trigger("scroll");
     }
