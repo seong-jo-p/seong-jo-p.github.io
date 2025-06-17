@@ -131,6 +131,11 @@ $(function () {
             e.preventDefault();
 
             $("html, body").animate({ scrollTop: 0 }, 300);
+            lenis.stop(); // 스크롤 막기
+
+            setTimeout(() => {
+                lenis.start(); // 스크롤 풀기
+            }, 300);
         });
 
         $(window)
