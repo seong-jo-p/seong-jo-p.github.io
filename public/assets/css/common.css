@@ -509,6 +509,7 @@ header .gnb-bg {
 /* 탭 type2 */
 .tab-wrap.type2 .tab-btns {
     display: flex;
+    margin-bottom: 30px;
 }
 
 .tab-wrap.type2 .tab-btns li {
@@ -544,6 +545,7 @@ header .gnb-bg {
 /* 탭 type3 */
 .tab-wrap.type3 .tab-btns {
     display: flex;
+    margin-bottom: 15px;
 }
 
 .tab-wrap.type3 .tab-btns li {
