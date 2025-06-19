@@ -46,8 +46,11 @@
                     <td>/</td>
                     <td>index.html</td>
                     <td class="state-done">●</td>
-                    <td class="date">25-06-12</td>
-                    <td></td>
+                    <td class="date">
+                        <del>25-06-12</del><br />
+                        25-06-18
+                    </td>
+                    <td>모션 디테일 수정 및 css 수정</td>
                 </tr>
             </tbody>
         </table>
@@ -152,7 +155,6 @@
             .date {
                 text-align: center;
             }
-
         </style>
         <script src="/public/assets/js/vendor/jquery-3.7.1.min.js"></script>
         <script>
@@ -183,11 +185,7 @@
                             // file이 빈칸이 아니면 링크 적용
                             var link = "pages" + path + file;
                             $tds.eq(5).html(
-                                '<a class="file-link" href="' +
-                                    link +
-                                    '" target="_blank">' +
-                                    file +
-                                    "</a>"
+                                '<a class="file-link" href="' + link + '" target="_blank">' + file + "</a>"
                             );
                         }
                         // file이 빈칸이면 아무 처리하지 않음 (빈칸 그대로)

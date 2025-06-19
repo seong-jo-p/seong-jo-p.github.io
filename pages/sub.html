@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="/public/assets/css/common.css" />
         <link rel="stylesheet" href="/public/assets/css/main.css" />
         <link rel="stylesheet" href="/public/assets/css/sub.css" />
+        <link rel="stylesheet" href="/public/assets/css/tui-custom.css" />
 
         <!-- JS -->
         <script src="/public/assets/js/vendor/jquery-3.7.1.min.js"></script>
@@ -187,7 +188,10 @@
                         <li>Depth 2</li>
                     </ul>
 
-                    <div class="tab-wrap">
+                    <h2 class="sub-title-01">타이틀 1</h2>
+
+                    <!-- 탭 - type1 -->
+                    <div class="tab-wrap type1">
                         <ul class="tab-btns">
                             <li><a href="#">탭 버튼 1</a></li>
                             <li><a href="#">탭 버튼 2</a></li>
@@ -195,8 +199,103 @@
                             <li><a href="#">탭 버튼 4</a></li>
                         </ul>
 
-                        <div>tui 그리드</div>
+                        <div>
+                            탭 Tpye1번 컨텐츠
+                            <br />
+                            <br />
+                            <br />
+                        </div>
                     </div>
+
+                    <!-- 탭 - type2 -->
+                    <div class="tab-wrap type2">
+                        <ul class="tab-btns">
+                            <li><a href="#">탭 버튼 1</a></li>
+                            <li><a href="#">탭 버튼 2</a></li>
+                            <li><a href="#">탭 버튼 3</a></li>
+                            <li><a href="#">탭 버튼 4</a></li>
+                        </ul>
+
+                        <div>
+                            탭 Tpye2번 컨텐츠
+                            <br />
+                            <br />
+                            <br />
+                        </div>
+                    </div>
+
+                    <!-- 탭 - type3 -->
+                    <div class="tab-wrap type3">
+                        <ul class="tab-btns">
+                            <li><a href="#">탭 버튼 1</a></li>
+                            <li><a href="#">탭 버튼 2</a></li>
+                            <li><a href="#">탭 버튼 3</a></li>
+                            <li><a href="#">탭 버튼 4</a></li>
+                        </ul>
+
+                        <div>
+                            탭 Tpye3번 컨텐츠
+                            <br />
+                            <br />
+                            <br />
+                        </div>
+                    </div>
+
+                    <!-- 그리드 - type1 -->
+                    <!-- 
+                        현재 페이지 부드럽게 스크롤 하기 위해 
+                        lenis 라이브러리 사용 중입니다
+                        이로 인해 테이블 스크롤시 전체 스크롤이 같이 발생하는 상황이 있습니다.
+                        이를 방지하기 위해 data-lenis-prevent 속성을 추가해주세요.
+                    -->
+                    <div class="grid-wrap type1" id="grid01" data-lenis-prevent></div>
+                    <script>
+                        const Grid = tui.Grid;
+
+                        const data = [
+                            {
+                                header1: "텍스트 왼쪽 정렬 (기본). ",
+                                header2: "텍스트 가운데 정렬. ",
+                                header3: "텍스트 오른쪽 정렬 ",
+                                header4: "0",
+                            },
+                            {
+                                header1: "텍스트 왼쪽 정렬 (기본). ",
+                                header2: "텍스트 가운데 정렬. ",
+                                header3: "텍스트 오른쪽 정렬 ",
+                                header4: "1",
+                            },
+                            {
+                                header1: "텍스트 왼쪽 정렬 (기본). ",
+                                header2: "텍스트 가운데 정렬. ",
+                                header3: "텍스트 오른쪽 정렬 ",
+                                header4: "-1",
+                            },
+                        ];
+
+                        const instance1 = new Grid({
+                            el: $("#grid01")[0],
+                            bodyHeight: 300,
+                            columns: [
+                                { header: "헤더 1", name: "header1" },
+                                { header: "헤더 2", name: "header2", className: "text-center" },
+                                { header: "헤더 3", name: "header3", className: "text-right" },
+                                { header: "헤더 4", name: "header4", className: "text-center" },
+                            ],
+                            data: data,
+                        });
+
+                        instance1.getData().forEach((row) => {
+                            const num = Number(row["header4"]);
+                            if (num > 0) {
+                                instance1.addCellClassName(row.rowKey, "header4", "up");
+                            }
+
+                            if (num < 0) {
+                                instance1.addCellClassName(row.rowKey, "header4", "down");
+                            }
+                        });
+                    </script>
                 </div>
                 <!-- // .container-wrap -->
             </main>

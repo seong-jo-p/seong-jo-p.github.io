@@ -1,0 +1,62 @@
+/* 공통 */
+
+/* 셀렉트 효과 없애기 */
+.tui-grid-layer-focus,
+.tui-grid-layer-selection {
+    display: none;
+}
+
+/* 헤더 셀 스타일 */
+.tui-grid-header-area .tui-grid-cell-header {
+    border: var(--border-style-01);
+    background: #f4f8fb;
+    font-weight: 700;
+    font-family: "Pretendard", sans-serif;
+    font-size: 14px;
+    color: var(--color-font-default);
+}
+
+.tui-grid-header-area .tui-grid-cell-header.tui-grid-cell-selected {
+    background: #f4f8fb;
+}
+
+/* 바디 셀 스타일 */
+.tui-grid-body-area::-webkit-scrollbar-thumb {
+    background-color: #d9d9d9;
+    border-radius: 10px;
+}
+
+.tui-grid-body-area .tui-grid-cell {
+    background-color: var(--color-white);
+}
+
+.tui-grid-body-area .tui-grid-cell-content {
+    font-size: 14px;
+    font-family: "Pretendard", sans-serif;
+    color: var(--color-font-default);
+}
+
+.tui-grid-body-area .tui-grid-cell.text-center .tui-grid-cell-content {
+    text-align: center;
+}
+
+.tui-grid-body-area .tui-grid-cell.text-right .tui-grid-cell-content {
+    text-align: right;
+}
+
+.tui-grid-body-area .tui-grid-cell.up .tui-grid-cell-content::before,
+.tui-grid-body-area .tui-grid-cell.down .tui-grid-cell-content::before {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 8px;
+    margin-right: 4px;
+}
+
+.tui-grid-body-area .tui-grid-cell.up .tui-grid-cell-content::before{
+    background: url('/public/assets/images/sub/ico-number-up.svg') no-repeat center center / contain;
+}
+
+.tui-grid-body-area .tui-grid-cell.down .tui-grid-cell-content::before{
+    background: url('/public/assets/images/sub/ico-number-down.svg') no-repeat center center / contain;
+}

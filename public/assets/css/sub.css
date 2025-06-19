@@ -9,6 +9,7 @@
     margin: 0 auto;
 }
 
+/* 페이지 경로 */
 .page-path {
     display: flex;
     justify-content: flex-end;
@@ -36,4 +37,25 @@
     height: 14px;
     padding-right: 16px;
     background: no-repeat url("../images/sub/ico-path-arr.svg");
+}
+
+/* 타이틀 01 */
+.sub-title-01 {
+    padding: 64px 0 50px;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+/* 그리드 - type1 */
+.grid-wrap.type1 .tui-grid-border-line-top {
+    border-top-color: var(--color-primary-blue);
+}
+
+.grid-wrap.type1 .tui-grid-header-area {
+    border: var(--border-style-01);
+    border-left: none;
+}
+
+.grid-wrap.type1 .tui-grid-cell {
+    border: var(--border-style-01);
 }
