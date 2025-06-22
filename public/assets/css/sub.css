@@ -1,15 +1,16 @@
 @charset "utf-8";
 /* ===============================
-    0. 서브 공통
+    서브 공통
    =============================== */
-
 #container.sub {
     position: relative;
     width: 1200px;
     margin: 0 auto;
 }
 
-/* 페이지 경로 */
+/* ===============================
+    페이지 경로
+   =============================== */
 .page-path {
     display: flex;
     justify-content: flex-end;
@@ -39,14 +40,18 @@
     background: no-repeat url("../images/sub/ico-path-arr.svg");
 }
 
-/* 타이틀 01 */
+/* ===============================
+    타이틀
+   =============================== */
 .sub-title-01 {
     padding: 64px 0 50px;
     font-size: 40px;
     font-weight: 700;
 }
 
-/* 그리드 - type1 */
+/* ===============================
+    그리드
+   =============================== */
 .grid-wrap.type1 .tui-grid-border-line-top {
     border-top-color: var(--color-primary-blue);
 }
@@ -60,51 +65,45 @@
     border: var(--border-style-01);
 }
 
-/* 검색영역 */
+/* ===============================
+    검색영역
+   =============================== */
 .sub-search {
     margin-bottom: 49px;
 }
 
 .sub-search .sub-search-wrap {
-    position: relative;
     padding: 17px 66px;
     border-radius: 10px;
     border: var(--border-style-02);
 
     display: flex;
-    gap: 10px 40px;
     flex-wrap: wrap;
-    /* display: grid; */
-    /* grid-template-columns: repeat(auto-fit, minmax(calc(50% - 20px), 1fr)); */
-    /* grid-template-columns: repeat(2, 1fr); */
-    /* grid-template-columns: auto auto;
-    grid-auto-rows: auto;
-    grid-gap: 10px 40px; */
+    gap: 10px 40px;
 }
-
-.sub-search .sub-search-wrap::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    width: 1px;
-    background-color: red;
-    z-index: 1;
-
-}
-
 .sub-search .sub-search-item {
+    flex: 1;
+    min-width: calc(50% - 20px);
+    max-width: calc(50% - 20px);
+
     display: flex;
-    gap: 6px;
     align-items: center;
+    gap: 0 20px;
 }
 
-.sub-search .sub-search-item h4 {
-    margin-right: 20px;
+.sub-search .input-wrap {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 0 6px;
+}
+
+/* 검색 타이틀 */
+.sub-search .sub-search-item .sub-search-title {
     font-weight: 700;
 }
 
+/* 검색 버튼s */
 .sub-search .search-btn-wrap {
     display: flex;
     align-items: center;
@@ -129,7 +128,9 @@
     background-color: var(--color-primary-blue);
 }
 
-/* 코드검색 - 버튼있는 input */
+/* ===============================
+    검색영역 - 코드검색
+   =============================== */
 .input-item.search-input {
     position: relative;
     flex: none;
@@ -149,7 +150,9 @@
     background: no-repeat url("/public/assets/images/sub/ico-search-btn.svg") center;
 }
 
-/* 달력 */
+/* ===============================
+    검색영역 - 달력
+   =============================== */
 .input-item.date-input {
     position: relative;
     flex: none;
@@ -169,22 +172,26 @@
     background: no-repeat url("/public/assets/images/sub/ico-date-btn.svg") center;
 }
 
-/* 라디오 */
+/* ===============================
+    검색영역 - 라디오
+   =============================== */
 .input-item.radio-input {
     flex: none;
     display: flex;
     align-items: center;
-    height: 100%;
-    padding-right: 18px;
 }
 
-.input-item.radio-input:last-of-type {
-    padding-right: 0;
+.input-item.radio-input + .input-item.radio-input {
+    padding-left: 18px;
 }
 
 .input-item.radio-input span {
     position: relative;
+    display: block;
+    height: 100%;
     font-weight: 600;
+    line-height: 29px;
+    cursor: pointer;
 }
 
 .input-item.radio-input span::before {
@@ -194,17 +201,62 @@
     width: 14px;
     height: 14px;
     margin-right: 13px;
-    border-radius: 50%;
     border: var(--border-style-01);
+    border-radius: 50%;
 }
 
 .input-item.radio-input input[type="radio"]:checked + span::after {
     content: "";
     position: absolute;
+    top: 50%;
     left: 5px;
-    top: 6px;
     width: 6px;
     height: 6px;
     border-radius: 50%;
     background-color: var(--color-primary-blue);
+    transform: translateY(-50%);
+}
+
+/* ===============================
+    검색영역 - 라디오
+   =============================== */
+.input-item.check-input {
+    flex: none;
+    display: flex;
+    align-items: center;
+}
+
+.input-item.check-input + .input-item.check-input {
+    padding-left: 18px;
+}
+
+.input-item.check-input span {
+    position: relative;
+    display: block;
+    height: 100%;
+    font-weight: 600;
+    line-height: 29px;
+    cursor: pointer;
+}
+.input-item.check-input span::before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 14px;
+    height: 14px;
+    margin-right: 13px;
+    border: var(--border-style-01);
+    border-radius: 3px;
+}
+
+.input-item.check-input input[type="checkbox"]:checked + span::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--color-primary-blue);
+    transform: translateY(-50%);
 }
