@@ -226,6 +226,7 @@
     height: 32px;
     padding: 0 43px 0px 11px;
     border-radius: 5px;
+    border: none;
 }
 
 .main-current-search .input-group input::placeholder {
@@ -276,12 +277,12 @@
 }
 
 .main-current-search .current-list .up {
-    background-image: url("../images/main/ico-number-up.svg");
+    background-image: url("../images/common/ico-number-up.svg");
     color: var(--color-point-red);
 }
 
 .main-current-search .current-list .down {
-    background-image: url("../images/main/ico-number-down.svg");
+    background-image: url("../images/common/ico-number-down.svg");
     color: var(--color-point-blue);
 }
 
@@ -341,11 +342,11 @@
 }
 
 .main-stock-grid .up p::before {
-    background: no-repeat url("/public/assets/images/main/ico-number-up.svg");
+    background: no-repeat url("/public/assets/images/common/ico-number-up.svg");
 }
 
 .main-stock-grid .down p::before {
-    background: no-repeat url("/public/assets/images/main/ico-number-down.svg");
+    background: no-repeat url("/public/assets/images/common/ico-number-down.svg");
 }
 
 /* ===============================

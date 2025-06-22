@@ -129,22 +129,59 @@ table {
 }
 
 button {
+    display: inline-block;
+    vertical-align: middle;
     border: none;
     cursor: pointer;
     padding: 0;
     margin: 0;
     background-color: transparent;
     font-family: "Pretendard", sans-serif;
+    font-size: 14px;
+}
+
+label {
+    display: block;
 }
 
 input {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+    margin: 0;
     font-family: "Pretendard", sans-serif;
-    border: none;
     outline: none;
     font-size: 14px;
+    box-sizing: border-box;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"] {
+    width: 100%;
+    border: var(--border-style-01);
+    border-radius: 3px;
+    padding: 5px 10px 6px;
+}
+
+input[type="radio"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* input */
+.input-item {
+    flex: 1;
 }
 
 .blind {

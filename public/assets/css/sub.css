@@ -59,3 +59,152 @@
 .grid-wrap.type1 .tui-grid-cell {
     border: var(--border-style-01);
 }
+
+/* 검색영역 */
+.sub-search {
+    margin-bottom: 49px;
+}
+
+.sub-search .sub-search-wrap {
+    position: relative;
+    padding: 17px 66px;
+    border-radius: 10px;
+    border: var(--border-style-02);
+
+    display: flex;
+    gap: 10px 40px;
+    flex-wrap: wrap;
+    /* display: grid; */
+    /* grid-template-columns: repeat(auto-fit, minmax(calc(50% - 20px), 1fr)); */
+    /* grid-template-columns: repeat(2, 1fr); */
+    /* grid-template-columns: auto auto;
+    grid-auto-rows: auto;
+    grid-gap: 10px 40px; */
+}
+
+.sub-search .sub-search-wrap::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    background-color: red;
+    z-index: 1;
+
+}
+
+.sub-search .sub-search-item {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.sub-search .sub-search-item h4 {
+    margin-right: 20px;
+    font-weight: 700;
+}
+
+.sub-search .search-btn-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    gap: 8px;
+}
+
+.sub-search .search-btn-wrap button {
+    width: 90px;
+    height: 35px;
+    border-radius: 5px;
+    color: var(--color-white);
+    font-weight: 700;
+}
+
+.sub-search .search-btn-wrap .reset-btn {
+    background-color: #bdcce3;
+}
+
+.sub-search .search-btn-wrap .submit-btn {
+    background-color: var(--color-primary-blue);
+}
+
+/* 코드검색 - 버튼있는 input */
+.input-item.search-input {
+    position: relative;
+    flex: none;
+    width: 122px;
+}
+
+.input-item.search-input input {
+    padding-right: 32px;
+}
+
+.input-item.search-input button {
+    position: absolute;
+    top: 0;
+    right: 0px;
+    width: 32px;
+    height: 29px;
+    background: no-repeat url("/public/assets/images/sub/ico-search-btn.svg") center;
+}
+
+/* 달력 */
+.input-item.date-input {
+    position: relative;
+    flex: none;
+    width: 122px;
+}
+
+.input-item.date-input input {
+    padding-right: 32px;
+}
+
+.input-item.date-input button {
+    position: absolute;
+    top: 0;
+    right: 0px;
+    width: 32px;
+    height: 29px;
+    background: no-repeat url("/public/assets/images/sub/ico-date-btn.svg") center;
+}
+
+/* 라디오 */
+.input-item.radio-input {
+    flex: none;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding-right: 18px;
+}
+
+.input-item.radio-input:last-of-type {
+    padding-right: 0;
+}
+
+.input-item.radio-input span {
+    position: relative;
+    font-weight: 600;
+}
+
+.input-item.radio-input span::before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 14px;
+    height: 14px;
+    margin-right: 13px;
+    border-radius: 50%;
+    border: var(--border-style-01);
+}
+
+.input-item.radio-input input[type="radio"]:checked + span::after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 6px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--color-primary-blue);
+}

@@ -54,9 +54,9 @@
 }
 
 .tui-grid-body-area .tui-grid-cell.up .tui-grid-cell-content::before{
-    background: url('/public/assets/images/sub/ico-number-up.svg') no-repeat center center / contain;
+    background: url('/public/assets/images/common/ico-number-up.svg') no-repeat center center / contain;
 }
 
 .tui-grid-body-area .tui-grid-cell.down .tui-grid-cell-content::before{
-    background: url('/public/assets/images/sub/ico-number-down.svg') no-repeat center center / contain;
+    background: url('/public/assets/images/common/ico-number-down.svg') no-repeat center center / contain;
 }

@@ -156,9 +156,6 @@ header .gnb-bg {
 .header-saerch {
     padding-left: 37.5px;
 }
-.header-saerch button {
-    display: block;
-}
 
 .header-saerch .search-open {
     width: 20px;
@@ -206,10 +203,10 @@ header .gnb-bg {
 }
 
 .header-saerch .input-group input {
-    width: 100%;
-    padding-bottom: 12px;
+    padding: 0 0 12px;
     border: none;
     border-bottom: 1px solid #414141;
+    border-radius: 0;
 }
 
 .header-saerch .input-group input::placeholder {
