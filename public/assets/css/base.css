@@ -185,17 +185,19 @@ select {
     -moz-appearance: none;
     appearance: none;
     width: 100%;
+    min-width: 200px;
     border: var(--border-style-01);
     border-radius: 3px;
     padding: 5px 10px 6px;
     font-family: "Pretendard", sans-serif;
     font-size: 14px;
+    outline: none;
 }
 
 /* input */
-.input-item {
+/* .input-item {
     flex: 1;
-}
+} */
 
 .blind {
     position: absolute;
@@ -222,10 +224,11 @@ select {
     --color-light-gray3: #707070;
     --color-point-red: #ee0c0c;
     --color-point-blue: #206bec;
+    --color-light-blue: #F4F8FB;
 
     /* border */
     --border-style-01: 1px solid #dcdcdc;
-    --border-style-02: 1px solid var(--color-point-blue);
+    --border-style-02: 1px solid var(--color-primary-blue);
     --border-style-03: 1px solid transparent;
 }
 
@@ -263,5 +266,17 @@ body.search-on .header-wrap {
 }
 
 #container {
-    min-height: 863px;
+    /* 브라우저 높이 - 헤더 높이 - 푸터 높이 */
+    min-height: calc(100vh - 60px - 190px);
+    box-sizing: border-box;
+}
+
+.text-right {
+    text-align: right;
+}
+.text-left {
+    text-align: left;
+}
+.text-center {
+    text-align: center;
 }

@@ -299,7 +299,7 @@ header .gnb-bg {
     height: 43px;
     margin-bottom: 6px;
     border-radius: 16px;
-    background-color: #f4f8fb;
+    background-color: var(--color-light-blue);
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -481,7 +481,6 @@ header .gnb-bg {
 /* ===============================
     탭
    =============================== */
-
 /* 탭 type1 */
 .tab-wrap.type1 .tab-btns {
     display: flex;
@@ -492,7 +491,7 @@ header .gnb-bg {
     display: block;
     padding: 0 24px;
     border-radius: 21px;
-    background-color: #f4f8fb;
+    background-color: var(--color-light-blue);
     line-height: 36px;
     font-weight: 700;
     transition: 0.5s;
@@ -551,10 +550,12 @@ header .gnb-bg {
 }
 
 .tab-wrap.type3 .tab-btns a {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 34px;
     border: var(--border-style-01);
     text-align: center;
-    line-height: 34px;
     font-weight: 700;
     transition: 0.5s;
 }

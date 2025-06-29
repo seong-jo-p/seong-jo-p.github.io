@@ -51,7 +51,8 @@ $(function () {
             autoplay: true,
             autoplaySpeed: 3000,
             slidesToShow: 6,
-            slidesToScroll: 1,
+            slidesToScroll: 6,
+            speed: 2500,
         });
 
         // 시작,정지 토글

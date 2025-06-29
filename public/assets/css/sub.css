@@ -6,6 +6,7 @@
     position: relative;
     width: 1200px;
     margin: 0 auto;
+    padding-bottom: 40px;
 }
 
 /* ===============================
@@ -37,7 +38,7 @@
     width: 8px;
     height: 14px;
     padding-right: 16px;
-    background: no-repeat url("../images/sub/ico-path-arr.svg");
+    background: no-repeat url("/public/assets/images/sub/ico-path-arr.svg");
 }
 
 /* ===============================
@@ -52,17 +53,36 @@
 /* ===============================
     그리드
    =============================== */
-.grid-wrap.type1 .tui-grid-border-line-top {
-    border-top-color: var(--color-primary-blue);
+.grid-section {
+    display: flex;
+    gap: 0 30px;
 }
 
-.grid-wrap.type1 .tui-grid-header-area {
-    border: var(--border-style-01);
-    border-left: none;
+.grid-section .grid-section-item {
+    flex: 1;
 }
 
-.grid-wrap.type1 .tui-grid-cell {
-    border: var(--border-style-01);
+.grid-utils {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0 8px;
+    margin-bottom: 5px;
+}
+
+.grid-utils .unit {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.grid-utils .btn-excel {
+    width: 13px;
+    height: 13px;
+    background: no-repeat url("/public/assets/images/sub/ico-excel-down.svg") center;
+}
+
+.grid-utils .total {
+    margin-right: auto;
 }
 
 /* ===============================
@@ -82,9 +102,9 @@
     gap: 10px 40px;
 }
 .sub-search .sub-search-item {
-    flex: 1;
+    /* flex: 1;
     min-width: calc(50% - 20px);
-    max-width: calc(50% - 20px);
+    max-width: calc(50% - 20px); */
 
     display: flex;
     align-items: center;
@@ -92,15 +112,17 @@
 }
 
 .sub-search .input-wrap {
-    flex: 1;
+    /* flex: 1; */
     display: flex;
     align-items: center;
     gap: 0 6px;
+    flex-wrap: wrap;
 }
 
 /* 검색 타이틀 */
 .sub-search .sub-search-item .sub-search-title {
     font-weight: 700;
+    flex-shrink: 0;
 }
 
 /* 검색 버튼s */
@@ -175,14 +197,21 @@
 /* ===============================
     검색영역 - 라디오
    =============================== */
+.radio-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px 24px;
+}
+
+.input-item + .radio-list {
+    padding-left: 34px;
+}
+
 .input-item.radio-input {
     flex: none;
     display: flex;
     align-items: center;
-}
-
-.input-item.radio-input + .input-item.radio-input {
-    padding-left: 18px;
 }
 
 .input-item.radio-input span {
@@ -218,16 +247,19 @@
 }
 
 /* ===============================
-    검색영역 - 라디오
+    검색영역 - 체크박스
    =============================== */
+.checkbox-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px 24px;
+}
+
 .input-item.check-input {
     flex: none;
     display: flex;
     align-items: center;
-}
-
-.input-item.check-input + .input-item.check-input {
-    padding-left: 18px;
 }
 
 .input-item.check-input span {
@@ -259,4 +291,153 @@
     border-radius: 50%;
     background-color: var(--color-primary-blue);
     transform: translateY(-50%);
+}
+
+/* ===============================
+    공지사항
+   =============================== */
+.notice-wrap {
+    margin-top: 40px;
+    padding: 21px 25px 21px 65px;
+    border-radius: 10px;
+    background: no-repeat var(--color-light-blue) url("/public/assets/images/sub/ico-notice.svg") 20px center;
+}
+
+.notice-wrap p {
+    font-size: 13px;
+    line-height: 20px;
+}
+
+/* ===============================
+    현재가
+   =============================== */
+.company-title {
+    padding: 22px 18px;
+    background-color: #f2f3f6;
+    border-radius: 10px;
+}
+
+.company-title strong {
+    padding-left: 25px;
+    font-weight: 600;
+    font-size: 16px;
+    background: no-repeat url("/public/assets/images/sub/ico-company-tit.svg") 0 50%;
+}
+
+.company-title .badge {
+    margin-left: 8px;
+    padding: 4px 12px 4px 31px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.company-title .badge-01 {
+    background: no-repeat var(--color-white) url("/public/assets/images/sub/ico-company-badge-01.svg") 10px 50%;
+}
+
+.company-title .badge-02 {
+    background: no-repeat var(--color-white) url("/public/assets/images/sub/ico-company-badge-01.svg") 10px 50%;
+}
+
+.company-title .badge-03 {
+    background: no-repeat var(--color-white) url("/public/assets/images/sub/ico-company-badge-01.svg") 10px 50%;
+}
+
+.company-info-list {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0 6px;
+    padding: 20px 0;
+}
+
+.company-info-list a {
+    display: block;
+    padding: 0px 37px 0px 17px;
+    border-radius: 20px;
+    background: no-repeat var(--color-primary-blue) url("/public/assets/images/sub/ico-company-arr.svg") right 10px
+        center;
+    line-height: 29px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-white);
+}
+
+.company-wrap {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* grid-template-rows: repeat(2, 1fr); */
+    grid-column-gap: 23px;
+    grid-row-gap: 23px;
+}
+
+.company-item-title {
+    margin: 20px 0 10px;
+    padding-left: 9px;
+    font-weight: 700;
+    background: no-repeat url("/public/assets/images/sub/ico-company-tit2.svg") 0 50%;
+}
+
+.company-item-title:first-of-type {
+    margin-top: 0;
+}
+
+/* ===============================
+    테이블
+   =============================== */
+.cell-bg-red {
+    background-color: #fff0e8;
+}
+
+.cell-bg-blue {
+    background-color: #eff6ff;
+}
+
+.table-type-01 {
+    width: 100%;
+    text-align: right;
+}
+
+.table-type-01 th,
+.table-type-01 td {
+    height: 40px;
+    padding: 10px 16px;
+    vertical-align: middle;
+    border: var(--border-style-01);
+}
+
+.table-type-01 th {
+    font-weight: 700;
+    text-align: center;
+}
+
+.table-type-01 thead tr:first-child th {
+    border-top: var(--border-style-02);
+}
+
+.table-type-01 thead th {
+    background-color: var(--color-light-blue);
+}
+
+.table-type-01 tbody th.cell-title {
+    padding: 10px 8px;
+    background-color: var(--color-light-blue);
+}
+
+/* ===============================
+    차트영역 - 현재가
+   =============================== */
+#chart {
+    height: 100%;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+/* ===============================
+    페이징
+   =============================== */
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
