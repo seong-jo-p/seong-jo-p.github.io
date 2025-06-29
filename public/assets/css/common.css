@@ -306,31 +306,31 @@ header .gnb-bg {
 
 /* 퀵 메뉴 - 아이콘 설정 */
 #quick-menu ul .item01 a::before {
-    background-image: url("../images/common/ico-quick-item01.svg");
+    background-image: url("../images/common/ico-quick-item1.svg");
 }
 
 #quick-menu ul .item02 a::before {
-    background-image: url("../images/common/ico-quick-item02.svg");
+    background-image: url("../images/common/ico-quick-item2.svg");
 }
 
 #quick-menu ul .item03 a::before {
-    background-image: url("../images/common/ico-quick-item03.svg");
+    background-image: url("../images/common/ico-quick-item3.svg");
 }
 
 #quick-menu ul .item04 a::before {
-    background-image: url("../images/common/ico-quick-item04.svg");
+    background-image: url("../images/common/ico-quick-item4.svg");
 }
 
 #quick-menu ul .item05 a::before {
-    background-image: url("../images/common/ico-quick-item05.png");
+    background-image: url("../images/common/ico-quick-item5.png");
 }
 
 #quick-menu ul .item06 a::before {
-    background-image: url("../images/common/ico-quick-item06.png");
+    background-image: url("../images/common/ico-quick-item6.png");
 }
 
 #quick-menu ul .item07 a::before {
-    background-image: url("../images/common/ico-quick-item07.svg");
+    background-image: url("../images/common/ico-quick-item7.svg");
 }
 
 /* ===============================
