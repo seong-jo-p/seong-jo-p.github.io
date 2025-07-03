@@ -221,19 +221,22 @@
                                     <!-- // .sub-search-item -->
                                 </div>
 
-                                <div class="search-btn-wrap">
+                                <!-- <div class="search-btn-wrap">
                                     <button type="reset" class="reset-btn">초기화</button>
                                     <button type="submit" class="submit-btn">검색</button>
-                                </div>
+                                </div> -->
                             </fieldset>
                         </form>
                     </div>
 
                     <div class="company-title">
-                        <strong>메가젠임플란트(102600)</strong>
-                        <span class="badge badge1">지정기업부</span>
-                        <span class="badge badge2">벤처</span>
-                        <span class="badge badge3">투자유의</span>
+                        <h5 class="sub-title3">메가젠임플란트(102600)</h5>
+
+                        <div class="badges">
+                            <span class="badge badge1">지정기업부</span>
+                            <span class="badge badge2">벤처</span>
+                            <span class="badge badge3">투자유의</span>
+                        </div>
                     </div>
 
                     <ul class="company-info-list">
@@ -439,10 +442,10 @@
                                 <ul class="tab-btns">
                                     <li><a href="#" class="on">시간별</a></li>
                                     <li><a href="#">일자별</a></li>
-                                    <li><a href="#">월식적</a></li>
+                                    <li><a href="#">월실적</a></li>
                                     <li><a href="#">월주가</a></li>
                                     <li>
-                                        <a href="#">K-OTC<br />공시/안내</a>
+                                        <a href="#">K-OTC 공시/안내</a>
                                     </li>
                                     <li><a href="#">DART</a></li>
                                 </ul>
@@ -524,7 +527,7 @@
                                 const instance = new Grid({
                                     el: $("#grid01")[0],
                                     bodyHeight: 320,
-                                    scrollX:false,
+                                    scrollX: false,
                                     columns: [
                                         { header: "시간", name: "header1", className: "text-center" },
                                         { header: "주가", name: "header2", className: "text-right" },
@@ -550,7 +553,6 @@
                     </div>
 
                     <div class="notice-wrap">
-                        
                         <p>
                             본회가 제공하는 정보는 투자 참고 사항이며, 불가피한 오류 또는 누락이 발생하거나 지연 제공될
                             수 있습니다.

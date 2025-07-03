@@ -10,7 +10,7 @@
 
 /* === 타이틀 & 탭 === */
 .main-title {
-    padding-bottom: 18px;
+    padding-bottom: 15px;
     font-size: 30px;
     font-weight: 700;
 }
@@ -55,7 +55,7 @@
 }
 
 .main-visual .slick-slide {
-    height: 300px;
+    height: 325px;
 }
 
 .main-visual .slick-slide a {
@@ -149,10 +149,11 @@
    =============================== */
 .main-status {
     position: relative;
-    margin-top: -50px;
-    margin-bottom: 25px;
-    padding: 23px 0px;
-    border-radius: 15px;
+    width: 1152px !important;
+    margin-top: -96px;
+    margin-bottom: 40px;
+    padding: 12px 0px;
+    border-radius: 10px;
     background-color: var(--color-white);
     box-shadow: 0 0 10px rgba(0 0 0 / 7%);
 }
@@ -175,23 +176,25 @@
     top: 50%;
     right: -35px;
     width: 1px;
-    height: calc(100% - 4px);
+    height: 46px;
     background-color: var(--color-light-gray);
     transform: translateY(-50%);
 }
 
 .main-status .main-status-list dt {
     font-weight: 500;
+    font-size: 13px;
 }
 
 .main-status .main-status-list dd .num {
-    font-size: 32px;
+    font-size: 30px;
     font-weight: 700;
 }
 
 .main-status .main-status-list dd .str {
     margin-left: 3px;
-    color: rgba(18 18 18 / 50%);
+    color: #000;
+    font-size: 12px;
 }
 
 /* ===============================
@@ -201,11 +204,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 14px 0;
+    gap: 12px 0;
 
     padding: 13px 0;
-    margin-bottom: 25px;
-    border-radius: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
     background-color: #e2f3fc;
 }
 
@@ -222,7 +225,7 @@
 }
 
 .main-current-search .input-group input {
-    width: 473px;
+    width: 469px;
     height: 32px;
     padding: 0 43px 0px 11px;
     border-radius: 5px;
@@ -244,7 +247,7 @@
 
 .main-current-search .current-list {
     display: flex;
-    gap: 0 67px;
+    gap: 0 60px;
 }
 
 .main-current-search .current-list li {
@@ -257,13 +260,13 @@
     right: -33px;
     top: 50%;
     width: 1px;
-    height: 13px;
-    background-color: #cbcbcb;
+    height: 10px;
+    background-color: #000;
     transform: translateY(-50%);
 }
 
 .main-current-search .current-list .num {
-    margin-left: 16px;
+    margin-left: 14px;
     font-weight: 500;
 }
 
@@ -306,9 +309,10 @@
 
 /* 그리드 바디 */
 .main-stock-grid tbody p {
-    margin-top: 8px;
+    margin-top: 5px;
     background-color: var(--color-light-gray2);
     line-height: 40px;
+    font-weight: 500;
 }
 
 .main-stock-grid tbody td:first-child p {
@@ -330,6 +334,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-weight: 500;
 }
 
 .main-stock-grid .up p::before,
@@ -365,7 +370,7 @@
     border-bottom: 1px solid var(--color-light-gray3);
 }
 
-.main-announcement-grid thead th:not(:last-child)::before {
+/* .main-announcement-grid thead th:not(:last-child)::before {
     content: "";
     position: absolute;
     top: 50%;
@@ -374,13 +379,14 @@
     height: 16px;
     background-color: var(--color-light-gray);
     transform: translateY(-50%);
-}
+} */
 
 /* 그리드 바디 */
 .main-announcement-grid tbody td {
     position: relative;
     border-bottom: 1px solid var(--color-light-gray);
     line-height: 40px;
+    font-weight: 500;
 }
 
 .main-announcement-grid tbody a {
@@ -389,6 +395,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-weight: 500;
 }
 
 /* ===============================
@@ -406,7 +413,7 @@
 .main-notice-list li {
     position: relative;
     flex: 1;
-    padding: 30px 27px 60px 27px;
+    padding: 30px 30px 60px 30px;
     min-height: 220px;
     border-radius: 20px;
     background-color: #f6f6f8;
@@ -423,7 +430,6 @@
 .main-notice-list h3 {
     padding-bottom: 15px;
     font-weight: 500;
-    font-size: 13px;
     color: #7f7f7f;
 }
 .main-notice-list .title {
@@ -531,7 +537,6 @@
     display: flex;
     align-items: center;
     margin: 34px 0 58px;
-    padding-left: 15px;
     gap: 25px;
 }
 

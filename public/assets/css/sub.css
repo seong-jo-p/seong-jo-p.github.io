@@ -55,10 +55,20 @@
     padding-left: 9px;
     font-weight: 700;
     background: no-repeat url("/public/assets/images/sub/ico-sub-title2.svg") 0 50%;
+    font-size: 17px;
+    color: #223A6B;
 }
 
 .sub-title2:first-of-type {
     margin-top: 0;
+}
+
+.sub-title3 {
+    padding-left: 25px;
+    padding-bottom: 20px;
+    font-weight: 600;
+    font-size: 16px;
+    background: no-repeat url("/public/assets/images/sub/ico-company-title.svg") 0 0;
 }
 
 /* ===============================
@@ -100,7 +110,7 @@
     검색영역
    =============================== */
 .sub-search {
-    margin-bottom: 49px;
+    margin-bottom: 20px;
 }
 
 .sub-search .sub-search-wrap {
@@ -323,16 +333,14 @@
     현재가
    =============================== */
 .company-title {
+    display: flex;
     padding: 22px 18px;
     background-color: #f2f3f6;
     border-radius: 10px;
 }
 
-.company-title strong {
-    padding-left: 25px;
-    font-weight: 600;
-    font-size: 16px;
-    background: no-repeat url("/public/assets/images/sub/ico-company-title.svg") 0 50%;
+.company-title .sub-title3{
+    padding-bottom: 0;
 }
 
 .company-title .badge {
@@ -376,10 +384,10 @@
 
 .company-wrap {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 536px auto;
     /* grid-template-rows: repeat(2, 1fr); */
-    grid-column-gap: 23px;
-    grid-row-gap: 23px;
+    grid-column-gap: 41px;
+    grid-row-gap: 30px;
 }
 
 /* ===============================

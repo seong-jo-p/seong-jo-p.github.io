@@ -541,11 +541,10 @@ header .gnb-bg {
 /* 탭 type3 */
 .tab-wrap.type3 .tab-btns {
     display: flex;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .tab-wrap.type3 .tab-btns li {
-    flex: 1;
     margin-left: -1px;
 }
 
@@ -554,6 +553,7 @@ header .gnb-bg {
     align-items: center;
     justify-content: center;
     height: 34px;
+    padding: 0 25px;
     border: var(--border-style-01);
     text-align: center;
     font-weight: 700;
