@@ -492,7 +492,8 @@ header .gnb-bg {
     padding: 0 24px;
     border-radius: 21px;
     background-color: var(--color-light-blue);
-    line-height: 36px;
+    font-size: 14px;
+    line-height: 34px;
     font-weight: 700;
     transition: 0.5s;
 }
@@ -505,7 +506,7 @@ header .gnb-bg {
 /* 탭 type2 */
 .tab-wrap.type2 .tab-btns {
     display: flex;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .tab-wrap.type2 .tab-btns li {
@@ -518,6 +519,7 @@ header .gnb-bg {
     display: block;
     border: var(--border-style-01);
     line-height: 44px;
+    font-size: 16px;
     font-weight: 700;
     text-align: center;
     transition: 0.5s;
@@ -545,6 +547,7 @@ header .gnb-bg {
 }
 
 .tab-wrap.type3 .tab-btns li {
+    flex: 1 1 auto;
     margin-left: -1px;
 }
 
@@ -552,10 +555,10 @@ header .gnb-bg {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 34px;
-    padding: 0 25px;
+    height: 40px;
     border: var(--border-style-01);
     text-align: center;
+    font-size: 16px;
     font-weight: 700;
     transition: 0.5s;
 }
@@ -563,4 +566,29 @@ header .gnb-bg {
 .tab-wrap.type3 .tab-btns a.on {
     color: var(--color-white);
     background-color: var(--color-primary-orange);
+    border: 1px solid var(--color-primary-orange);
+}
+
+/* 탭 type4 */
+.tab-wrap.type4 .tab-btns {
+    display: flex;
+    justify-content: center;
+    gap: 0 16px;
+    margin-bottom: 40px;
+}
+
+.tab-wrap.type4 .tab-btns a {
+    display: block;
+    padding: 0 22px;
+    background-color: #ecf0f6;
+    border-radius: 18px;
+    line-height: 36px;
+    font-size: 16px;
+    font-weight: 700;
+    transition: 0.5s;
+}
+
+.tab-wrap.type4 .tab-btns a.on {
+    background-color: var(--color-primary-blue);
+    color: var(--color-white);
 }

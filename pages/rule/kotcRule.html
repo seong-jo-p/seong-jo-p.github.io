@@ -184,262 +184,67 @@
                 <div class="container-wrap">
                     <ul class="page-path">
                         <li class="home"><span class="blind">Home</span></li>
-                        <li>종목정보</li>
-                        <li>호가/체결 상세정보</li>
+                        <li>제도/규정</li>
+                        <li>K-OTC 관련규정</li>
                     </ul>
+                    <h2 class="sub-title1">K-OTC 관련규정</h2>
 
-                    <h2 class="sub-title1">호가/체결 상세정보</h2>
-
-                    <div class="sub-search">
-                        <form>
-                            <fieldset>
-                                <legend class="blind">검색어 입력 폼</legend>
-
-                                <div class="sub-search-wrap">
-                                    <div class="sub-search-item">
-                                        <h4 class="sub-search-title">종목</h4>
-
-                                        <div class="input-wrap">
-                                            <div class="input-item search-input">
-                                                <label for="ex1">
-                                                    <input type="text" id="ex1" name="ex1" placeholder="000000" />
-                                                    <span class="blind">종목코드</span>
-                                                </label>
-
-                                                <button type="button">
-                                                    <span class="blind">종목 코드검색</span>
-                                                </button>
-                                            </div>
-
-                                            <div class="input-item">
-                                                <label for="ex2">
-                                                    <input type="text" id="ex2" name="ex2" placeholder="" />
-                                                    <span class="blind">종목이름</span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- // .sub-search-item -->
-                                </div>
-
-                                <!-- <div class="search-btn-wrap">
-                                    <button type="reset" class="reset-btn">초기화</button>
-                                    <button type="submit" class="submit-btn">검색</button>
-                                </div> -->
-                            </fieldset>
-                        </form>
-                    </div>
-                    <!-- // .sub-search -->
-                    <div class="tab-wrap type2">
-                        <ul class="tab-btns">
-                            <li><a href="#" class="on">시간별 주문내역</a></li>
-                            <li><a href="#">시간별 호가상황</a></li>
-                            <li><a href="#">시간별 체결내역</a></li>
-                            <li><a href="#">가격별체결내역</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="grid-section">
-                        <!-- 그리드1 -->
-                        <div class="grid-section-item">
-                            <div class="grid-utils">
-                                <a href="#" download class="btn-excel"><span class="blind">엑셀 다운로드</span> </a>
-                            </div>
-                            <div class="tab-content">
-                                <div class="grid-wrap type1" id="grid01" data-lenis-prevent></div>
-                            </div>
+                    <div class="kotc-rule">
+                        <div class="rule-item">
+                            <h4 class="sub-title3">K-OTC 규정</h4>
+                            <ul>
+                                <li>
+                                    <a
+                                        href="https://law.kofia.or.kr/service/law/lawView.do?seq=297&historySeq=0&gubun=cur&tree=part"
+                                        target="_blank"
+                                    >
+                                        K-OTC시장운영규정 <br />
+                                        K-OTC시장운영규정 시행세척
+                                    </a>
+                                </li>
+                                <li>
+                                    <a style="width: 233px" href="#" target="_blank"> 투자자유의사항 </a>
+                                </li>
+                            </ul>
                         </div>
-
-                        <div class="grid-section-item">
-                            <div class="grid-utils">
-                                <span>(단위 : 주 ,원)</span>
-                                <a href="#" download class="btn-excel"><span class="blind">엑셀 다운로드</span> </a>
-                            </div>
-                            <div class="tab-content">
-                                <div class="grid-wrap type1" id="grid02" data-lenis-prevent></div>
-                            </div>
+                        <div class="rule-item">
+                            <h4 class="sub-title3">기타 협회 규정</h4>
+                            <ul>
+                                <li>
+                                    <a href="https://law.kofia.or.kr/service/main/main.do" target="_blank">
+                                        금융투자회사의 영업 및 업무에 관한규정 <br />
+                                        증권인수업무에관한 규정
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="rule-item">
+                            <h4 class="sub-title3">법규정</h4>
+                            <ul>
+                                <li>
+                                    <a href="https://law.kofia.or.kr/service/main/main.do" target="_blank">
+                                        금자본시장과 금융투자업에 관한 법률 <br />
+                                        자본시장과 금융투자업에 관한 법률 시행령 <br />
+                                        자본시장과 금융투자업에 관한 법률 시행규칙
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="rule-item">
+                            <h4 class="sub-title3">금융위 규정</h4>
+                            <ul>
+                                <li>
+                                    <a
+                                        href="https://www.fss.or.kr/fss/job/lrgInfo/list.do?menuNo=200486&lrgClsfcCode1=LAW101&lrgClsfcCode2=LAW101-04&lrgClsfcCode3=LAW101-04-08&lrgClsfcCode4=&keywordSearchAt=N&searchWrd&pageIndex=1"
+                                        target="_blank"
+                                    >
+                                        금융투자업규정 <br />
+                                        금융투자업규정 시행세칙
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-
-                    <script>
-                        const Grid = tui.Grid;
-
-                        const data1 = [
-                            {
-                                header1: "15:21:18",
-                                header2: "8950",
-                                header3: "1928",
-                                header4: "",
-                            },
-                            {
-                                header1: "15:21:18",
-                                header2: "8950",
-                                header3: "1928",
-                                header4: "",
-                            },
-                            {
-                                header1: "15:21:18",
-                                header2: "8950",
-                                header3: "1928",
-                                header4: "",
-                            },
-                            {
-                                header1: "15:21:18",
-                                header2: "8950",
-                                header3: "1928",
-                                header4: "정정",
-                            },
-                            {
-                                header1: "15:21:18",
-                                header2: "8950",
-                                header3: "1928",
-                                header4: "",
-                            },
-                            {
-                                header1: "15:21:18",
-                                header2: "8950",
-                                header3: "1928",
-                                header4: "정정",
-                            },
-                            {
-                                header1: "15:21:18",
-                                header2: "8950",
-                                header3: "1928",
-                                header4: "정정",
-                            },
-                            {
-                                header1: "15:21:18",
-                                header2: "8950",
-                                header3: "1928",
-                                header4: "정정",
-                            },
-                            {
-                                header1: "15:21:18",
-                                header2: "8950",
-                                header3: "1928",
-                                header4: "정정",
-                            },
-                            {
-                                header1: "15:21:18",
-                                header2: "8950",
-                                header3: "1928",
-                                header4: "정정",
-                            },
-                            {
-                                header1: "15:21:18",
-                                header2: "8950",
-                                header3: "1928",
-                                header4: "정정",
-                            },
-                            {
-                                header1: "15:21:18",
-                                header2: "8950",
-                                header3: "1928",
-                                header4: "정정",
-                            },
-                        ];
-
-                        const instance1 = new Grid({
-                            el: $("#grid01")[0],
-                            bodyHeight: 400,
-                            scrollX: false,
-                            columns: [
-                                { header: "시간", name: "header1", className: "text-center" },
-                                { header: "매도가격", name: "header2", className: "text-right" },
-                                { header: "매도수량", name: "header3", className: "text-right" },
-                                { header: "구분", name: "header4", className: "text-center" },
-                            ],
-                            data: data1,
-                        });
-
-                        const data2 = [
-                            {
-                                header1: "15:21:18",
-                                header2: "8950",
-                                header3: "1928",
-                                header4: "",
-                            },
-                            {
-                                header1: "15:21:18",
-                                header2: "8950",
-                                header3: "1928",
-                                header4: "",
-                            },
-                            {
-                                header1: "15:21:18",
-                                header2: "8950",
-                                header3: "1928",
-                                header4: "",
-                            },
-                            {
-                                header1: "15:21:18",
-                                header2: "8950",
-                                header3: "1928",
-                                header4: "정정",
-                            },
-                            {
-                                header1: "15:21:18",
-                                header2: "8950",
-                                header3: "1928",
-                                header4: "",
-                            },
-                            {
-                                header1: "15:21:18",
-                                header2: "8950",
-                                header3: "1928",
-                                header4: "정정",
-                            },
-                            {
-                                header1: "15:21:18",
-                                header2: "8950",
-                                header3: "1928",
-                                header4: "정정",
-                            },
-                            {
-                                header1: "15:21:18",
-                                header2: "8950",
-                                header3: "1928",
-                                header4: "정정",
-                            },
-                            {
-                                header1: "15:21:18",
-                                header2: "8950",
-                                header3: "1928",
-                                header4: "정정",
-                            },
-                            {
-                                header1: "15:21:18",
-                                header2: "8950",
-                                header3: "1928",
-                                header4: "정정",
-                            },
-                            {
-                                header1: "15:21:18",
-                                header2: "8950",
-                                header3: "1928",
-                                header4: "정정",
-                            },
-                            {
-                                header1: "15:21:18",
-                                header2: "8950",
-                                header3: "1928",
-                                header4: "정정",
-                            },
-                        ];
-
-                        const instance2 = new Grid({
-                            el: $("#grid02")[0],
-                            bodyHeight: 400,
-                            scrollX: false,
-                            columns: [
-                                { header: "시간", name: "header1", className: "text-center" },
-                                { header: "매도가격", name: "header2", className: "text-right" },
-                                { header: "매도수량", name: "header3", className: "text-right" },
-                                { header: "구분", name: "header4", className: "text-center" },
-                            ],
-                            data: data1,
-                        });
-                    </script>
 
                     <div class="notice-wrap">
                         <p>

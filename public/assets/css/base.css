@@ -170,7 +170,7 @@ input[type="week"] {
     width: 100%;
     border: var(--border-style-01);
     border-radius: 3px;
-    padding: 5px 10px 6px;
+    padding: 6px 10px;
 }
 
 input[type="radio"],
@@ -269,6 +269,11 @@ body.search-on .header-wrap {
     /* 브라우저 높이 - 헤더 높이 - 푸터 높이 */
     min-height: calc(100vh - 60px - 190px);
     box-sizing: border-box;
+}
+
+/* 메인은 기본폰트 14px, 서브는 15px */
+#container.sub {
+    font-size: 15px;
 }
 
 .text-right {

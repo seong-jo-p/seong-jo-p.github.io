@@ -85,10 +85,6 @@
 /* =========================
    type1 그리드 스타일
 ========================= */
-.grid-wrap.type1 .tui-grid-cell.tui-grid-cell-header {
-    border-top: 1px solid var(--color-primary-blue);
-}
-
 .grid-wrap.type1 .tui-grid-cell {
     border: var(--border-style-01);
 }
@@ -97,6 +93,10 @@
 }
 .grid-wrap.type1 .tui-grid-border-line-bottom {
     border-bottom: var(--border-style-01);
+}
+.grid-wrap.type1 .tui-grid-border-line.tui-grid-border-line-top {
+    display: block;
+    border-top: var(--border-style-02);
 }
 
 .grid-wrap.type1 .tui-grid-scrollbar-right-top {

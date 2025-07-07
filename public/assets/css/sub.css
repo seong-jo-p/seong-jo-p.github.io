@@ -6,7 +6,7 @@
     position: relative;
     width: 1200px;
     margin: 0 auto;
-    padding-bottom: 40px;
+    padding-bottom: 172px;
 }
 
 /* ===============================
@@ -51,12 +51,12 @@
 }
 
 .sub-title2 {
-    margin: 20px 0 10px;
+    margin: 30px 0 10px;
     padding-left: 9px;
     font-weight: 700;
     background: no-repeat url("/public/assets/images/sub/ico-sub-title2.svg") 0 50%;
     font-size: 17px;
-    color: #223A6B;
+    color: #223a6b;
 }
 
 .sub-title2:first-of-type {
@@ -89,6 +89,7 @@
     align-items: center;
     gap: 0 8px;
     margin-bottom: 5px;
+    min-height: 18px;
 }
 
 .grid-utils .unit {
@@ -114,7 +115,7 @@
 }
 
 .sub-search .sub-search-wrap {
-    padding: 17px 66px;
+    padding: 16px 66px;
     border-radius: 10px;
     border: var(--border-style-02);
 
@@ -142,6 +143,7 @@
 
 /* 검색 타이틀 */
 .sub-search .sub-search-item .sub-search-title {
+    font-size: 16px;
     font-weight: 700;
     flex-shrink: 0;
 }
@@ -318,7 +320,9 @@
     공지사항
    =============================== */
 .notice-wrap {
-    margin-top: 40px;
+    position: absolute;
+    left: 0;
+    bottom: 20px;
     padding: 21px 25px 21px 65px;
     border-radius: 10px;
     background: no-repeat var(--color-light-blue) url("/public/assets/images/sub/ico-notice.svg") 20px center;
@@ -334,12 +338,13 @@
    =============================== */
 .company-title {
     display: flex;
+    margin-top: 30px;
     padding: 22px 18px;
     background-color: #f2f3f6;
     border-radius: 10px;
 }
 
-.company-title .sub-title3{
+.company-title .sub-title3 {
     padding-bottom: 0;
 }
 
@@ -367,7 +372,7 @@
     display: flex;
     justify-content: flex-end;
     gap: 0 6px;
-    padding: 20px 0;
+    padding: 30px 0;
 }
 
 .company-info-list a {
@@ -377,7 +382,6 @@
     background: no-repeat var(--color-primary-blue) url("/public/assets/images/sub/ico-company-arr.svg") right 10px
         center;
     line-height: 29px;
-    font-size: 13px;
     font-weight: 700;
     color: var(--color-white);
 }
@@ -388,6 +392,12 @@
     /* grid-template-rows: repeat(2, 1fr); */
     grid-column-gap: 41px;
     grid-row-gap: 30px;
+}
+
+.notice-text1 {
+    margin-top: 30px;
+    font-size: 14px;
+    line-height: 17px;
 }
 
 /* ===============================
@@ -409,12 +419,14 @@
 .table-type1 th,
 .table-type1 td {
     height: 40px;
-    padding: 10px 16px;
+    padding: 10px 15px;
     vertical-align: middle;
     border: var(--border-style-01);
+    background-color: var(--color-white);
 }
 
 .table-type1 th {
+    font-size: 16px;
     font-weight: 700;
     text-align: center;
 }
@@ -428,6 +440,7 @@
 }
 
 .table-type1 tbody th.cell-title {
+    font-size: 15px;
     padding: 10px 8px;
     background-color: var(--color-light-blue);
 }
@@ -448,4 +461,127 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* ===============================
+    FAQ
+   =============================== */
+.faq-list li {
+    position: relative;
+    padding-left: 172px;
+    background-color: #f6f6f8;
+    margin-top: 10px;
+}
+
+.faq-list li:first-child {
+    margin-top: 0;
+}
+
+.faq-list .faq-list-head {
+    position: absolute;
+    top: 17px;
+    left: 23px;
+    line-height: 20px;
+    font-weight: 700;
+}
+
+.faq-list .faq-list-body .faq-Q {
+    position: relative;
+    padding: 11px 64px 11px 51px;
+    font-weight: 700;
+    line-height: 32px;
+    cursor: pointer;
+}
+
+.faq-list .faq-list-body .faq-Q::before {
+    content: "Q";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var(--color-white);
+    text-align: center;
+    line-height: 32px;
+    font-size: 14px;
+}
+
+.faq-list .faq-list-body .faq-Q::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 24px;
+    width: 14px;
+    height: 8px;
+    transform: translateY(-50%);
+    background: no-repeat url("/public/assets/images/sub/ico-faq-list-arr.svg") center;
+}
+
+.faq-list .faq-list-body .faq-Q.on::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.faq-list .faq-list-body .faq-A {
+    display: none;
+    position: relative;
+    padding: 6px 64px 16px 51px;
+    font-weight: 500;
+    line-height: 22px;
+}
+
+.faq-list .faq-list-body .faq-A::before {
+    content: "A";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var(--color-primary-blue);
+    text-align: center;
+    line-height: 32px;
+    font-size: 14px;
+    color: var(--color-white);
+}
+
+/* ===============================
+    K-OTC 관련규정
+   =============================== */
+.kotc-rule .rule-item {
+    position: relative;
+    margin-top: 20px;
+    padding-left: 290px;
+}
+
+.kotc-rule .rule-item:first-child {
+    margin-top: 0;
+}
+
+.kotc-rule .sub-title3 {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.kotc-rule ul {
+    display: flex;
+    gap: 0 30px;
+}
+
+.kotc-rule a {
+    display: block;
+    width: 355px;
+    height: 100%;
+    padding: 18px 24px;
+    background: #fafafa no-repeat url('/public/assets/images/sub/ico-rule-arr.svg') right 14px bottom 17px;
+    border-radius: 5px;
+    transition: 0.5s;
+    line-height: 22px;
+}
+
+.kotc-rule a:hover {
+    background: var(--color-primary-blue) no-repeat url('/public/assets/images/sub/ico-rule-arr-on.svg') right 14px bottom 17px;
+    color: var(--color-white);
 }
