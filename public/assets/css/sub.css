@@ -68,7 +68,7 @@
     padding-bottom: 20px;
     font-weight: 600;
     font-size: 16px;
-    background: no-repeat url("/public/assets/images/sub/ico-company-title.svg") 0 0;
+    background: no-repeat url("/public/assets/images/sub/ico-sub-title3.svg") 0 0;
 }
 
 /* ===============================
@@ -575,13 +575,74 @@
     width: 355px;
     height: 100%;
     padding: 18px 24px;
-    background: #fafafa no-repeat url('/public/assets/images/sub/ico-rule-arr.svg') right 14px bottom 17px;
+    background: #fafafa no-repeat url("/public/assets/images/sub/ico-rule-arr.svg") right 14px bottom 17px;
     border-radius: 5px;
     transition: 0.5s;
     line-height: 22px;
 }
 
 .kotc-rule a:hover {
-    background: var(--color-primary-blue) no-repeat url('/public/assets/images/sub/ico-rule-arr-on.svg') right 14px bottom 17px;
+    background: var(--color-primary-blue) no-repeat url("/public/assets/images/sub/ico-rule-arr-on.svg") right 14px
+        bottom 17px;
     color: var(--color-white);
+}
+
+/* ===============================
+    연혁
+   =============================== */
+.history-wrap {
+    position: relative;
+}
+
+.history-wrap::before {
+    content: '';
+    position: absolute;
+    left: 222px;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background: repeat-y url('/public/assets/images/sub/ico-history-line.svg') left top;
+}
+
+.history-wrap dl {
+    position: relative;
+    padding-left: 213px;
+    margin-top: 30px;
+}
+
+.history-wrap dl:first-child {
+    margin-top: 0;
+}
+
+.history-wrap dt {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--color-primary-blue);
+}
+
+.history-wrap dd {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.history-wrap dd:first-of-type {
+    margin-top: 0;
+}
+
+.history-wrap .history-month {
+    padding-left: 38px;
+    background: no-repeat var(--color-white) url('/public/assets/images/sub/ico-sub-title3.svg') left center;
+    line-height: 20px;
+    font-weight: 700;
+    color: var(--color-primary-blue);
+}
+
+.history-wrap .history-text {
+    padding-left: 38px;
+    line-height: 22px;
 }
