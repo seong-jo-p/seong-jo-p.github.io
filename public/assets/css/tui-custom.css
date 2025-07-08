@@ -28,8 +28,13 @@
 /* 바디 셀 */
 .tui-grid-body-area .tui-grid-cell {
     background-color: var(--color-white);
+   
 }
 .tui-grid-body-area .tui-grid-cell-content {
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    
     padding: 0px 16px;
     font-size: 15px;
     font-family: "Pretendard", sans-serif;

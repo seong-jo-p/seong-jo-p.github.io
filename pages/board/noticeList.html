@@ -189,6 +189,213 @@
                     </ul>
                     <h2 class="sub-title1">공지사항</h2>
 
+                    <div class="sub-search">
+                        <form>
+                            <fieldset>
+                                <legend class="blind">검색어 입력 폼</legend>
+
+                                <div class="sub-search-wrap">
+                                    <div class="sub-search-item">
+                                        <h4 class="sub-search-title">조회 기간</h4>
+
+                                        <div class="input-wrap">
+                                            <div class="input-item date-input">
+                                                <label for="">
+                                                    <input type="text" id="" name="" />
+                                                    <span class="blind">시작일</span>
+                                                </label>
+
+                                                <button type="button"><span class="blind">달력 팝업 열기</span></button>
+                                            </div>
+                                            <span>~</span>
+                                            <div class="input-item date-input">
+                                                <label for="">
+                                                    <input type="text" id="" name="" />
+                                                    <span class="blind">시작일</span>
+                                                </label>
+
+                                                <button type="button"><span class="blind">달력 팝업 열기</span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="sub-search-item">
+                                        <div class="input-wrap">
+                                            <div class="input-item">
+                                                <select id="example" name="example" class="w90">
+                                                    <option value="option1">전체</option>
+                                                    <option value="option2">제목</option>
+                                                    <option value="option3">내용</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="input-item">
+                                                <label for="">
+                                                    <input type="text" id="" name="" placeholder="" />
+                                                    <span class="blind">종목이름</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="search-btn-wrap">
+                                    <button type="reset" class="reset-btn">초기화</button>
+                                    <button type="submit" class="submit-btn">검색</button>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+
+                    <div class="grid-section">
+                        <div class="grid-section-wrap">
+                            <!-- 그리드1 -->
+                            <div class="grid-section-item">
+                                <div class="grid-wrap type1" id="grid01" data-lenis-prevent></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <script>
+                        const Grid = tui.Grid;
+
+                        const data1 = [
+                            {
+                                header1: "247 ",
+                                header2: "K-OTC시장 기업 중소중견기업 여부 안내(’24년 사업연도 기준)",
+                                header3: "2025-06-13 ",
+                                header4: [
+                                    { name: "첨부파일1", url: "/" },
+                                    { name: "첨부파일2", url: "/" },
+                                ],
+                            },
+                            {
+                                header1: "246 ",
+                                header2: "K-OTC시장 휴장 안내",
+                                header3: "2025-06-13 ",
+                                header4: [{ name: "첨부파일1", url: "/" }],
+                            },
+                            {
+                                header1: "245 ",
+                                header2:
+                                    "244	대학수학능력시험일(2024년 11월 14일) K-OTC시장 매매거래시간 임시변경 안내 244	대학수학능력시험일(2024년 11월 14일) K-OTC시장 매매거래시간 임시변경 안내",
+                                header3: "2025-06-13 ",
+                                header4: [],
+                            },
+                            {
+                                header1: "244 ",
+                                header2: "K-OTC시장 휴장 안내",
+                                header3: "2025-06-13 ",
+                                header4: [
+                                    { name: "첨부파일1", url: "/" },
+                                    { name: "첨부파일2", url: "/" },
+                                ],
+                            },
+                            {
+                                header1: "243 ",
+                                header2: "서울시-금융투자협회(K-OTC) 공동 스케일업 IR DAY 개최 안내(2024년)",
+                                header3: "2025-06-13 ",
+                                header4: [{ name: "첨부파일1", url: "/" }],
+                            },
+                            {
+                                header1: "242 ",
+                                header2: "K-OTC시장 휴장 안내",
+                                header3: "2025-06-13 ",
+                                header4: [],
+                            },
+                            {
+                                header1: "241 ",
+                                header2: "서울시-금융투자협회(K-OTC) 공동 스케일업 IR DAY 개최 안내(2024년)",
+                                header3: "2025-06-13 ",
+                                header4: [
+                                    { name: "첨부파일1", url: "/" },
+                                    { name: "첨부파일2", url: "/" },
+                                ],
+                            },
+                            {
+                                header1: "240 ",
+                                header2: "K-OTC시장 휴장 안내",
+                                header3: "2025-06-13 ",
+                                header4: [{ name: "첨부파일1", url: "/" }],
+                            },
+                            {
+                                header1: "239 ",
+                                header2: "K-OTC시장 기업 중소중견기업 여부 안내(’24년 사업연도 기준)",
+                                header3: "2025-06-13 ",
+                                header4: [],
+                            },
+                            {
+                                header1: "240 ",
+                                header2: "K-OTC시장 휴장 안내",
+                                header3: "2025-06-13 ",
+                                header4: [{ name: "첨부파일1", url: "/" }],
+                            },
+                            {
+                                header1: "239 ",
+                                header2: "K-OTC시장 기업 중소중견기업 여부 안내(’24년 사업연도 기준)",
+                                header3: "2025-06-13 ",
+                                header4: [],
+                            },
+                        ];
+
+                        const instance1 = new Grid({
+                            el: $("#grid01")[0],
+                            bodyHeight: 400,
+                            scrollX: false,
+                            columns: [
+                                { header: "번호", name: "header1", className: "text-center", width: 100 },
+                                { header: "제목", name: "header2", className: "text-center" },
+                                { header: "등록일", name: "header3", className: "text-center", width: 150 },
+                                {
+                                    header: "첨부파일",
+                                    name: "header4",
+                                    width: 150,
+                                    className: "text-center",
+                                    formatter: function ({ value }) {
+                                        if (!value || value.length === 0) return "";
+
+                                        return value
+                                            .map(
+                                                (file, idx) =>
+                                                    `<a href="${
+                                                        file.url
+                                                    }" target="_blank" class="file-down" ><span class="blind">${
+                                                        file.name || "첨부파일" + (idx + 1)
+                                                    } </span></a>`
+                                            )
+                                            .join("");
+                                    },
+                                },
+                            ],
+
+                            data: data1,
+                        });
+                    </script>
+                    <ul class="pagination">
+                        <li class="first-page">
+                            <a href="#"><span class="blind">처음</span></a>
+                        </li>
+                        <li class="prev-page">
+                            <a href="#"><span class="blind">이전</span></a>
+                        </li>
+                        <li><a href="#" class="on">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">6</a></li>
+                        <li><a href="#">7</a></li>
+                        <li><a href="#">8</a></li>
+                        <li><a href="#">9</a></li>
+                        <li><a href="#">10</a></li>
+                        <li class="next-page">
+                            <a href="#"><span class="blind">다음</span></a>
+                        </li>
+                        <li class="last-page">
+                            <a href="#"><span class="blind">마지막</span></a>
+                        </li>
+                    </ul>
+
                     <div class="notice-wrap">
                         <p>
                             본회가 제공하는 정보는 투자 참고 사항이며, 불가피한 오류 또는 누락이 발생하거나 지연 제공될
