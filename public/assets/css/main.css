@@ -86,7 +86,7 @@
 .main-visual .controller .controller-item {
     display: flex;
     align-items: center;
-    background-color: rgba(77 72 146 / 50%);
+    background-color: rgba(0 0 0 / 40%);
 }
 
 .main-visual .controller .controller-item .page-num {

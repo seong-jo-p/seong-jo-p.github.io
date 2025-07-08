@@ -18,7 +18,7 @@
     background: var(--color-light-blue);
     font-weight: 700;
     font-family: "Pretendard", sans-serif;
-    font-size: 14px;
+    font-size: 15px;
     color: var(--color-font-default);
 }
 .tui-grid-header-area .tui-grid-cell-header.tui-grid-cell-selected {
@@ -30,7 +30,8 @@
     background-color: var(--color-white);
 }
 .tui-grid-body-area .tui-grid-cell-content {
-    font-size: 14px;
+    padding: 0px 16px;
+    font-size: 15px;
     font-family: "Pretendard", sans-serif;
     color: var(--color-font-default);
 }
@@ -59,6 +60,22 @@
     background: url('/public/assets/images/common/ico-number-down.svg') no-repeat center center/contain;
 }
 
+/* 증감 아이콘2 */
+.tui-grid-body-area .tui-grid-cell.up-arr .tui-grid-cell-content::before,
+.tui-grid-body-area .tui-grid-cell.down-arr .tui-grid-cell-content::before {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 8px;
+    margin-right: 4px;
+}
+.tui-grid-body-area .tui-grid-cell.up-arr .tui-grid-cell-content::before {
+    background: url('/public/assets/images/common/ico-number-up.svg') no-repeat center center/contain;
+}
+.tui-grid-body-area .tui-grid-cell.down-arr .tui-grid-cell-content::before {
+    background: url('/public/assets/images/common/ico-number-down.svg') no-repeat center center/contain;
+}
+
 /* 스크롤바 및 불필요한 라인 제거 */
 .tui-grid-scrollbar-right-top,
 .tui-grid-scrollbar-right-bottom,
@@ -79,6 +96,20 @@
 .tui-grid-body-area::-webkit-scrollbar-thumb {
     background-color: #d9d9d9;
     border-radius: 10px;
+}
+
+/* 첨부파일 */
+.tui-grid-body-area .tui-grid-cell .file-down {
+    display: inline-block;
+    vertical-align: middle;
+    width: 14px;
+    height: 15px;
+    margin-left: 10px;
+    background: no-repeat url('/public/assets/images/sub/ico-file-down.svg') center;
+}
+
+.tui-grid-body-area .tui-grid-cell .file-down:first-child {
+    margin-left: 0;
 }
 
 
@@ -108,4 +139,8 @@
     border-bottom: var(--border-style-01);
     border-left: 0px;
     border-right: 0px;
+}
+
+.grid-wrap.type1 .tui-grid-body-area tr:hover td {
+    background-color: #FFF7F3;
 }

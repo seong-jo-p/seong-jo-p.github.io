@@ -172,6 +172,9 @@ input[type="week"] {
     border-radius: 3px;
     padding: 6px 10px;
 }
+input[type="text"] {
+    width: 184px;
+}
 
 input[type="radio"],
 input[type="checkbox"] {
@@ -184,7 +187,7 @@ select {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    width: 100%;
+    width: 184px;
     min-width: 200px;
     border: var(--border-style-01);
     border-radius: 3px;
@@ -192,6 +195,14 @@ select {
     font-family: "Pretendard", sans-serif;
     font-size: 14px;
     outline: none;
+    cursor: pointer;
+}
+
+input[type="text"]:hover,
+input[type="text"]:focus,
+select:hover,
+select:focus {
+    border: 1px solid #121212;
 }
 
 /* input */
@@ -224,7 +235,7 @@ select {
     --color-light-gray3: #707070;
     --color-point-red: #ee0c0c;
     --color-point-blue: #206bec;
-    --color-light-blue: #F4F8FB;
+    --color-light-blue: #f4f8fb;
 
     /* border */
     --border-style-01: 1px solid #dcdcdc;
@@ -277,11 +288,19 @@ body.search-on .header-wrap {
 }
 
 .text-right {
-    text-align: right;
+    text-align: right !important;
 }
 .text-left {
-    text-align: left;
+    text-align: left !important;
 }
 .text-center {
-    text-align: center;
+    text-align: center !important;
+}
+
+.item-full {
+    width: 100% !important;
+}
+
+.item-half {
+    width: 50% !important;
 }

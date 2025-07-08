@@ -194,7 +194,7 @@ $(function () {
 
         $tab.each(function () {
             // 초기 설정 - 첫 번째 버튼에 .on
-            $(this).find(".tab-btns a").first().addClass("on");
+            $(this).find(".tab-btns li").first().addClass("on");
 
             $(this)
                 .find(".tab-btns a")
@@ -203,8 +203,8 @@ $(function () {
                         e.preventDefault();
                     }
 
-                    $(this).closest(".tab-btns").find("a").removeClass("on");
-                    $(this).toggleClass("on");
+                    $(this).closest(".tab-btns").find("li").removeClass("on");
+                    $(this).parent().addClass('on')
                 });
         });
     }

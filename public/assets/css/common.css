@@ -498,7 +498,7 @@ header .gnb-bg {
     transition: 0.5s;
 }
 
-.tab-wrap.type1 .tab-btns a.on {
+.tab-wrap.type1 .tab-btns .on a {
     color: var(--color-white);
     background-color: var(--color-primary-orange);
 }
@@ -528,15 +528,16 @@ header .gnb-bg {
 .tab-wrap.type2 .tab-btns a::before {
     content: "";
     position: absolute;
-    left: 0;
+    left: -1px;
     bottom: -1px;
-    width: 100%;
+    width: calc(100% + 2px);
     height: 2px;
     background-color: transparent;
     transition: 0.5s;
+    z-index: 1;
 }
 
-.tab-wrap.type2 .tab-btns a.on::before {
+.tab-wrap.type2 .tab-btns li.on a::before {
     background-color: var(--color-primary-orange);
 }
 
@@ -549,24 +550,26 @@ header .gnb-bg {
 .tab-wrap.type3 .tab-btns li {
     flex: 1 1 auto;
     margin-left: -1px;
+    border: var(--border-style-01);
+    transition: 0.5s;
 }
 
 .tab-wrap.type3 .tab-btns a {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 40px;
-    border: var(--border-style-01);
     text-align: center;
     font-size: 16px;
     font-weight: 700;
-    transition: 0.5s;
 }
 
-.tab-wrap.type3 .tab-btns a.on {
+.tab-wrap.type3 .tab-btns li.on {
+    border: 1px solid var(--color-primary-orange);
     color: var(--color-white);
     background-color: var(--color-primary-orange);
-    border: 1px solid var(--color-primary-orange);
+    z-index: 1;
 }
 
 /* 탭 type4 */
@@ -588,7 +591,7 @@ header .gnb-bg {
     transition: 0.5s;
 }
 
-.tab-wrap.type4 .tab-btns a.on {
+.tab-wrap.type4 .tab-btns li.on a {
     background-color: var(--color-primary-blue);
     color: var(--color-white);
 }
