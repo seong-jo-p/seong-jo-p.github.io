@@ -481,8 +481,17 @@
     height: 40px;
     padding: 10px 15px;
     vertical-align: middle;
-    border: var(--border-style-01);
+    border-left: var(--border-style-01);
+    border-top: var(--border-style-01);
     background-color: var(--color-white);
+}
+
+.table-default th:first-child,
+.table-default td:first-child {
+    border-left: none;
+}
+.table-default tr:last-child td {
+    border-bottom: var(--border-style-01);
 }
 
 /* ===============================
@@ -491,7 +500,6 @@
 
 .table-default thead th {
     position: relative;
-    font-size: 16px;
     font-weight: 700;
     text-align: center;
     background-color: var(--color-light-blue);
@@ -508,6 +516,7 @@
     background-color: var(--color-primary-blue);
     z-index: 1;
 }
+
 
 /* ===============================
    테이블 바디 영역
@@ -536,6 +545,8 @@
     padding: 10px 8px;
     background-color: var(--color-light-blue);
 }
+
+
 
 /* ===============================
     차트영역 - 현재가
