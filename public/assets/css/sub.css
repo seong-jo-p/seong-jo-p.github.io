@@ -484,7 +484,6 @@
 }
 
 .notice-detail-wrap .detail-file-utlis {
-    
     border-top: var(--border-style-01);
     padding-top: 20px;
     text-align: center;
@@ -512,31 +511,31 @@
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background-color: #EEF0F5;
+    background-color: #eef0f5;
     background-position: center;
     background-repeat: no-repeat;
     transition: 0.5s;
 }
 .notice-detail-wrap .detail-file-utlis .bbs-arr:hover {
-    background-color: #D4D9E4;
+    background-color: #d4d9e4;
 }
 
 .notice-detail-wrap .detail-file-utlis .bbs-prev {
     float: left;
-    background-image: url('/public/assets/images/sub/ico-bbs-prev.svg');
+    background-image: url("/public/assets/images/sub/ico-bbs-prev.svg");
 }
 
 .notice-detail-wrap .detail-file-utlis .bbs-prev:hover {
-    background-image: url('/public/assets/images/sub/ico-bbs-prev-on.svg');
+    background-image: url("/public/assets/images/sub/ico-bbs-prev-on.svg");
 }
 
 .notice-detail-wrap .detail-file-utlis .bbs-next {
     float: right;
-    background-image: url('/public/assets/images/sub/ico-bbs-next.svg');
+    background-image: url("/public/assets/images/sub/ico-bbs-next.svg");
 }
 
 .notice-detail-wrap .detail-file-utlis .bbs-next:hover {
-    background-image: url('/public/assets/images/sub/ico-bbs-next-on.svg');
+    background-image: url("/public/assets/images/sub/ico-bbs-next-on.svg");
 }
 
 /* ===============================
@@ -989,10 +988,12 @@
     position: absolute;
     top: 20px;
     right: 20px;
+}
+
+.popup-container .popup-close button {
     width: 17px;
     height: 17px;
     background: no-repeat url("/public/assets/images/sub/ico-popup-close.svg") center;
-    cursor: pointer;
 }
 
 /* 조회 팝업 */

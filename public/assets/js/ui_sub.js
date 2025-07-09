@@ -76,16 +76,6 @@ $(function () {
         });
     }
 
-    /* ===============================
-   팝업 닫기
-   =============================== */
-    function popupClose() {
-        $(".popup-close").on("click", function () {
-            $(".popup-container").hide();
-        });
-    }
-
     faqList();
-    popupClose();
     snb();
 });

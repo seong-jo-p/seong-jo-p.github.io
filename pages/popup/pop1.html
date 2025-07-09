@@ -384,6 +384,11 @@
 
                 <div class="popup-close">
                     <button><span class="blind">팝업닫기</span></button>
+                    <script>
+                        $(".popup-close button").on("click", function () {
+                            $(".popup-container").hide();
+                        });
+                    </script>
                 </div>
             </div>
         </div>
@@ -428,7 +433,7 @@
 
         const instance1 = new Grid({
             el: $("#grid01")[0],
-            bodyHeight: 280,
+            bodyHeight: 279,
             scrollX: false,
             columns: [
                 { header: "종목코드", name: "header1", className: "text-center", width: 120 },
