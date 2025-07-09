@@ -470,7 +470,6 @@
 
 .notice-detail-wrap .detail-file-list {
     padding-bottom: 26px;
-    border-bottom: var(--border-style-01);
 }
 
 .notice-detail-wrap .detail-file-list li {
@@ -478,13 +477,15 @@
 }
 
 .notice-detail-wrap .detail-file-list a {
-    display: block;
+    display: inline-block;
     padding-right: 34px;
     line-height: 30px;
     background: no-repeat url("/public/assets/images/sub/ico-file-down.svg") right center;
 }
 
 .notice-detail-wrap .detail-file-utlis {
+    
+    border-top: var(--border-style-01);
     padding-top: 20px;
     text-align: center;
 }
