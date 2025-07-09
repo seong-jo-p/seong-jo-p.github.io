@@ -498,6 +498,13 @@
     line-height: 36px;
     font-size: 13px;
     font-weight: 700;
+    transition: 0.5s;
+}
+
+.notice-detail-wrap .detail-file-utlis .bbs-list:hover {
+    background-color: #434853;
+    border-color: #434853;
+    color: var(--color-white);
 }
 
 .notice-detail-wrap .detail-file-utlis .bbs-arr {
@@ -508,6 +515,10 @@
     background-color: #EEF0F5;
     background-position: center;
     background-repeat: no-repeat;
+    transition: 0.5s;
+}
+.notice-detail-wrap .detail-file-utlis .bbs-arr:hover {
+    background-color: #D4D9E4;
 }
 
 .notice-detail-wrap .detail-file-utlis .bbs-prev {
@@ -515,9 +526,17 @@
     background-image: url('/public/assets/images/sub/ico-bbs-prev.svg');
 }
 
+.notice-detail-wrap .detail-file-utlis .bbs-prev:hover {
+    background-image: url('/public/assets/images/sub/ico-bbs-prev-on.svg');
+}
+
 .notice-detail-wrap .detail-file-utlis .bbs-next {
     float: right;
     background-image: url('/public/assets/images/sub/ico-bbs-next.svg');
+}
+
+.notice-detail-wrap .detail-file-utlis .bbs-next:hover {
+    background-image: url('/public/assets/images/sub/ico-bbs-next-on.svg');
 }
 
 /* ===============================
