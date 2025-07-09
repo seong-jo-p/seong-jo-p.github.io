@@ -190,7 +190,7 @@ select {
     width: 184px;
     border: var(--border-style-01);
     border-radius: 3px;
-    padding: 5px 10px 6px;
+    padding: 5px 36px 6px 10px;
     font-family: "Pretendard", sans-serif;
     font-size: 14px;
     outline: none;
@@ -297,6 +297,7 @@ body.search-on .header-wrap {
     text-align: center !important;
 }
 
+/* width */
 .w10 {width:10px !important}
 .w20 {width:20px !important}
 .w30 {width:30px !important}
@@ -308,3 +309,9 @@ body.search-on .header-wrap {
 .w90 {width:90px !important}
 .w100 {width:100px !important}
 .w100p {width:100% !important}
+.w250 {width:250px !important}
+
+/* margin */
+.mgl_15{margin-left: -15px;}
+
+.mgr_15{margin-right: -15px;}

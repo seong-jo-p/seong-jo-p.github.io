@@ -99,11 +99,11 @@
 }
 
 .tui-grid-body-area .tui-grid-cell.up-arr .tui-grid-cell-content::before {
-    background: url('/public/assets/images/common/ico-number-up.svg') no-repeat center center/contain;
+    background: url('/public/assets/images/common/ico-number-up-arr.svg') no-repeat center center/contain;
 }
 
 .tui-grid-body-area .tui-grid-cell.down-arr .tui-grid-cell-content::before {
-    background: url('/public/assets/images/common/ico-number-down.svg') no-repeat center center/contain;
+    background: url('/public/assets/images/common/ico-number-down-arr.svg') no-repeat center center/contain;
 }
 
 
@@ -168,7 +168,7 @@
 }
 
 .tui-grid-border-line-bottom {
-    border-bottom: var(--border-style-01);
+    border-bottom: var(--border-style-01) !important;
 }
 
 .tui-grid-border-line.tui-grid-border-line-top {

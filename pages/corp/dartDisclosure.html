@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <title>K-OTC</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="/public/assets/css/vendor/jquery-ui.css" />
+        <link rel="stylesheet" href="/public/assets/css/vendor/slick.css" />
+        <link rel="stylesheet" href="/public/assets/css/vendor/tui-grid.css" />
+
+        <link rel="stylesheet" href="/public/assets/css/base.css" />
+        <link rel="stylesheet" href="/public/assets/css/common.css" />
+        <link rel="stylesheet" href="/public/assets/css/main.css" />
+        <link rel="stylesheet" href="/public/assets/css/sub.css" />
+        <link rel="stylesheet" href="/public/assets/css/tui-custom.css" />
+
+        <!-- JS -->
+        <script src="/public/assets/js/vendor/jquery-3.7.1.min.js"></script>
+        <script src="/public/assets/js/vendor/jquery-ui.js"></script>
+        <script src="/public/assets/js/vendor/slick.min.js"></script>
+        <script src="/public/assets/js/vendor/tui-grid.js"></script>
+        <script src="/public/assets/js/vendor/lenis.min.js"></script>
+
+        <script src="/public/assets/js/ui_common.js"></script>
+        <script src="/public/assets/js/ui_main.js"></script>
+        <script src="/public/assets/js/ui_sub.js"></script>
+    </head>
+    <body>
+        <div id="body-wrap">
+            <header id="header">
+                <div class="header-wrap">
+                    <h1 class="logo">
+                        <a href="/"><span class="blind">K-OTC 로고</span></a>
+                    </h1>
+
+                    <nav id="gnb">
+                        <ul class="depth1">
+                            <li>
+                                <a href="#">종목정보</a>
+                                <ul class="depth2">
+                                    <li><a href="#">현재가</a></li>
+                                    <li><a href="#">호가/체결 상세정보</a></li>
+                                    <li><a href="#">종목 일자별 시세</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">투자정보</a>
+                                <ul class="depth2">
+                                    <li><a href="#">시장특징주</a></li>
+                                    <li><a href="#">투자유의사항</a></li>
+                                    <li><a href="#">시장경보 현황</a></li>
+                                    <li><a href="#">소속부별 현황</a></li>
+                                    <li><a href="#">시황</a></li>
+                                    <li><a href="#">기업/기술 분석보고서</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">기업현황/공시</a>
+                                <ul class="depth2">
+                                    <li><a href="#">기업현황</a></li>
+                                    <li><a href="#">K-OTC공시/안내</a></li>
+                                    <li><a href="#">DART공시 조회</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">통계정보</a>
+                                <ul class="depth2">
+                                    <li><a href="#">일별시장통계</a></li>
+                                    <li><a href="#">소속부별 거래실적</a></li>
+                                    <li><a href="#">주가평균 추이</a></li>
+                                    <li><a href="#">기간별 시장지표</a></li>
+                                    <li><a href="#">기간별 거래실적</a></li>
+                                    <li><a href="#">기간별 순위통계</a></li>
+                                    <li><a href="#">법인수 추이</a></li>
+                                    <li><a href="#">월간통계</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">제도/규정</a>
+                                <ul class="depth2">
+                                    <li><a href="#">등록 및 지정제도</a></li>
+                                    <li><a href="#">변경(추가) 등록 및 지정</a></li>
+                                    <li><a href="#">매매거래제도</a></li>
+                                    <li><a href="#">공시제도</a></li>
+                                    <li><a href="#">등록/지정해제</a></li>
+                                    <li><a href="#">투자자 유의사항</a></li>
+                                    <li><a href="#">시장경보제도</a></li>
+                                    <li><a href="#">K-OTC 관련규정</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">참여마당</a>
+                                <ul class="depth2">
+                                    <li><a href="#">FAQ</a></li>
+                                    <li><a href="#">공지사항</a></li>
+                                    <li><a href="#">자료실</a></li>
+                                    <li><a href="#">보도자료</a></li>
+                                    <li><a href="#">고객의견</a></li>
+                                    <li><a href="#">K-OTC 메일링</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">K-OTC시장</a>
+                                <ul class="depth2">
+                                    <li><a href="#">의의 및 특징</a></li>
+                                    <li><a href="#">연혁</a></li>
+                                    <li><a href="#">찾아오시는 길</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="gnb-bg"></div>
+                    </nav>
+
+                    <!-- // #gnb -->
+
+                    <div class="header-saerch">
+                        <button type="button" class="search-open">
+                            <span class="blind">검색창 열기 버튼</span>
+                        </button>
+
+                        <div class="header-saerch-wrap">
+                            <form>
+                                <fieldset>
+                                    <legend class="blind">검색어 입력 폼</legend>
+
+                                    <div class="input-group">
+                                        <label for="abc" class="blind">검색어</label>
+                                        <input id="abc" name="abc" type="text" placeholder="검색어를 입력해 주세요." />
+                                    </div>
+
+                                    <h3>추천 검색어</h3>
+                                    <ul class="recommend-list">
+                                        <li><a href="#">상승종목</a></li>
+                                        <li><a href="#">매매 체결방법</a></li>
+                                        <li><a href="#">신규가입 등록문의</a></li>
+                                    </ul>
+
+                                    <button class="search-close" type="button">
+                                        <span class="blind">검색창 닫기</span>
+                                    </button>
+                                </fieldset>
+                            </form>
+                        </div>
+
+                        <div class="header-saerch-bg"></div>
+                    </div>
+                    <!-- // .header-saerch -->
+                </div>
+            </header>
+
+            <div id="snb">
+                <div class="snb-wrap">
+                    <div class="home">
+                        <a href="#"><span class="blind">Home</span></a>
+                    </div>
+
+                    <div class="depth-menu depth1">
+                        <a href="#" class="cur-menu">기업현황/공시</a>
+                        <ul>
+                            <li><a href="#">종목정보</a></li>
+                            <li><a href="#">투자정보</a></li>
+                            <li><a href="#">기업현황/공시</a></li>
+                            <li><a href="#">통계정보</a></li>
+                            <li><a href="#">제도/규정</a></li>
+                            <li><a href="#">참여마당</a></li>
+                            <li><a href="#">K-OTC시장</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="depth-menu depth2">
+                        <a href="#" class="cur-menu">DART공시 조회</a>
+                        <ul>
+                            <li><a href="#">기업현황</a></li>
+                            <li><a href="#">K-OTC공시/안내</a></li>
+                            <li><a href="#">DART공시 조회</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <aside id="quick-menu">
+                <!-- 
+                    아이콘은 layout.css에서 컨트롤 중 
+                    "퀵 메뉴 - 아이콘 설정"
+                -->
+                <div class="quick-menu-wrap">
+                    <ul>
+                        <li class="item01">
+                            <a href="#">K-OTC<br />소개</a>
+                        </li>
+                        <li class="item02">
+                            <a href="#">투자자<br />유의사항</a>
+                        </li>
+                        <li class="item03">
+                            <a href="#">기업<br />리스트</a>
+                        </li>
+                        <li class="item04">
+                            <a href="#">등록기업<br />서식</a>
+                        </li>
+                        <li class="item05"><a href="#">DART</a></li>
+                        <li class="item06"><a href="#">SEIBro</a></li>
+                        <li class="item07"><a href="#">K-OTC BB</a></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- 
+                ** 컨텐츠 시작
+                메인 페이지 class="main"
+                서브 페이지 class="sub"
+            -->
+            <main id="container" class="sub">
+                <div class="container-wrap">
+                    <!-- 타이틀 1 -->
+                    <h2 class="sub-title1">DART공시 조회</h2>
+                    <!-- 컨텐츠 시작  -->
+                    <div class="sub-search">
+                        <form>
+                            <fieldset>
+                                <legend class="blind">검색어 입력 폼</legend>
+
+                                <div class="sub-search-wrap">
+                                    <div class="sub-search-item">
+                                        <h4 class="sub-search-title">종목</h4>
+
+                                        <div class="input-wrap">
+                                            <div class="input-item search-input">
+                                                <label for="">
+                                                    <input type="text" id="" name="" placeholder="" />
+                                                    <span class="blind">종목코드</span>
+                                                </label>
+
+                                                <button type="button">
+                                                    <span class="blind">종목 코드검색</span>
+                                                </button>
+                                            </div>
+
+                                            <div class="input-item">
+                                                <label for="">
+                                                    <input type="text" id="" name="" placeholder="" />
+                                                    <span class="blind">종목이름</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="sub-search-item">
+                                        <h4 class="sub-search-title">조회기간</h4>
+
+                                        <div class="input-wrap">
+                                            <div class="input-item date-input">
+                                                <label for="">
+                                                    <input type="text" id="" name="" />
+                                                    <span class="blind">시작일</span>
+                                                </label>
+
+                                                <button type="button"><span class="blind">달력 팝업 열기</span></button>
+                                            </div>
+                                            <span>~</span>
+                                            <div class="input-item date-input">
+                                                <label for="">
+                                                    <input type="text" id="" name="" />
+                                                    <span class="blind">시작일</span>
+                                                </label>
+
+                                                <button type="button"><span class="blind">달력 팝업 열기</span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="sub-search-item">
+                                        <h4 class="sub-search-title">항목</h4>
+
+                                        <div class="input-wrap">
+                                            <div class="checkbox-list">
+                                                <div class="input-item check-input">
+                                                    <label for="a1">
+                                                        <input type="checkbox" id="a1" name="a1" />
+                                                        <span>정기공시</span>
+                                                    </label>
+                                                </div>
+                                                <div class="input-item check-input">
+                                                    <label for="b1">
+                                                        <input type="checkbox" id="b1" name="b1" />
+                                                        <span>주요사항보고</span>
+                                                    </label>
+                                                </div>
+                                                <div class="input-item check-input">
+                                                    <label for="c1">
+                                                        <input type="checkbox" id="c1" name="c1" />
+                                                        <span>발행공시</span>
+                                                    </label>
+                                                </div>
+                                                <div class="input-item check-input">
+                                                    <label for="d1">
+                                                        <input type="checkbox" id="d1" name="d1" />
+                                                        <span>지분공시</span>
+                                                    </label>
+                                                </div>
+                                                <div class="input-item check-input">
+                                                    <label for="e1">
+                                                        <input type="checkbox" id="e1" name="e1" />
+                                                        <span>기타공시</span>
+                                                    </label>
+                                                </div>
+                                                <div class="input-item check-input">
+                                                    <label for="f1">
+                                                        <input type="checkbox" id="f1" name="f1" />
+                                                        <span>외부감사관련</span>
+                                                    </label>
+                                                </div>
+                                                <div class="input-item check-input">
+                                                    <label for="g1">
+                                                        <input type="checkbox" id="g1" name="g1" />
+                                                        <span>펀드공시</span>
+                                                    </label>
+                                                </div>
+                                                <div class="input-item check-input">
+                                                    <label for="h1">
+                                                        <input type="checkbox" id="h1" name="h1" />
+                                                        <span>자산유동화</span>
+                                                    </label>
+                                                </div>
+                                                <div class="input-item check-input">
+                                                    <label for="i1">
+                                                        <input type="checkbox" id="i1" name="i1" />
+                                                        <span>거래소공시</span>
+                                                    </label>
+                                                </div>
+                                                <div class="input-item check-input">
+                                                    <label for="j1">
+                                                        <input type="checkbox" id="j1" name="j1" />
+                                                        <span>공정위공시</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="search-btn-wrap">
+                                    <button type="reset" class="reset-btn">초기화</button>
+                                    <button type="submit" class="submit-btn">검색</button>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+
+                    <div class="grid-section">
+                        <div class="grid-section-wrap">
+                            <!-- 그리드1 -->
+                            <div class="grid-section-item">
+                                <div class="grid-wrap" id="grid01" data-lenis-prevent></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <ul class="pagination">
+                        <li class="first-page">
+                            <a href="#"><span class="blind">처음</span></a>
+                        </li>
+                        <li class="prev-page">
+                            <a href="#"><span class="blind">이전</span></a>
+                        </li>
+                        <li><a href="#" class="on">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">6</a></li>
+                        <li><a href="#">7</a></li>
+                        <li><a href="#">8</a></li>
+                        <li><a href="#">9</a></li>
+                        <li><a href="#">10</a></li>
+                        <li class="next-page">
+                            <a href="#"><span class="blind">다음</span></a>
+                        </li>
+                        <li class="last-page">
+                            <a href="#"><span class="blind">마지막</span></a>
+                        </li>
+                    </ul>
+
+                    <p class="notice-text2">본 공시내용은 금융감독원 전자공시시스템(DART)에서 제공되는 자료입니다</p>
+
+                    <div class="notice-wrap">
+                        <p>
+                            본회가 제공하는 정보는 투자 참고 사항이며, 불가피한 오류 또는 누락이 발생하거나 지연 제공될
+                            수 있습니다.
+                        </p>
+                        <p>제공된 정보에 의한 투자결과에 대하여 법적인 책임을 지지 않습니다.</p>
+                    </div>
+                </div>
+                <!-- // .container-wrap -->
+            </main>
+            <!-- // 컨텐츠 끝 -->
+
+            <footer id="footer">
+                <div class="footer-wrap">
+                    <div class="info">
+                        <p>
+                            본회가 제공하는 정보는투자 참고 사항이며, 불가피한 오류 또는 누락이 발생하거나 지연 제공될
+                            수 있습니다. 제공된 정보에 의한투자결과에 대하여 법적인 책임을 지지 않습니다
+                        </p>
+                        <p>
+                            서울시 영등포구 의사당대로 143 금융투자협회
+                            <span class="tel">TEL 02-2003-9000</span>
+                            <span class="copy">Copyright&copy;2025 KOFIA.</span>
+                        </p>
+                    </div>
+
+                    <div class="footer-utils">
+                        <div class="more-info similar">
+                            <button>유관기관</button>
+                            <!-- 
+                            현재 전달 받은 목록이 없음 -->
+                            <ul class="info-list">
+                                <li><a href="#">목록1</a></li>
+                                <li><a href="#">목록2</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="more-info family-site">
+                            <button>FamilySite</button>
+                            <ul class="info-list">
+                                <li><a target="_blank" href="http://www.kofia.or.kr/">금융투자협회</a></li>
+                                <li><a target="_blank" href="https://dis.kofia.or.kr/">전자공시서비스</a></li>
+                                <li><a target="_blank" href="http://freesis.kofia.or.kr/">자본시장통계</a></li>
+                                <li><a target="_blank" href="https://license.kofia.or.kr/">자격시험접수센터</a></li>
+                                <li><a target="_blank" href="https://www.kifin.or.kr/">금융투자교육원</a></li>
+                                <li><a target="_blank" href="https://www.k-otcbb.or.kr/">K-OTCBB</a></li>
+                                <li><a target="_blank" href="https://www.k-otcpro.or.kr/">K-OTC PRO</a></li>
+                                <li><a target="_blank" href="https://www.kofiabond.or.kr/">채권정보센터</a></li>
+                                <li><a target="_blank" href="https://law.kofia.or.kr/">법규정보시스템</a></li>
+                                <li><a target="_blank" href="https://www.kcie.or.kr/">전국투자자교육협의회</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="go-top">
+                        <a href="#">TOP</a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </body>
+    <script>
+        const Grid = tui.Grid;
+
+        const data1 = [
+            {
+                header1: "아리바이오",
+                header2:
+                    "주요사항보고서(전환사채권발행결정) 주요사항보고서(전환사채권발행결정) 주요사항보고서(전환사채권발행결정)",
+                header3: "아리바이오",
+                header4: "2025-07-08",
+                header5: "20250708000410",
+            },
+            {
+                header1: "아리바이오",
+                header2:
+                    "주요사항보고서(전환사채권발행결정) 주요사항보고서(전환사채권발행결정) 주요사항보고서(전환사채권발행결정)",
+                header3: "아리바이오",
+                header4: "2025-07-08",
+                header5: "20250708000410",
+            },
+            {
+                header1: "아리바이오",
+                header2:
+                    "주요사항보고서(전환사채권발행결정) 주요사항보고서(전환사채권발행결정) 주요사항보고서(전환사채권발행결정)",
+                header3: "아리바이오",
+                header4: "2025-07-08",
+                header5: "20250708000410",
+            },
+            {
+                header1: "아리바이오",
+                header2:
+                    "주요사항보고서(전환사채권발행결정) 주요사항보고서(전환사채권발행결정) 주요사항보고서(전환사채권발행결정)",
+                header3: "아리바이오",
+                header4: "2025-07-08",
+                header5: "20250708000410",
+            },
+            {
+                header1: "아리바이오",
+                header2:
+                    "주요사항보고서(전환사채권발행결정) 주요사항보고서(전환사채권발행결정) 주요사항보고서(전환사채권발행결정)",
+                header3: "아리바이오",
+                header4: "2025-07-08",
+                header5: "20250708000410",
+            },
+            {
+                header1: "아리바이오",
+                header2:
+                    "주요사항보고서(전환사채권발행결정) 주요사항보고서(전환사채권발행결정) 주요사항보고서(전환사채권발행결정)",
+                header3: "아리바이오",
+                header4: "2025-07-08",
+                header5: "20250708000410",
+            },
+            {
+                header1: "아리바이오",
+                header2:
+                    "주요사항보고서(전환사채권발행결정) 주요사항보고서(전환사채권발행결정) 주요사항보고서(전환사채권발행결정)",
+                header3: "아리바이오",
+                header4: "2025-07-08",
+                header5: "20250708000410",
+            },
+            {
+                header1: "아리바이오",
+                header2:
+                    "주요사항보고서(전환사채권발행결정) 주요사항보고서(전환사채권발행결정) 주요사항보고서(전환사채권발행결정)",
+                header3: "아리바이오",
+                header4: "2025-07-08",
+                header5: "20250708000410",
+            },
+            {
+                header1: "아리바이오",
+                header2:
+                    "주요사항보고서(전환사채권발행결정) 주요사항보고서(전환사채권발행결정) 주요사항보고서(전환사채권발행결정)",
+                header3: "아리바이오",
+                header4: "2025-07-08",
+                header5: "20250708000410",
+            },
+            {
+                header1: "아리바이오",
+                header2:
+                    "주요사항보고서(전환사채권발행결정) 주요사항보고서(전환사채권발행결정) 주요사항보고서(전환사채권발행결정)",
+                header3: "아리바이오",
+                header4: "2025-07-08",
+                header5: "20250708000410",
+            },
+            {
+                header1: "아리바이오",
+                header2:
+                    "주요사항보고서(전환사채권발행결정) 주요사항보고서(전환사채권발행결정) 주요사항보고서(전환사채권발행결정)",
+                header3: "아리바이오",
+                header4: "2025-07-08",
+                header5: "20250708000410",
+            },
+            {
+                header1: "아리바이오",
+                header2:
+                    "주요사항보고서(전환사채권발행결정) 주요사항보고서(전환사채권발행결정) 주요사항보고서(전환사채권발행결정)",
+                header3: "아리바이오",
+                header4: "2025-07-08",
+                header5: "20250708000410",
+            },
+            {
+                header1: "아리바이오",
+                header2:
+                    "주요사항보고서(전환사채권발행결정) 주요사항보고서(전환사채권발행결정) 주요사항보고서(전환사채권발행결정)",
+                header3: "아리바이오",
+                header4: "2025-07-08",
+                header5: "20250708000410",
+            },
+        ];
+
+        const instance1 = new Grid({
+            el: $("#grid01")[0],
+            bodyHeight: 400,
+            scrollX: false,
+            columns: [
+                { header: "종목명", name: "header1", className: "text-center", width: 170 },
+                { header: "보고서명", name: "header2" },
+                { header: "제출인", name: "header3", className: "text-center", width: 170 },
+                { header: "접수일자", name: "header4", className: "text-center", width: 120 },
+                { header: "접수번호", name: "header5", className: "text-center", width: 180 },
+            ],
+
+            data: data1,
+        });
+
+        instance1.getData().forEach((row) => {
+            const num = Number(row["header8"]);
+            if (num > 0) {
+                instance1.addCellClassName(row.rowKey, "header8", "up");
+            }
+
+            if (num < 0) {
+                instance1.addCellClassName(row.rowKey, "header8", "down");
+            }
+        });
+    </script>
+</html>

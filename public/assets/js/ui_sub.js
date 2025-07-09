@@ -1,5 +1,38 @@
 $(function () {
     /* ===============================
+   snb
+   =============================== */
+    function snb() {
+        const $snb = $("#snb");
+
+        $snb.on("click", ".cur-menu", function (e) {
+            e.preventDefault();
+
+            const $this = $(this);
+
+            if (!$this.hasClass("on")) {
+                $("#snb .cur-menu").removeClass("on");
+                $("#snb .depth-menu > ul").stop().slideUp(400);
+
+                $this.addClass("on");
+                $this.next().stop().slideDown(400);
+            } else {
+                $this.removeClass("on");
+                $this.next().stop().slideUp(400);
+            }
+        });
+
+        // 리스트 바깥 클릭 시 모든 리스트 닫기
+        $(document).on("click", function (e) {
+            // e.target이 #snb 또는 그 하위 요소가 아니면 메뉴 닫기
+            if (!$(e.target).closest("#snb").length) {
+                $("#snb .cur-menu").removeClass("on");
+                $("#snb .depth-menu > ul").stop().slideUp(400);
+            }
+        });
+    }
+
+    /* ===============================
    FAQ
    =============================== */
     function faqList() {
@@ -54,4 +87,5 @@ $(function () {
 
     faqList();
     popupClose();
+    snb();
 });
