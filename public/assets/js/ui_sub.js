@@ -76,6 +76,51 @@ $(function () {
         });
     }
 
+    /* ===============================
+   Histroy
+   =============================== */
+    function history() {
+        const $historyBtns = $(".history-btns li");
+        const $historyItems = $(".history-wrap .history-item");
+        const itemTops = $historyItems.map((_, el) => $(el).offset().top).get();
+        let isScrolling = false;
+
+        // 버튼 클릭 시 스크롤 이동
+        $historyBtns.find("a").on("click", function (e) {
+            e.preventDefault();
+            const targetOffset = $($(this).attr("href")).offset().top;
+
+            isScrolling = true; // 애니메이션 시작
+            $("html, body")
+                .stop()
+                .animate({ scrollTop: targetOffset }, 1000, "easeInOutCubic", function () {
+                    isScrolling = false; // 애니메이션 끝
+                    updateOnClass(); // 최종 on 클래스 갱신
+                });
+        });
+
+        // on 클래스 갱신 함수
+        function updateOnClass() {
+            const sTop = $(window).scrollTop();
+            let activeIdx = 0;
+
+            // 현재 스크롤 위치에 맞는 인덱스 계산
+            for (let i = 0; i < itemTops.length; i++) {
+                if (sTop >= itemTops[i] - 300) activeIdx = i;
+                else break;
+            }
+
+            // on 클래스 갱신 (불필요한 반복 제거)
+            $historyBtns.removeClass("on").eq(activeIdx).addClass("on");
+        }
+
+        // 스크롤 이벤트: 애니메이션 중에는 무시
+        $(window).on("scroll load", function () {
+            if (!isScrolling) updateOnClass();
+        });
+    }
+
     faqList();
     snb();
+    history();
 });

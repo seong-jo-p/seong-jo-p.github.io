@@ -916,7 +916,98 @@
 /* ===============================
     연혁
    =============================== */
+.history-btns {
+    position: sticky;
+    top: 60px;
+    background-color: var(--color-white);
+    z-index: 1;
+}
 
+.history-btns ul {
+    display: flex;
+    justify-content: center;
+    gap: 86px;
+    border-bottom: var(--border-style-01);
+}
+
+.history-btns a {
+    position: relative;
+    display: block;
+    padding: 12px 0px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #a2a2a2;
+    transition: 0.5s;
+}
+
+.history-btns a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 0;
+    bottom: -1px;
+    height: 2px;
+    background-color: var(--color-primary-blue);
+    transition: 0.5s;
+}
+
+.history-btns .on a::before {
+    width: 100%;
+}
+
+.history-btns .on a {
+    color: var(--color-font-default);
+}
+
+.history-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 100px 0;
+    padding-top: 48px;
+}
+
+.history-wrap .history-item {
+    display: flex;
+    gap: 0 109px;
+}
+
+.history-wrap .history-year p {
+    position: sticky;
+    top: 127px;
+    width: 200px;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--color-primary-blue);
+}
+
+.history-wrap .history-content {
+    flex: 1;
+}
+
+.history-wrap .history-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-top: 20px;
+}
+
+.history-wrap .history-content li {
+    position: relative;
+    padding-left: 100px;
+}
+
+.history-wrap .history-content strong {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-primary-blue);
+}
+
+.history-wrap .history-content p {
+    line-height: 22px;
+}
 
 /* ===============================
     팝업
