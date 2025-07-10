@@ -721,14 +721,14 @@
 /* ===============================
     페이징
    =============================== */
-.pagination {
+#pager {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px 0 10px;
 }
 
-.pagination a {
+#pager a {
     display: block;
     padding: 0 10px;
     font-size: 13px;
@@ -736,51 +736,56 @@
     font-weight: 500;
 }
 
-.pagination a:hover,
-.pagination a.on {
+#pager a:hover,
+#pager .active a {
     color: var(--color-primary-blue);
 }
 
-.pagination .prev-page a,
-.pagination .next-page a,
-.pagination .first-page a,
-.pagination .last-page a {
-    display: block;
+#pager .prev a,
+#pager .next a,
+#pager .first a,
+#pager .last a {
     width: 15px;
     height: 16px;
     padding: 0;
+    font-size: 0;
+    line-height: 0;
 }
 
-.pagination .prev-page a {
+#pager .prev a {
     background: no-repeat url("/public/assets/images/sub/ico-pagination-prev.svg") center;
 }
 
-.pagination .prev-page a:hover {
+#pager .prev a:hover {
     background: no-repeat url("/public/assets/images/sub/ico-pagination-prev-on.svg") center;
 }
 
-.pagination .next-page a {
+#pager .next a {
     background: no-repeat url("/public/assets/images/sub/ico-pagination-next.svg") center;
 }
 
-.pagination .next-page a:hover {
+#pager .next a:hover {
     background: no-repeat url("/public/assets/images/sub/ico-pagination-next-on.svg") center;
 }
 
-.pagination .first-page a {
+#pager .first a {
     background: no-repeat url("/public/assets/images/sub/ico-pagination-first.svg") center;
 }
 
-.pagination .first-page a:hover {
+#pager .first a:hover {
     background: no-repeat url("/public/assets/images/sub/ico-pagination-first-on.svg") center;
 }
 
-.pagination .last-page a {
+#pager .last a {
     background: no-repeat url("/public/assets/images/sub/ico-pagination-last.svg") center;
 }
 
-.pagination .last-page a:hover {
+#pager .last a:hover {
     background: no-repeat url("/public/assets/images/sub/ico-pagination-last-on.svg") center;
+}
+
+#pager .disabled a {
+    display: none;
 }
 
 /* ===============================
@@ -910,62 +915,7 @@
 /* ===============================
     연혁
    =============================== */
-.history-wrap {
-    position: relative;
-}
 
-.history-wrap::before {
-    content: "";
-    position: absolute;
-    left: 222px;
-    top: 0;
-    width: 1px;
-    height: 100%;
-    background: repeat-y url("/public/assets/images/sub/ico-history-line.svg") left top;
-}
-
-.history-wrap dl {
-    position: relative;
-    padding-left: 213px;
-    margin-top: 30px;
-}
-
-.history-wrap dl:first-child {
-    margin-top: 0;
-}
-
-.history-wrap dt {
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-size: 30px;
-    font-weight: 700;
-    color: var(--color-primary-blue);
-}
-
-.history-wrap dd {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 20px;
-}
-
-.history-wrap dd:first-of-type {
-    margin-top: 0;
-}
-
-.history-wrap .history-month {
-    padding-left: 38px;
-    background: no-repeat var(--color-white) url("/public/assets/images/sub/ico-sub-title3.svg") left center;
-    line-height: 20px;
-    font-weight: 700;
-    color: var(--color-primary-blue);
-}
-
-.history-wrap .history-text {
-    padding-left: 38px;
-    line-height: 22px;
-}
 
 /* ===============================
     팝업
