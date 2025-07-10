@@ -357,29 +357,21 @@
                         </div>
                     </div>
 
-                    <ul class="pagination">
-                        <li class="first-page">
-                            <a href="#"><span class="blind">처음</span></a>
-                        </li>
-                        <li class="prev-page">
-                            <a href="#"><span class="blind">이전</span></a>
-                        </li>
-                        <li><a href="#" class="on">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li><a href="#">6</a></li>
-                        <li><a href="#">7</a></li>
-                        <li><a href="#">8</a></li>
-                        <li><a href="#">9</a></li>
-                        <li><a href="#">10</a></li>
-                        <li class="next-page">
-                            <a href="#"><span class="blind">다음</span></a>
-                        </li>
-                        <li class="last-page">
-                            <a href="#"><span class="blind">마지막</span></a>
-                        </li>
+                    <ul id="pager" class="pagination">
+                        <li class="page-item first"><a href="#" class="page-link">«</a></li>
+                        <li class="page-item prev"><a href="#" class="page-link">‹</a></li>
+                        <li class="page-item"><a href="#" class="page-link">1</a></li>
+                        <li class="page-item"><a href="#" class="page-link">2</a></li>
+                        <li class="page-item active"><a href="#" class="page-link">3</a></li>
+                        <li class="page-item"><a href="#" class="page-link">4</a></li>
+                        <li class="page-item"><a href="#" class="page-link">5</a></li>
+                        <li class="page-item"><a href="#" class="page-link">6</a></li>
+                        <li class="page-item"><a href="#" class="page-link">7</a></li>
+                        <li class="page-item"><a href="#" class="page-link">8</a></li>
+                        <li class="page-item"><a href="#" class="page-link">9</a></li>
+                        <li class="page-item"><a href="#" class="page-link">10</a></li>
+                        <li class="page-item next"><a href="#" class="page-link">›</a></li>
+                        <li class="page-item last"><a href="#" class="page-link">»</a></li>
                     </ul>
 
                     <p class="notice-text2">
@@ -462,7 +454,8 @@
                 header1: "2",
                 header2: "2025-07-09",
                 header3: "보아스에셋",
-                header4: "보아스에셋	[시장경보] ㈜보아스에셋 투자주의종목 지정 보아스에셋	[시장경보] ㈜보아스에셋 투자주의종목 지정 보아스에셋	[시장경보] ㈜보아스에셋 투자주의종목 지정",
+                header4:
+                    "보아스에셋	[시장경보] ㈜보아스에셋 투자주의종목 지정 보아스에셋	[시장경보] ㈜보아스에셋 투자주의종목 지정 보아스에셋	[시장경보] ㈜보아스에셋 투자주의종목 지정",
             },
             {
                 header1: "3",
@@ -550,8 +543,8 @@
             scrollX: false,
             columns: [
                 { header: "번호", name: "header1", className: "text-center", width: 60 },
-                { header: "일자", name: "header2", className: "text-right" , width: 120},
-                { header: "종목", name: "header3", width: 200},
+                { header: "일자", name: "header2", className: "text-right", width: 120 },
+                { header: "종목", name: "header3", width: 200 },
                 { header: "제목", name: "header4" },
             ],
 
