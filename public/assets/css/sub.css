@@ -768,7 +768,7 @@
 .company-title .badge {
     display: flex;
     align-items: center;
-    padding: 4px 12px;
+    padding: 1px 12px;
     border-radius: 10px;
     font-weight: 600;
     font-size: 12px;
