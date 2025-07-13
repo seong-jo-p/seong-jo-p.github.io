@@ -285,7 +285,7 @@ body.search-on .header-wrap {
 /* 메인은 기본폰트 14px, 서브는 15px */
 #container.sub {
     font-size: 15px;
-    line-height: 20px;
+    line-height: 1.46;
 }
 
 /*text */

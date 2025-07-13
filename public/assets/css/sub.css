@@ -290,10 +290,10 @@
 
 .sub-title3 {
     padding-left: 25px;
-    padding-bottom: 20px;
+    margin-bottom: 20px;
     font-weight: 600;
     font-size: 16px;
-    background: no-repeat url("/public/assets/images/sub/ico-sub-title3.svg") 0 0;
+    background: no-repeat url("/public/assets/images/sub/ico-sub-title3.svg") left center;
 }
 
 .sub-title4 {
