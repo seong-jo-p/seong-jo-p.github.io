@@ -214,18 +214,32 @@
                 <div class="container-wrap">
                     <h2 class="sub-title1">찾아오시는 길</h2>
 
-                    <div id="map" style="height: 400px;">
-                        
-                    </div>
-                    
-                    <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=mgzlt7ak3a&callback=CALLBACK_FUNCTION"></script>
+                    <div id="map" style="height: 400px"></div>
+
+                    <script
+                        type="text/javascript"
+                        src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=mgzlt7ak3a&callback=CALLBACK_FUNCTION"
+                    ></script>
                     <script>
+                        // 지도 옵션
                         var mapOptions = {
-                            center: new naver.maps.LatLng(37.3595704, 127.105399),
-                            zoom: 10,
+                            center: new naver.maps.LatLng(37.5189799, 126.9275554),
+                            zoom: 16,
                         };
 
+                        // 지도 생성
                         var map = new naver.maps.Map("map", mapOptions);
+
+                        // 마커 생성
+                        var marker = new naver.maps.Marker({
+                            position: new naver.maps.LatLng(37.5189799, 126.9275554), // 마커 좌표
+                            map: map, // 마커를 표시할 지도 객체
+                            icon: {
+                                url: "/public/assets/images/sub/ico-map-marker.png", // public 폴더 기준 상대경로
+                                size: new naver.maps.Size(145, 72),
+                                anchor: new naver.maps.Point(72, 72), // 마커의 하단 중앙 기준(옵션)
+                            },
+                        });
                     </script>
 
                     <div class="map-visit">
