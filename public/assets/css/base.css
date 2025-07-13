@@ -195,7 +195,7 @@ select {
     font-size: 14px;
     outline: none;
     cursor: pointer;
-    background: no-repeat url('/public/assets/images/sub/ico-select.svg') right 13px center;
+    background: no-repeat url("/public/assets/images/sub/ico-select.svg") right 13px center;
 }
 
 input[type="text"]:hover,
@@ -263,7 +263,7 @@ body.bg-on {
 }
 
 body.search-on {
-    padding-right: 16px;
+    padding-right: 15px;
     overflow: hidden;
 }
 
@@ -285,8 +285,10 @@ body.search-on .header-wrap {
 /* 메인은 기본폰트 14px, 서브는 15px */
 #container.sub {
     font-size: 15px;
+    line-height: 20px;
 }
 
+/*text */
 .text-right {
     text-align: right !important;
 }
@@ -297,10 +299,26 @@ body.search-on .header-wrap {
     text-align: center !important;
 }
 
+.text-bold {
+    font-weight: 700;
+}
+
+.text-bold2 {
+    font-weight: 600;
+}
+
 /* width */
-.w100p {width:100% !important}
-.w250 {width:250px !important}
+.w100p {
+    width: 100% !important;
+}
+.w250 {
+    width: 250px !important;
+}
 
 /* margin */
-.mgl_15{margin-left: -15px !important;}
-.mgr_15{margin-right: -15px !important;}
+.mgl_15 {
+    margin-left: -15px !important;
+}
+.mgr_15 {
+    margin-right: -15px !important;
+}

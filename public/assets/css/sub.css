@@ -9,11 +9,184 @@
     padding-bottom: 172px;
 }
 
+/* 알림 */
+.notice-wrap {
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+    padding: 21px 25px 21px 65px;
+    border-radius: 10px;
+    background: no-repeat var(--color-light-blue) url("/public/assets/images/sub/ico-notice.svg") 20px center;
+}
+
+.notice-wrap p {
+    font-size: 13px;
+}
+
+.notice-wrap2 {
+    position: relative;
+    margin-top: 40px;
+    padding: 21px 21px 21px 65px;
+    border-radius: 10px;
+    background-color: #f4f8fb;
+}
+
+.notice-wrap2 strong {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.notice-wrap2 p {
+    font-size: 13px;
+}
+
+.notice-wrap2::before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 23px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #cad4e5 no-repeat url("/public/assets/images/sub/ico-alert.svg") center;
+}
+
+/* 리트스 타입별 */
+/* bar */
+.list-type-bar li {
+    position: relative;
+    padding-left: 10px;
+    line-height: 22px;
+}
+
+.list-type-bar li::before {
+    content: "-";
+    position: absolute;
+    left: 0;
+}
+
+/* 숫자타입 */
+.list-type-number {
+    counter-reset: number-list;
+}
+
+.list-type-number li {
+    position: relative;
+    padding-left: 22px;
+    line-height: 22px;
+    counter-increment: number-list;
+}
+
+.list-type-number li::before {
+    content: counter(number-list) ". ";
+    position: absolute;
+    left: 0;
+}
+
+/* 숫자타입 (특수문자) */
+.list-type-symbol li {
+    position: relative;
+    padding-left: 18px;
+    line-height: 22px;
+}
+
+.list-type-symbol li::before {
+    position: absolute;
+    left: 0;
+}
+
+.list-type-symbol li:nth-child(1)::before {
+    content: "① ";
+}
+.list-type-symbol li:nth-child(2)::before {
+    content: "② ";
+}
+.list-type-symbol li:nth-child(3)::before {
+    content: "③ ";
+}
+.list-type-symbol li:nth-child(4)::before {
+    content: "④ ";
+}
+.list-type-symbol li:nth-child(5)::before {
+    content: "⑤ ";
+}
+.list-type-symbol li:nth-child(6)::before {
+    content: "⑥ ";
+}
+.list-type-symbol li:nth-child(7)::before {
+    content: "⑦ ";
+}
+.list-type-symbol li:nth-child(8)::before {
+    content: "⑧ ";
+}
+.list-type-symbol li:nth-child(9)::before {
+    content: "⑨ ";
+}
+.list-type-symbol li:nth-child(10)::before {
+    content: "⑩ ";
+}
+
+/* 가나다 리스트 타입 */
+.list-type-kor li {
+    position: relative;
+    padding-left: 18px;
+    line-height: 22px;
+}
+
+.list-type-kor li::before {
+    position: absolute;
+    left: 0;
+}
+
+.list-type-kor li:nth-child(1)::before {
+    content: "가";
+}
+.list-type-kor li:nth-child(2)::before {
+    content: "나";
+}
+.list-type-kor li:nth-child(3)::before {
+    content: "다";
+}
+.list-type-kor li:nth-child(4)::before {
+    content: "라";
+}
+.list-type-kor li:nth-child(5)::before {
+    content: "마";
+}
+.list-type-kor li:nth-child(6)::before {
+    content: "바";
+}
+.list-type-kor li:nth-child(7)::before {
+    content: "사";
+}
+.list-type-kor li:nth-child(8)::before {
+    content: "아";
+}
+.list-type-kor li:nth-child(9)::before {
+    content: "자";
+}
+.list-type-kor li:nth-child(10)::before {
+    content: "차";
+}
+.list-type-kor li:nth-child(11)::before {
+    content: "카";
+}
+.list-type-kor li:nth-child(12)::before {
+    content: "타";
+}
+.list-type-kor li:nth-child(13)::before {
+    content: "파";
+}
+.list-type-kor li:nth-child(14)::before {
+    content: "하";
+}
+
 /* ===============================
     snb
    =============================== */
 #snb {
-    position: relative;
+    position: sticky;
+    top: 60px;
     z-index: 2;
     border-bottom: var(--border-style-01);
     background-color: #f4f6f9;
@@ -107,16 +280,12 @@
 }
 
 .sub-title2 {
-    margin: 0 0 10px;
+    margin: 20px 0 10px;
     padding-left: 9px;
     font-weight: 700;
     background: no-repeat url("/public/assets/images/sub/ico-sub-title2.svg") 0 50%;
     font-size: 17px;
     color: #223a6b;
-}
-
-.sub-title2:first-of-type {
-    margin-top: 0;
 }
 
 .sub-title3 {
@@ -128,6 +297,7 @@
 }
 
 .sub-title4 {
+    margin-bottom: 20px;
     padding-left: 23px;
     background: no-repeat url("/public/assets/images/sub/ico-sub-title4.svg") left center;
     font-size: 16px;
@@ -142,12 +312,26 @@
     font-weight: 700;
 }
 
+.sub-title5 span {
+    display: inline-block;
+    padding: 9px 27px;
+    border: var(--border-style-02);
+    border-radius: 20px;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.sub-title6 {
+    margin: 20px 0 10px;
+    padding-left: 17px;
+    font-size: 16px;
+    font-weight: 700;
+    background: no-repeat url("/public/assets/images/sub/ico-sub-title6.svg") left center;
+}
+
 /* ===============================
     그리드
    =============================== */
-.grid-section {
-}
-
 .grid-section .grid-section-wrap {
     display: flex;
     gap: 0 30px;
@@ -190,6 +374,7 @@
     검색영역
    =============================== */
 .sub-search {
+    position: relative;
     margin-bottom: 20px;
 }
 
@@ -260,6 +445,39 @@
 }
 
 .sub-search .search-btn-wrap .submit-btn:hover {
+    background-color: #3660a3;
+}
+
+/* 검색 영역 안에 있는 버튼 */
+.sub-search .sub-search-item.btn-wrap {
+    display: flex;
+    gap: 0 8px;
+    margin-left: auto;
+}
+
+.sub-search .sub-search-item.btn-wrap button {
+    padding: 0 20px;
+    height: 35px;
+    border-radius: 5px;
+    color: var(--color-white);
+    font-weight: 700;
+}
+
+.sub-search .sub-search-item.btn-wrap .reset-btn {
+    background-color: #bdcce3;
+    transition: 0.5s;
+}
+
+.sub-search .sub-search-item.btn-wrap .reset-btn:hover {
+    background-color: #9eb1ce;
+}
+
+.sub-search .sub-search-item.btn-wrap .submit-btn {
+    background-color: var(--color-primary-blue);
+    transition: 0.5s;
+}
+
+.sub-search .sub-search-item.btn-wrap .submit-btn:hover {
     background-color: #3660a3;
 }
 
@@ -415,7 +633,7 @@
     height: 100%;
     border: var(--border-style-01);
     font-size: 14px;
-    line-height: 20px;
+
     text-align: center;
 }
 
@@ -430,19 +648,6 @@
 /* ===============================
     공지사항
    =============================== */
-.notice-wrap {
-    position: absolute;
-    left: 0;
-    bottom: 20px;
-    padding: 21px 25px 21px 65px;
-    border-radius: 10px;
-    background: no-repeat var(--color-light-blue) url("/public/assets/images/sub/ico-notice.svg") 20px center;
-}
-
-.notice-wrap p {
-    font-size: 13px;
-    line-height: 20px;
-}
 
 .notice-detail-wrap {
     border-top: var(--border-style-02);
@@ -555,7 +760,8 @@
 
 .company-title .badges {
     display: flex;
-    gap: 0 8px;
+    flex-wrap: wrap;
+    gap: 8px;
     margin-left: 8px;
 }
 
@@ -629,6 +835,19 @@
 .table-default {
     width: 100%;
     text-align: right;
+}
+
+.table-default .file-down {
+    display: inline-block;
+    vertical-align: middle;
+    width: 14px;
+    height: 15px;
+    margin-left: 10px;
+    background: no-repeat url("/public/assets/images/sub/ico-file-down.svg") center;
+}
+
+.table-default .file-down:first-child {
+    margin-left: 0;
 }
 
 /* ===============================
@@ -807,7 +1026,6 @@
     position: absolute;
     top: 17px;
     left: 23px;
-    line-height: 20px;
     font-weight: 700;
 }
 
@@ -918,7 +1136,7 @@
    =============================== */
 .history-btns {
     position: sticky;
-    top: 60px;
+    top: 100px;
     background-color: var(--color-white);
     z-index: 1;
 }
@@ -935,6 +1153,7 @@
     display: block;
     padding: 12px 0px;
     font-size: 18px;
+    line-height: 19px;
     font-weight: 700;
     color: #a2a2a2;
     transition: 0.5s;
@@ -973,10 +1192,11 @@
 
 .history-wrap .history-year p {
     position: sticky;
-    top: 127px;
+    top: 160px;
     width: 200px;
     font-size: 30px;
     font-weight: 700;
+    line-height: 1;
     color: var(--color-primary-blue);
 }
 
@@ -988,7 +1208,6 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
-    padding-top: 20px;
 }
 
 .history-wrap .history-content li {
@@ -1043,4 +1262,434 @@
     width: 600px;
     padding: 22px 20px 26px;
     background-color: var(--color-white);
+}
+
+/* ===============================
+    오시는 길
+   =============================== */
+.map-visit {
+    display: flex;
+    padding-top: 40px;
+}
+
+.map-visit dl {
+    position: relative;
+    flex: 1;
+    padding-left: 118px;
+    font-size: 14px;
+}
+
+/* 타이틀 */
+.map-visit dt {
+    display: flex;
+    align-items: center;
+    height: 88px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.map-visit dt::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+}
+
+.map-visit .metro dt::before {
+    background: #eff6ff no-repeat url("/public/assets/images/sub/ico-map-metro.svg") center;
+}
+
+.map-visit .bus dt::before {
+    background: #eff6ff no-repeat url("/public/assets/images/sub/ico-map-bus.svg") center;
+}
+
+/* 아이콘 */
+.map-visit .line-icon {
+    display: inline-block;
+    padding: 0 20px;
+    border-radius: 21.5px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-white);
+    text-align: center;
+    line-height: 32px;
+}
+
+.map-visit .line-5 {
+    background-color: #833edb;
+}
+.map-visit .line-9 {
+    background-color: #c9a754;
+}
+.map-visit .bus-1 {
+    background-color: #3957a5;
+}
+.map-visit .bus-2 {
+    background-color: #56aa28;
+}
+.map-visit .bus-3 {
+    background-color: #f32a05;
+}
+
+.map-visit ul {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 지하철 */
+.map-visit .metro ul {
+    gap: 40px;
+    padding-top: 8px;
+}
+
+.map-visit .metro .line-icon {
+    margin-bottom: 10px;
+}
+
+/* 버스 */
+.map-visit .bus dt {
+    padding-bottom: 27px;
+}
+
+.map-visit .bus ul {
+    gap: 30px;
+    margin-top: -35px;
+}
+
+.map-visit .bus p {
+    margin-bottom: 10px;
+}
+
+.map-visit .bus p:first-child {
+    margin: 0 0 20px;
+}
+
+.map-visit .bus p:last-child {
+    margin-bottom: 0;
+}
+
+.map-visit .bus .line-icon {
+    margin-right: 20px;
+}
+
+/* ===============================
+    의의 및 특징
+   =============================== */
+.meaning-wrap .sub-title4 {
+    margin: 40px 0 19px;
+}
+
+.meaning-wrap .sub-title4:first-child {
+    margin-top: 0;
+}
+
+.meaning-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 1080px;
+    margin: 0 auto;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.meaning-list li {
+    display: flex;
+    align-items: center;
+
+    position: relative;
+    height: 116px;
+    padding: 13px 13px 13px 139px;
+    background-color: #ecf2fb;
+    border-radius: 57.5px;
+}
+
+.meaning-list .number {
+    position: absolute;
+    left: 13px;
+    top: 13px;
+    width: 90px;
+    border-radius: 50%;
+    background-color: var(--color-white);
+    line-height: 90px;
+    font-weight: 700;
+    font-size: 30px;
+    color: var(--color-primary-blue);
+    text-align: center;
+}
+
+.meaning-list .point {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+/* ===============================
+    컨텐츠 페이지 공통 (매매방법, 신규등록 등등)
+   =============================== */
+.contents-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px 0;
+    line-height: 22px;
+}
+
+.contents-info .sub-title4 {
+    margin: 20px 0 10px;
+}
+
+.contents-info .sub-title5 {
+    width: 310px;
+}
+
+.contents-info .contents-info-item {
+    width: calc(100% - 310px);
+}
+
+.contents-info .contents-info-item .sub-title2:first-of-type {
+    margin-top: 0;
+}
+
+/* ===============================
+    주문절차
+   =============================== */
+.trade-step {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 20px 0 40px;
+    padding-bottom: 40px;
+    border-bottom: var(--border-style-01);
+}
+.trade-step .trade-item {
+    position: relative;
+    min-height: 144px;
+    padding: 28px 36px 28px 135px;
+    border-radius: 30px;
+    background-color: #eef3fb;
+    font-size: 14px;
+}
+
+.trade-step .trade-item strong {
+    font-weight: 700;
+}
+
+.trade-step .trade-item .point {
+    color: #ec843a;
+}
+
+.trade-step .trade-item::before {
+    content: "";
+    position: absolute;
+    left: 28px;
+    top: 50%;
+    width: 88px;
+    height: 88px;
+    border-radius: 30px;
+    transform: translateY(-50%);
+    background-color: var(--color-white);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.trade-step .trade-item:nth-child(1)::before {
+    background-image: url("/public/assets/images/sub/ico-trade-step1.svg");
+}
+.trade-step .trade-item:nth-child(2)::before {
+    background-image: url("/public/assets/images/sub/ico-trade-step2.svg");
+}
+.trade-step .trade-item:nth-child(3)::before {
+    background-image: url("/public/assets/images/sub/ico-trade-step3.svg");
+}
+.trade-step .trade-item:nth-child(4)::before {
+    background-image: url("/public/assets/images/sub/ico-trade-step4.svg");
+}
+
+.trade-step .view-more {
+    position: absolute;
+    right: 36px;
+    bottom: 28px;
+    padding: 0 12px;
+    border-radius: 5px;
+    background-color: #4e78ba;
+    font-size: 12px;
+    line-height: 28px;
+    color: var(--color-white);
+}
+
+/* ===============================
+    단어 정의 box
+   =============================== */
+.info-box {
+    position: relative;
+    margin-bottom: 40px;
+    padding: 28px 38px;
+    border-radius: 40px;
+    background-color: #f4f8fb;
+}
+
+.info-box dt {
+    margin-bottom: 7px;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-primary-blue);
+}
+
+.info-box dd {
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.info-box .download {
+    position: absolute;
+    top: 50%;
+    right: 49px;
+    transform: translateY(-50%);
+}
+
+.info-box .download a {
+    display: block;
+    padding: 0 22px;
+    border-radius: 5px;
+    background-color: var(--color-primary-blue);
+    line-height: 33px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-white);
+}
+
+.info-box .download a::after {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 13px;
+    height: 11px;
+    margin-top: -4px;
+    margin-left: 6px;
+    background: no-repeat url("/public/assets/images/sub/ico-download.svg");
+}
+
+/* ===============================
+    step
+   =============================== */
+.step-by-step {
+    display: flex;
+    flex-direction: column;
+    gap: 53px 0;
+}
+.step-by-step .step-item {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 53px 60px;
+}
+
+.step-by-step .step-item .step-list {
+    position: relative;
+    width: calc((100% - 180px) / 4);
+}
+
+.step-by-step .step-item.col3 .step-list {
+    width: calc((100% - 120px) / 3);
+}
+
+/* 
+    짝수번 째 줄은 정렬 반대로 
+    1 2 3 4
+    8 7 6 5
+    9 10 11 12 순서
+*/
+.step-by-step .step-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+/* 홀수번째는 오른쪽 화살표 */
+.step-by-step .step-item:nth-child(odd) .step-list::before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: calc(100% + 24px);
+    width: 17px;
+    height: 29px;
+    background: no-repeat url("/public/assets/images/sub/ico-step-right.svg") center;
+}
+.step-by-step .step-item:nth-child(odd) .step-list:last-child::before {
+    display: none;
+}
+
+/* 짝수번째는 왼쪽 화살표 */
+.step-by-step .step-item:nth-child(even) .step-list::before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    right: calc(100% + 24px);
+    width: 17px;
+    height: 29px;
+    background: no-repeat url("/public/assets/images/sub/ico-step-left.svg") center;
+}
+.step-by-step .step-item:nth-child(even) .step-list:last-child::before {
+    display: none;
+}
+
+/* 4개째 아래화살표 */
+.step-by-step .step-item .step-list:nth-child(4)::after {
+    content: "";
+    position: absolute;
+    width: 29px;
+    height: 17px;
+    top: calc(100% + 10px);
+    left: 50%;
+    background: no-repeat url("/public/assets/images/sub/ico-step-down.svg") center;
+    transform: translateX(-50%);
+}
+
+/* 3개째 아래화살표 */
+/* 컬럼3 */
+.step-by-step .step-item.col3 .step-list:nth-child(3)::after {
+    content: "";
+    position: absolute;
+    width: 29px;
+    height: 17px;
+    top: calc(100% + 10px);
+    left: 50%;
+    background: no-repeat url("/public/assets/images/sub/ico-step-down.svg") center;
+    transform: translateX(-50%);
+}
+
+/* 화살표 없애기 */
+.step-by-step .step-item .step-list.none-arr::before,
+.step-by-step .step-item .step-list.none-arr::after {
+    display: none;
+}
+
+.step-by-step .step-title {
+    display: flex;
+    align-items: center;
+    gap: 0 14px;
+    padding: 16px 27px;
+    border-radius: 12px;
+    background-color: #6f8ab4;
+}
+
+.step-by-step .step-title strong {
+    font-weight: 700;
+    font-size: 11px;
+    line-height: 15px;
+    color: rgba(255 255 255 / 50%);
+}
+
+.step-by-step .step-title strong .number {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.step-by-step .step-title p {
+    font-weight: 700;
+    color: var(--color-white);
+}
+.step-by-step .step-item .step-list > p {
+    padding: 16px 33px 0;
 }

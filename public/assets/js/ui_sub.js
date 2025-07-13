@@ -93,10 +93,17 @@ $(function () {
             isScrolling = true; // 애니메이션 시작
             $("html, body")
                 .stop()
-                .animate({ scrollTop: targetOffset }, 1000, "easeInOutCubic", function () {
-                    isScrolling = false; // 애니메이션 끝
-                    updateOnClass(); // 최종 on 클래스 갱신
-                });
+                .animate(
+                    {
+                        scrollTop: targetOffset - 193, // 헤더높이(60) + snb높이(41) + 년도 버튼 높이(44) + .history-wrap의 패딩 높이(48)를 빼줘야 알맞게 높이 조절이 된다
+                    },
+                    1000,
+                    "easeInOutCubic",
+                    function () {
+                        isScrolling = false; // 애니메이션 끝
+                        updateOnClass(); // 최종 on 클래스 갱신
+                    }
+                );
         });
 
         // on 클래스 갱신 함수

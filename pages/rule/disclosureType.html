@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <title>K-OTC</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="/public/assets/css/vendor/jquery-ui.css" />
+        <link rel="stylesheet" href="/public/assets/css/vendor/slick.css" />
+        <link rel="stylesheet" href="/public/assets/css/vendor/tui-grid.css" />
+
+        <link rel="stylesheet" href="/public/assets/css/base.css" />
+        <link rel="stylesheet" href="/public/assets/css/common.css" />
+        <link rel="stylesheet" href="/public/assets/css/main.css" />
+        <link rel="stylesheet" href="/public/assets/css/sub.css" />
+        <link rel="stylesheet" href="/public/assets/css/tui-custom.css" />
+
+        <!-- JS -->
+        <script src="/public/assets/js/vendor/jquery-3.7.1.min.js"></script>
+        <script src="/public/assets/js/vendor/jquery-ui.js"></script>
+        <script src="/public/assets/js/vendor/slick.min.js"></script>
+        <script src="/public/assets/js/vendor/tui-grid.js"></script>
+        <script src="/public/assets/js/vendor/lenis.min.js"></script>
+
+        <script src="/public/assets/js/ui_common.js"></script>
+        <script src="/public/assets/js/ui_main.js"></script>
+        <script src="/public/assets/js/ui_sub.js"></script>
+    </head>
+    <body>
+        <div id="body-wrap">
+            <header id="header">
+                <div class="header-wrap">
+                    <h1 class="logo">
+                        <a href="/"><span class="blind">K-OTC 로고</span></a>
+                    </h1>
+
+                    <nav id="gnb">
+                        <ul class="depth1">
+                            <li>
+                                <a href="#">종목정보</a>
+                                <ul class="depth2">
+                                    <li><a href="#">현재가</a></li>
+                                    <li><a href="#">호가/체결 상세정보</a></li>
+                                    <li><a href="#">종목 일자별 시세</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">투자정보</a>
+                                <ul class="depth2">
+                                    <li><a href="#">시장특징주</a></li>
+                                    <li><a href="#">투자유의사항</a></li>
+                                    <li><a href="#">시장경보 현황</a></li>
+                                    <li><a href="#">소속부별 현황</a></li>
+                                    <li><a href="#">시황</a></li>
+                                    <li><a href="#">기업/기술 분석보고서</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">기업현황/공시</a>
+                                <ul class="depth2">
+                                    <li><a href="#">기업현황</a></li>
+                                    <li><a href="#">K-OTC공시/안내</a></li>
+                                    <li><a href="#">DART공시 조회</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">통계정보</a>
+                                <ul class="depth2">
+                                    <li><a href="#">일별시장통계</a></li>
+                                    <li><a href="#">소속부별 거래실적</a></li>
+                                    <li><a href="#">주가평균 추이</a></li>
+                                    <li><a href="#">기간별 시장지표</a></li>
+                                    <li><a href="#">기간별 거래실적</a></li>
+                                    <li><a href="#">기간별 순위통계</a></li>
+                                    <li><a href="#">법인수 추이</a></li>
+                                    <li><a href="#">월간통계</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">제도/규정</a>
+                                <ul class="depth2">
+                                    <li><a href="#">등록 및 지정제도</a></li>
+                                    <li><a href="#">변경(추가) 등록 및 지정</a></li>
+                                    <li><a href="#">매매거래제도</a></li>
+                                    <li><a href="#">공시제도</a></li>
+                                    <li><a href="#">등록/지정해제</a></li>
+                                    <li><a href="#">투자자 유의사항</a></li>
+                                    <li><a href="#">시장경보제도</a></li>
+                                    <li><a href="#">K-OTC 관련규정</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">참여마당</a>
+                                <ul class="depth2">
+                                    <li><a href="#">FAQ</a></li>
+                                    <li><a href="#">공지사항</a></li>
+                                    <li><a href="#">자료실</a></li>
+                                    <li><a href="#">보도자료</a></li>
+                                    <li><a href="#">고객의견</a></li>
+                                    <li><a href="#">K-OTC 메일링</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">K-OTC시장</a>
+                                <ul class="depth2">
+                                    <li><a href="#">의의 및 특징</a></li>
+                                    <li><a href="#">연혁</a></li>
+                                    <li><a href="#">찾아오시는 길</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="gnb-bg"></div>
+                    </nav>
+
+                    <!-- // #gnb -->
+
+                    <div class="header-saerch">
+                        <button type="button" class="search-open">
+                            <span class="blind">검색창 열기 버튼</span>
+                        </button>
+
+                        <div class="header-saerch-wrap">
+                            <form>
+                                <fieldset>
+                                    <legend class="blind">검색어 입력 폼</legend>
+
+                                    <div class="input-group">
+                                        <label for="abc" class="blind">검색어</label>
+                                        <input id="abc" name="abc" type="text" placeholder="검색어를 입력해 주세요." />
+                                    </div>
+
+                                    <h3>추천 검색어</h3>
+                                    <ul class="recommend-list">
+                                        <li><a href="#">상승종목</a></li>
+                                        <li><a href="#">매매 체결방법</a></li>
+                                        <li><a href="#">신규가입 등록문의</a></li>
+                                    </ul>
+
+                                    <button class="search-close" type="button">
+                                        <span class="blind">검색창 닫기</span>
+                                    </button>
+                                </fieldset>
+                            </form>
+                        </div>
+
+                        <div class="header-saerch-bg"></div>
+                    </div>
+                    <!-- // .header-saerch -->
+                </div>
+            </header>
+
+            <div id="snb">
+                <div class="snb-wrap">
+                    <div class="home">
+                        <a href="#"><span class="blind">Home</span></a>
+                    </div>
+
+                    <div class="depth-menu depth1">
+                        <a href="#" class="cur-menu">제도/규정</a>
+                        <ul>
+                            <li><a href="#">종목정보</a></li>
+                            <li><a href="#">투자정보</a></li>
+                            <li><a href="#">기업현황/공시</a></li>
+                            <li><a href="#">통계정보</a></li>
+                            <li><a href="#">제도/규정</a></li>
+                            <li><a href="#">참여마당</a></li>
+                            <li><a href="#">K-OTC시장</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="depth-menu depth2">
+                        <a href="#" class="cur-menu">매매거래제도</a>
+                        <ul>
+                            <li><a href="#">등록 및 지정제도</a></li>
+                            <li><a href="#">변경(추가) 등록 및 지정</a></li>
+                            <li><a href="#">매매체결 방법 및 비용</a></li>
+                            <li><a href="#">공시제도</a></li>
+                            <li><a href="#">등록/지정해제</a></li>
+                            <li><a href="#">투자자 유의사항</a></li>
+                            <li><a href="#">시장경보제도</a></li>
+                            <li><a href="#">K-OTC 관련규정</a></li>
+                        </ul>
+                    </div>
+                    <div class="depth-menu depth3">
+                        <a href="#" class="cur-menu">등록법인 공시제도</a>
+                        <ul>
+                            <li><a href="#">공시제도 개요</a></li>
+                            <li><a href="#">등록법인 공시제도</a></li>
+                            <li><a href="#">시장안내 사항</a></li>
+                            <li><a href="#">공시불이행에 대한 조치</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <aside id="quick-menu">
+                <!-- 
+                    아이콘은 layout.css에서 컨트롤 중 
+                    "퀵 메뉴 - 아이콘 설정"
+                -->
+                <div class="quick-menu-wrap">
+                    <ul>
+                        <li class="item01">
+                            <a href="#">K-OTC<br />소개</a>
+                        </li>
+                        <li class="item02">
+                            <a href="#">투자자<br />유의사항</a>
+                        </li>
+                        <li class="item03">
+                            <a href="#">기업<br />리스트</a>
+                        </li>
+                        <li class="item04">
+                            <a href="#">등록기업<br />서식</a>
+                        </li>
+                        <li class="item05"><a href="#">DART</a></li>
+                        <li class="item06"><a href="#">SEIBro</a></li>
+                        <li class="item07"><a href="#">K-OTC BB</a></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- 
+                ** 컨텐츠 시작
+                메인 페이지 class="main"
+                서브 페이지 class="sub"
+            -->
+            <main id="container" class="sub">
+                <div class="container-wrap">
+                    <h2 class="sub-title1">등록법인 공시제도</h2>
+                    <dl class="info-box">
+                        <dt>기업공시제도는</dt>
+                        <dd>
+                            <ul class="list-type-bar">
+                                <li>
+                                    증권을 모집․매출하는 경우 모집․매출에 관한 사항과 발행인에 관한 사항을 공시하도록
+                                    하는 발행시장 공시제도
+                                </li>
+                                <li>
+                                    증권의 유통단계에서 기업의 경영활동 내역을 계속적으로 공시하도록 하는 유통시장
+                                    공시제도로 구분됩니다.
+                                </li>
+                                <li>K-OTC시장 등록법인의 유통공시 사항은 아래와 같습니다.</li>
+                            </ul>
+                        </dd>
+                    </dl>
+
+                    <div class="contents-info">
+                        <h3 class="sub-title5"><span>정기공시 (규정 제 46조)</span></h3>
+                        <div class="contents-info-item">
+                            <ul class="list-type-bar">
+                                <li>
+                                    공시사항 : 발행인에 관한 사항을 기재한 서류 및 감사보고서(반기결산기 경과시에는
+                                    반기검토보고서). 사업보고서 제출대상법인의 경우에는 사업보고서 및
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;반기보고서로
+                                    갈음합니다.
+                                </li>
+                                <li>제출시기 : 매 결산기 경과 후 90일 이내 및 매 반기 경과 후 45일 이내</li>
+                                <li>제 출 &nbsp;처 : 협회 및 금융감독원 전자공시시스템(전자문서)</li>
+                                <li>
+                                    제출방법 : 협회에 공문 1부 및 정기공시서류 2부를 제출 <br />
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(단,
+                                    K-OTC시장 공시시스템을 통하여 전자문서의 방법으로 제출한 경우 2부를 제출한 것으로
+                                    봅니다.)
+                                </li>
+                                <li>
+                                    주&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;의 : 정기공시의 경우 협회에
+                                    정기공시서류를 제출하는 것과 별도로 금융감독원 전자공시시스템에도 동 서류를
+                                    공시하여야 합니다. 금융감독원
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전자공시시스템에서는
+                                    동 서류를 “호가중개시스템을 통한 소액매출공시서류”라고 합니다. (사업보고서
+                                    제출대상법인의 경우에는 사업보고서,
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;반기보고서를
+                                    말합니다)
+                                </li>
+                                <li>
+                                    사업보고서 제출대상법인 : 증권을 모집 또는 매출(소액공모 제외)하였거나 외부감사대상
+                                    법인으로서 증권별로 소유자 수가 500인 이상인 발행인 등을
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 말합니다.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <h3 class="sub-title5"><span>수시공시(규정 제45조)</span></h3>
+                        <div class="contents-info-item">
+                            <ul class="list-type-bar">
+                                <li>
+                                    등록법인은 주가에 영향을 미칠 수 있는 주요 경영사항 등 19가지 항목에 대한 정보를
+                                    수시공시하여야 합니다.
+                                </li>
+                                <li>공시방법 : 서면, 전자문서 또는 모사전송(FAX)등 의 방법으로 협회에 제출합니다.</li>
+                                <li>
+                                    공시입력 : 등록법인이 K-OTC시장 공시시스템을 통해서 전자문서 등의 방법으로
+                                    공시사항을 신고하면, 협회는 해당 내용을 접수하고 호가중개시스템을 통해 공시합니다.
+                                </li>
+                                <li>주요 경영사항 신고 항목</li>
+                            </ul>
+                            <br />
+                            <table class="table-default">
+                                <colgroup>
+                                    <col />
+                                    <col />
+                                    <col />
+                                    <col style="width: 80px" />
+                                    <col style="width: 80px" />
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>신고사항</th>
+                                        <th>협회 신고시기</th>
+                                        <th>파일</th>
+                                        <th>비고</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center">1</td>
+                                        <td class="text-left">
+                                            어음 또는 수표의 부도, 은행과의 거래 정지 · 금지 또는 재개
+                                        </td>
+                                        <td class="text-center">사유 발생 당일</td>
+                                        <td class="text-center">
+                                            <a href="" class="file-down"><span class="blind">다운로드</span></a>
+                                        </td>
+                                        <td class="text-left"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">2</td>
+                                        <td class="text-left">주된 영업활동의 정지</td>
+                                        <td class="text-center">사유 발생 당일</td>
+                                        <td class="text-center">
+                                            <a href="" class="file-down"><span class="blind">다운로드</span></a>
+                                        </td>
+                                        <td class="text-left"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">3</td>
+                                        <td class="text-left">
+                                            채무자 회생 및 파산에 관한 법률에 따른 회생절차와 관련한 사실이나 법원의
+                                            결정이 있은 때
+                                        </td>
+                                        <td class="text-center">이사회결의일 또는확인일 당일</td>
+                                        <td class="text-center">
+                                            <a href="" class="file-down"><span class="blind">다운로드</span></a>
+                                        </td>
+                                        <td class="text-left"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">4</td>
+                                        <td class="text-left">본점소재지, 대표이사, 상호 또는 사업목적 변경</td>
+                                        <td class="text-center">주총일 또는 이사회결의일로부터 1일 이내</td>
+                                        <td class="text-center">
+                                            <a href="" class="file-down"><span class="blind">다운로드</span></a>
+                                        </td>
+                                        <td class="text-left"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">5</td>
+                                        <td class="text-left">
+                                            타법인과의 합병, 중요한 영업의 양도 · 양수, 기업분할 또는 분할합병
+                                        </td>
+                                        <td class="text-center">이사회결의 당일</td>
+                                        <td class="text-center">
+                                            <a href="" class="file-down"><span class="blind">다운로드</span></a>
+                                        </td>
+                                        <td class="text-left"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">6</td>
+                                        <td class="text-left">관계법률 등에 의한 해산사유 발생</td>
+                                        <td class="text-center">사유 발생 당일</td>
+                                        <td class="text-center">
+                                            <a href="" class="file-down"><span class="blind">다운로드</span></a>
+                                        </td>
+                                        <td class="text-left"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">7</td>
+                                        <td class="text-left">증자 또는 감자</td>
+                                        <td class="text-center">이사회결의 당일</td>
+                                        <td class="text-center">
+                                            <a href="" class="file-down"><span class="blind">다운로드</span></a>
+                                        </td>
+                                        <td class="text-left"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">8</td>
+                                        <td class="text-left">
+                                            주식분할, 주식병합, 또는 액면주식과 무 액면주식의 상호전환
+                                        </td>
+                                        <td class="text-center">이사회결의일부터1일 이내</td>
+                                        <td class="text-center">
+                                            <a href="" class="file-down"><span class="blind">다운로드</span></a>
+                                        </td>
+                                        <td class="text-left"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">9</td>
+                                        <td class="text-left">회사채(전환사채, 신주인수권부사채 등 포함) 발행</td>
+                                        <td class="text-center">이사회결의일부터1일 이내</td>
+                                        <td class="text-center">
+                                            <a href="" class="file-down"><span class="blind">다운로드</span></a>
+                                        </td>
+                                        <td class="text-left"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">10</td>
+                                        <td class="text-left">
+                                            신물질 또는 신기술에 관한 특허권의 취득 · 양수 또는 양도
+                                        </td>
+                                        <td class="text-center">등록·결정(이사회결의)일로부터 1일 이내</td>
+                                        <td class="text-center">
+                                            <a href="" class="file-down"><span class="blind">다운로드</span></a>
+                                        </td>
+                                        <td class="text-left"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">11</td>
+                                        <td class="text-left">등록해제신청 결정</td>
+                                        <td class="text-center">이사회결의일로부터1일이내</td>
+                                        <td class="text-center">
+                                            <a href="" class="file-down"><span class="blind">다운로드</span></a>
+                                        </td>
+                                        <td class="text-left"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">12</td>
+                                        <td class="text-left">주식배당 결의</td>
+                                        <td class="text-center">이사회결의일로부터1일이내</td>
+                                        <td class="text-center">
+                                            <a href="" class="file-down"><span class="blind">다운로드</span></a>
+                                        </td>
+                                        <td class="text-left"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">13</td>
+                                        <td class="text-left">중간배당 결의</td>
+                                        <td class="text-center">이사회결의일로부터1일이내</td>
+                                        <td class="text-center">
+                                            <a href="" class="file-down"><span class="blind">다운로드</span></a>
+                                        </td>
+                                        <td class="text-left"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">14</td>
+                                        <td class="text-left">주주총회 개최 및 종료된 때</td>
+                                        <td class="text-center">이사회결의일 및 주총일로부터 각 1일이내</td>
+                                        <td class="text-center">
+                                            <a href="" class="file-down"><span class="blind">다운로드</span></a>
+                                        </td>
+                                        <td class="text-left"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">15</td>
+                                        <td class="text-left">최대주주 변경</td>
+                                        <td class="text-center">확인일로부터 1일이내</td>
+                                        <td class="text-center">
+                                            <a href="" class="file-down"><span class="blind">다운로드</span></a>
+                                        </td>
+                                        <td class="text-left"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">16</td>
+                                        <td class="text-left">중소기업, 중견기업 및 벤처기업 지위의 취득, 상실 등</td>
+                                        <td class="text-center">
+                                            사유발생 당일, 익일 또는 만료일전 2영업일째가 되는날
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="" class="file-down"><span class="blind">다운로드</span></a>
+                                        </td>
+                                        <td class="text-left"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">17</td>
+                                        <td class="text-left">
+                                            임직원 등의 횡령ㆍ배임 혐의를 확인한 때 및 횡령ㆍ배임금액 상환(고소취하
+                                            포함) 등의 진행사항이 확인되거나 횡령ㆍ배임 혐의의 사실 여부가 확인된
+                                            때(다만, 임원이 아닌 직원 등의 경우에는 횡령ㆍ배임 금액이 협회장이 정하는
+                                            규모 이상인 경우에 한한다)
+                                        </td>
+                                        <td class="text-center">확인일 당일</td>
+                                        <td class="text-center">
+                                            <a href="" class="file-down"><span class="blind">다운로드</span></a>
+                                        </td>
+                                        <td class="text-left"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">18</td>
+                                        <td class="text-left">
+                                            등록법인 또는 그 임직원(퇴임 또는 퇴직한 임직원을 포함한다)을 금융위원회의
+                                            『외부감사 및 회계 등에 관한 규정』에 따라 증권선물위원회 등이 검찰고발 또는
+                                            검찰통보 조치하거나 검찰이 회계처리기준 위반행위로 기소한 사실 또는 그
+                                            결과가 확인된 때
+                                        </td>
+                                        <td class="text-center">확인일 당일</td>
+                                        <td class="text-center">
+                                            <a href="" class="file-down"><span class="blind">다운로드</span></a>
+                                        </td>
+                                        <td class="text-left"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">19</td>
+                                        <td class="text-left">
+                                            기타 투자자의 투자판단에 중대한 영향을 미칠 수 있는 사항이 발생하거나 결정된
+                                            때
+                                        </td>
+                                        <td class="text-center">당일 또는 1일 이내</td>
+                                        <td class="text-center">
+                                            <a href="" class="file-down"><span class="blind">다운로드</span></a>
+                                        </td>
+                                        <td class="text-left"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p class="notice-text2">
+                                주의 : 등록법인 중 사업보고서 제출대상법인은 K-OTC시장 수시공시사항이 자본시장법령에
+                                따른 주요사항보고서 제출사유에도 해당하는 경우에는 K-OTC시장에서의 공시와 별도로
+                                금융감독원 전자공시시스템을 통하여 주요사항보고서를 제출하여야 합니다.
+                            </p>
+                        </div>
+
+                        <h3 class="sub-title5"><span>조회공시 (규정 제47조)</span></h3>
+                        <div class="contents-info-item">
+                            <ul class="list-type-bar">
+                                <li>
+                                    주요 경영사항 또는 이에 준하는 사항에 대한 풍문 또는 보도 등의 사실여부를 확인할
+                                    필요가 있거나 등록종목의 주가 등이 협회가 정한 기준에 해당하여 중요정보의 유무를
+                                    확인할 필요가 있는 경우 협회는 등록법인에 조회공시를 요구할 수 있습니다.
+                                </li>
+                                <li>
+                                    협회는 해당 조회공시를 전자문서 등의 방법으로 요구하고, 해당 요구사실 및 그 내용을
+                                    호가중개시스템을 통하여 공표합니다.
+                                </li>
+                                <li>
+                                    협회로부터 조회공시를 요구받은 등록법인은 요구받은 날로부터 1일 이내에 공시내용을
+                                    문서로 작성하여 전자문서 등의 방법으로 협회에 신고하여야 합니다.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <h3 class="sub-title5"><span>기타 신고의무 (규정 제9조, 제13조)</span></h3>
+                        <div class="contents-info-item">
+                            <ul class="list-type-bar">
+                                <li>
+                                    주주명부요약표 제출 : 등록법인은 결산기 정기공시서류 제출기한의 다음 날부터 5영업일
+                                    이내에 보통주식의 주주명부요약표, 실질주주명부(전자등록된 주식일 경우에는 전자증권법
+                                    제37조제1항에 따른 소유자명세) 및 그 밖에 협회가 필요하다고 인정하는 서류를
+                                    제출하여야 합니다.
+                                </li>
+                                <li>
+                                    중소·중견기업 해당 여부 신고 : 등록법인은 매 사업연도마다 결산기 정기공시서류의
+                                    제출기한의 다음 날로부터 5영업일 이내에 협회에 '중소기업 해당 여부 신고서‘ 또는
+                                    ’중견기업 해당 여부 신고서' 를 제출하여야 하며, [법인세법 시행규칙] 별지 제 51호
+                                    서식에 따른 중소기업 기준검토표 사본 등 중소기업 또는 중견기업임을 증명할 수 있는
+                                    자료를 첨부하여야 합니다.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <h3 class="sub-title5"><span>협회의 등록신청서류 등 비치</span></h3>
+                        <div class="contents-info-item">
+                            <p>
+                                협회는 등록신청서류, 정기공시서류를 협회에 비치하여 접수일로부터 3년간 일반인이 열람할
+                                수 있도록 하고 있습니다.
+                            </p>
+                            <br />
+                            <h4 class="sub-title2">사업보고서 제출대상법인의 금융위 주요사항보고서 제출 의무</h4>
+
+                            <p>
+                                사업보고서 제출대상법인은 아래의 사유가 발생하는 경우 금융감독원 전자공시시스템을 통하여
+                                주요사항보고서를 제출하여야 합니다.
+                            </p>
+                            <h4 class="sub-title6">주요사항보고서 제출사유</h4>
+                            <ul class="list-type-number">
+                                <li>어음 또는 수표의 부도, 은행 당좌거래의 정지 또는 금지</li>
+                                <li>영업활동의 전부 또는 중요한 일부의 정지</li>
+                                <li>『채무자 회생 및 파산에 관한 법률』에 따른 회생절차개시의 신청</li>
+                                <li>해산사유발생</li>
+                                <li>자본증가 또는 감소, 조건부자본증권의 발행에 따른 부채의 증가에 관한 이사회 결의</li>
+                                <li>
+                                    주채권은행으로부터 『기업구조조정촉진법』 제5조제2항 각호의 어느 하나에 해당하는
+                                    관리절차가 개시되거나 같은 법 제19조에 따라 공동관리절차가 중단된 때
+                                </li>
+                                <li>증권에 관한 중대한 소송 제기</li>
+                                <li>해외증권시장 상장 또는 상장폐지결정, 매매거래정지 조치 등</li>
+                                <li>CB, BW, EB의 발행결정</li>
+                                <li>
+                                    조건부자본증권이 주식으로 전환되는 사유가 발생하거나 그 조건부자본증권의 상환과 이자
+                                    지급의무가 감면되는 사유가 발생하였을 때
+                                </li>
+                                <li>자기주식취득(신탁계약체결) 또는 처분(신탁계약해지)의 결의</li>
+                                <li>
+                                    합병, 주식교환·이전, 분할, 분할합병 등의 결정 중요한 영업 또는 자산의 양수도 결정
+                                </li>
+                                <li>중요한 자산양수·양도를 권리행사의 내용으로 하는 풋백옵션 등의 계약 체결</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="notice-wrap">
+                        <p>
+                            본회가 제공하는 정보는 투자 참고 사항이며, 불가피한 오류 또는 누락이 발생하거나 지연 제공될
+                            수 있습니다.
+                        </p>
+                        <p>제공된 정보에 의한 투자결과에 대하여 법적인 책임을 지지 않습니다.</p>
+                    </div>
+                </div>
+                <!-- // .container-wrap -->
+            </main>
+            <!-- // 컨텐츠 끝 -->
+
+            <footer id="footer">
+                <div class="footer-wrap">
+                    <div class="info">
+                        <p>
+                            본회가 제공하는 정보는투자 참고 사항이며, 불가피한 오류 또는 누락이 발생하거나 지연 제공될
+                            수 있습니다. 제공된 정보에 의한투자결과에 대하여 법적인 책임을 지지 않습니다
+                        </p>
+                        <p>
+                            서울시 영등포구 의사당대로 143 금융투자협회
+                            <span class="tel">TEL 02-2003-9000</span>
+                            <span class="copy">Copyright&copy;2025 KOFIA.</span>
+                        </p>
+                    </div>
+
+                    <div class="footer-utils">
+                        <div class="more-info similar">
+                            <button>유관기관</button>
+                            <!-- 
+                            현재 전달 받은 목록이 없음 -->
+                            <ul class="info-list">
+                                <li><a href="#">목록1</a></li>
+                                <li><a href="#">목록2</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="more-info family-site">
+                            <button>FamilySite</button>
+                            <ul class="info-list">
+                                <li><a target="_blank" href="http://www.kofia.or.kr/">금융투자협회</a></li>
+                                <li><a target="_blank" href="https://dis.kofia.or.kr/">전자공시서비스</a></li>
+                                <li><a target="_blank" href="http://freesis.kofia.or.kr/">자본시장통계</a></li>
+                                <li><a target="_blank" href="https://license.kofia.or.kr/">자격시험접수센터</a></li>
+                                <li><a target="_blank" href="https://www.kifin.or.kr/">금융투자교육원</a></li>
+                                <li><a target="_blank" href="https://www.k-otcbb.or.kr/">K-OTCBB</a></li>
+                                <li><a target="_blank" href="https://www.k-otcpro.or.kr/">K-OTC PRO</a></li>
+                                <li><a target="_blank" href="https://www.kofiabond.or.kr/">채권정보센터</a></li>
+                                <li><a target="_blank" href="https://law.kofia.or.kr/">법규정보시스템</a></li>
+                                <li><a target="_blank" href="https://www.kcie.or.kr/">전국투자자교육협의회</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="go-top">
+                        <a href="#">TOP</a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>
