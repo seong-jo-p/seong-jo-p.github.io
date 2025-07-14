@@ -1,75 +1,45 @@
 /* =========================
-   공통 그리드 스타일
+   공통 스타일
 ========================= */
-
-/* 셀렉트 효과 제거 */
-.tui-grid-layer-focus,
-.tui-grid-layer-selection {
-    display: none;
-}
-
-
-/* =========================
-   헤더 영역
-========================= */
-
-.tui-grid-header-area {
-    border: none;
-}
-
-.tui-grid-header-area .tui-grid-cell-header {
-    border: var(--border-style-01);
-    background: var(--color-light-blue);
-    font-weight: 700;
+.tui-grid-content-area {
     font-family: "Pretendard", sans-serif;
+}
+/* 헤더 */
+.tui-grid-cell-header {
+    padding: 0 18px;
     font-size: 15px;
-    color: var(--color-font-default);
+    font-weight: 700;
+    color: #000;
 }
 
-.tui-grid-header-area .tui-grid-cell-header.tui-grid-cell-selected {
-    background: var(--color-light-blue);
-}
-
-/* =========================
-   바디 셀
-========================= */
-
-.tui-grid-body-area .tui-grid-cell {
-    background-color: var(--color-white);
-    border: var(--border-style-01);
-}
-
-.tui-grid-body-area .tui-grid-cell-content {
+/* 바디 */
+.tui-grid-cell-content {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    padding: 0px 16px;
+    padding: 0 18px !important;
     font-size: 15px;
-    font-family: "Pretendard", sans-serif;
-    color: var(--color-font-default);
+    color: #000;
 }
 
+/* border */
+.tui-grid-border-line-top {
+    border-top-color: #4e78ba;
+}
 
 /* =========================
-   텍스트 정렬
+   스크롤바 스타일
 ========================= */
-
-.tui-grid-body-area .tui-grid-cell.text-center .tui-grid-cell-content {
-    text-align: center;
+.tui-grid-body-area::-webkit-scrollbar-thumb {
+    border-radius: 10px;
 }
-
-.tui-grid-body-area .tui-grid-cell.text-right .tui-grid-cell-content {
-    text-align: right;
-}
-
 
 /* =========================
    증감 아이콘 (작은 화살표)
 ========================= */
-
 .tui-grid-body-area .tui-grid-cell.up .tui-grid-cell-content::before,
 .tui-grid-body-area .tui-grid-cell.down .tui-grid-cell-content::before {
-    content: '';
+    content: "";
     display: inline-block;
     width: 10px;
     height: 8px;
@@ -77,13 +47,12 @@
 }
 
 .tui-grid-body-area .tui-grid-cell.up .tui-grid-cell-content::before {
-    background: url('/public/assets/images/common/ico-number-up.svg') no-repeat center center/contain;
+    background: url("/public/assets/images/common/ico-number-up.svg") no-repeat center center/contain;
 }
 
 .tui-grid-body-area .tui-grid-cell.down .tui-grid-cell-content::before {
-    background: url('/public/assets/images/common/ico-number-down.svg') no-repeat center center/contain;
+    background: url("/public/assets/images/common/ico-number-down.svg") no-repeat center center/contain;
 }
-
 
 /* =========================
    증감 아이콘2
@@ -91,7 +60,7 @@
 
 .tui-grid-body-area .tui-grid-cell.up-arr .tui-grid-cell-content::before,
 .tui-grid-body-area .tui-grid-cell.down-arr .tui-grid-cell-content::before {
-    content: '';
+    content: "";
     display: inline-block;
     width: 10px;
     height: 8px;
@@ -99,88 +68,39 @@
 }
 
 .tui-grid-body-area .tui-grid-cell.up-arr .tui-grid-cell-content::before {
-    background: url('/public/assets/images/common/ico-number-up-arr.svg') no-repeat center center/contain;
+    background: url("/public/assets/images/common/ico-number-up-arr.svg") no-repeat center center/contain;
 }
 
 .tui-grid-body-area .tui-grid-cell.down-arr .tui-grid-cell-content::before {
-    background: url('/public/assets/images/common/ico-number-down-arr.svg') no-repeat center center/contain;
+    background: url("/public/assets/images/common/ico-number-down-arr.svg") no-repeat center center/contain;
 }
-
-
-/* =========================
-   스크롤바 및 불필요한 라인 제거
-========================= */
-
-.tui-grid-scrollbar-right-top,
-.tui-grid-scrollbar-right-bottom,
-.tui-grid-scrollbar-y-inner-border,
-.tui-grid-scrollbar-y-outer-border,
-.tui-grid-scrollbar-frozen-border,
-.tui-grid-border-line-top,
-.tui-grid-border-line-left,
-.tui-grid-border-line-right {
-    display: none;
-}
-
-.tui-grid-content-area {
-    border: none;
-}
-
-
-/* =========================
-   스크롤바 스타일
-========================= */
-
-.tui-grid-body-area::-webkit-scrollbar-thumb {
-    background-color: #d9d9d9;
-    border-radius: 10px;
-}
-
 
 /* =========================
    첨부파일 아이콘
 ========================= */
-
 .tui-grid-body-area .tui-grid-cell .file-down {
     display: inline-block;
     vertical-align: middle;
     width: 14px;
     height: 15px;
     margin-left: 10px;
-    background: no-repeat url('/public/assets/images/sub/ico-file-down.svg') center;
+    background: no-repeat url("/public/assets/images/sub/ico-file-down.svg") center;
 }
 
 .tui-grid-body-area .tui-grid-cell .file-down:first-child {
     margin-left: 0;
 }
 
+/* =========================
+   셀 포커스 나갔을 때 border 생겨서 없앰
+========================= */
+.tui-grid-layer-focus-deactive {
+    display: none !important;
+}
 
 /* =========================
-   그리드 테두리 스타일
+   헤더 우측에 여백 남는 부분 헤더랑 동일한 스타일로 덮음
 ========================= */
-
-.tui-grid-cell {
-    border: var(--border-style-01);
-}
-
-.tui-grid-header-area {
-    border-bottom: var(--border-style-01);
-}
-
-.tui-grid-border-line-bottom {
-    border-bottom: var(--border-style-01) !important;
-}
-
-.tui-grid-border-line.tui-grid-border-line-top {
-    display: block;
-    border-top: var(--border-style-02);
-}
-
-
-/* =========================
-   오른쪽 상단 스크롤 영역
-========================= */
-
 .tui-grid-scrollbar-right-top {
     display: block;
     right: 1px;
@@ -192,11 +112,9 @@
     border-right: 0px;
 }
 
-
 /* =========================
-   Hover 효과
+   컬럼 고정했을때 구분선
 ========================= */
-
-.tui-grid-body-area tr:hover td {
-    background-color: #FFF7F3;
+.tui-grid-frozen-border {
+    background-color: transparent !important;
 }

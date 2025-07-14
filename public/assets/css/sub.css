@@ -52,14 +52,37 @@
 }
 
 /* 리트스 타입별 */
-/* bar */
-.list-type-bar li {
+/* Dot */
+.list-type-dot {
+    display: flex;
+    flex-direction: column;
+    gap: 10px 0;
+}
+.list-type-dot > li {
     position: relative;
     padding-left: 10px;
     line-height: 22px;
 }
 
-.list-type-bar li::before {
+.list-type-dot > li::before {
+    content: "·";
+    position: absolute;
+    left: 0;
+}
+
+/* bar */
+.list-type-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px 0;
+}
+.list-type-bar > li {
+    position: relative;
+    padding-left: 10px;
+    line-height: 22px;
+}
+
+.list-type-bar > li::before {
     content: "-";
     position: absolute;
     left: 0;
@@ -67,117 +90,131 @@
 
 /* 숫자타입 */
 .list-type-number {
+    display: flex;
+    flex-direction: column;
+    gap: 10px 0;
     counter-reset: number-list;
 }
 
-.list-type-number li {
+.list-type-number > li {
     position: relative;
     padding-left: 22px;
     line-height: 22px;
     counter-increment: number-list;
 }
 
-.list-type-number li::before {
+.list-type-number > li::before {
     content: counter(number-list) ". ";
     position: absolute;
     left: 0;
 }
 
 /* 숫자타입 (특수문자) */
-.list-type-symbol li {
+.list-type-symbol {
+    display: flex;
+    flex-direction: column;
+    gap: 10px 0;
+}
+.list-type-symbol > li {
     position: relative;
     padding-left: 18px;
     line-height: 22px;
 }
 
-.list-type-symbol li::before {
+.list-type-symbol > li::before {
     position: absolute;
     left: 0;
 }
 
-.list-type-symbol li:nth-child(1)::before {
+.list-type-symbol > li:nth-child(1)::before {
     content: "① ";
 }
-.list-type-symbol li:nth-child(2)::before {
+.list-type-symbol > li:nth-child(2)::before {
     content: "② ";
 }
-.list-type-symbol li:nth-child(3)::before {
+.list-type-symbol > li:nth-child(3)::before {
     content: "③ ";
 }
-.list-type-symbol li:nth-child(4)::before {
+.list-type-symbol > li:nth-child(4)::before {
     content: "④ ";
 }
-.list-type-symbol li:nth-child(5)::before {
+.list-type-symbol > li:nth-child(5)::before {
     content: "⑤ ";
 }
-.list-type-symbol li:nth-child(6)::before {
+.list-type-symbol > li:nth-child(6)::before {
     content: "⑥ ";
 }
-.list-type-symbol li:nth-child(7)::before {
+.list-type-symbol > li:nth-child(7)::before {
     content: "⑦ ";
 }
-.list-type-symbol li:nth-child(8)::before {
+.list-type-symbol > li:nth-child(8)::before {
     content: "⑧ ";
 }
-.list-type-symbol li:nth-child(9)::before {
+.list-type-symbol > li:nth-child(9)::before {
     content: "⑨ ";
 }
-.list-type-symbol li:nth-child(10)::before {
+.list-type-symbol > li:nth-child(10)::before {
     content: "⑩ ";
 }
 
 /* 가나다 리스트 타입 */
-.list-type-kor li {
+.list-type-kor {
+    display: flex;
+    flex-direction: column;
+    gap: 10px 0;
+}
+
+.list-type-kor > li {
     position: relative;
     padding-left: 18px;
     line-height: 22px;
 }
 
-.list-type-kor li::before {
+.list-type-kor > li::before {
     position: absolute;
     left: 0;
 }
 
-.list-type-kor li:nth-child(1)::before {
+.list-type-kor > li:nth-child(1)::before {
     content: "가";
 }
-.list-type-kor li:nth-child(2)::before {
+.list-type-kor > li:nth-child(2)::before {
     content: "나";
 }
-.list-type-kor li:nth-child(3)::before {
+.list-type-kor > li:nth-child(3)::before {
     content: "다";
 }
-.list-type-kor li:nth-child(4)::before {
+.list-type-kor > li:nth-child(4)::before {
     content: "라";
 }
-.list-type-kor li:nth-child(5)::before {
+.list-type-kor > li:nth-child(5)::before {
     content: "마";
 }
-.list-type-kor li:nth-child(6)::before {
+.list-type-kor > li:nth-child(6)::before {
     content: "바";
 }
-.list-type-kor li:nth-child(7)::before {
+.list-type-kor > li:nth-child(7)::before {
     content: "사";
 }
-.list-type-kor li:nth-child(8)::before {
+.list-type-kor > li:nth-child(8)::before {
     content: "아";
 }
-.list-type-kor li:nth-child(9)::before {
+.list-type-kor > li:nth-child(9)::before {
     content: "자";
 }
-.list-type-kor li:nth-child(10)::before {
+.list-type-kor > li:nth-child(10)::before {
     content: "차";
 }
-.list-type-kor li:nth-child(11)::before {
+.list-type-kor > li:nth-child(11)::before {
     content: "카";
 }
-.list-type-kor li:nth-child(12)::before {
+.list-type-kor > li:nth-child(12)::before {
     content: "타";
 }
-.list-type-kor li:nth-child(13)::before {
+.list-type-kor > li:nth-child(13)::before {
     content: "파";
 }
-.list-type-kor li:nth-child(14)::before {
+.list-type-kor > li:nth-child(14)::before {
     content: "하";
 }
 
@@ -297,7 +334,7 @@
 }
 
 .sub-title4 {
-    margin-bottom: 20px;
+    margin: 30px 0 20px;
     padding-left: 23px;
     background: no-repeat url("/public/assets/images/sub/ico-sub-title4.svg") left center;
     font-size: 16px;
@@ -323,7 +360,7 @@
 
 .sub-title6 {
     margin: 20px 0 10px;
-    padding-left: 17px;
+    padding-left: 11px;
     font-size: 16px;
     font-weight: 700;
     background: no-repeat url("/public/assets/images/sub/ico-sub-title6.svg") left center;
@@ -755,7 +792,7 @@
 }
 
 .company-title .sub-title3 {
-    padding-bottom: 0;
+    margin-bottom: 0;
 }
 
 .company-title .badges {
@@ -853,6 +890,18 @@
 /* ===============================
    테이블 셀 스타일 (th, td)
 =============================== */
+.table-default {
+    position: relative;
+}
+.table-default::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: var(--color-white);
+}
 
 .table-default th,
 .table-default td {
@@ -862,11 +911,6 @@
     border-left: var(--border-style-01);
     border-bottom: var(--border-style-01);
     background-color: var(--color-white);
-}
-
-.table-default th:first-child,
-.table-default td:first-child {
-    border-left: none;
 }
 
 .table-default tr:first-child {
@@ -1231,37 +1275,20 @@
 /* ===============================
     팝업
    =============================== */
-.popup-container {
-    position: fixed;
-    inset: 0 0 0 0;
-    background-color: var(--color-backdrop-bg);
-    z-index: 1000;
-}
-
-.popup-container .popup-wrap {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.popup-container .popup-close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-}
-
-.popup-container .popup-close button {
-    width: 17px;
-    height: 17px;
-    background: no-repeat url("/public/assets/images/sub/ico-popup-close.svg") center;
-}
 
 /* 조회 팝업 */
-#stock-search .popup-wrap {
+#stock-search {
     width: 600px;
     padding: 22px 20px 26px;
     background-color: var(--color-white);
+}
+
+#stock-search .sub-search-item {
+    width: 100%;
+}
+
+#stock-search .input-item.search-input {
+    width: 100%;
 }
 
 /* ===============================
@@ -1541,6 +1568,10 @@
 .info-box dd {
     font-size: 16px;
     line-height: 22px;
+}
+
+.info-box dd + dt {
+    margin-top: 15px;
 }
 
 .info-box .download {

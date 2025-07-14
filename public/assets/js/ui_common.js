@@ -204,7 +204,7 @@ $(function () {
                     }
 
                     $(this).closest(".tab-btns").find("li").removeClass("on");
-                    $(this).parent().addClass('on')
+                    $(this).parent().addClass("on");
                 });
         });
     }
