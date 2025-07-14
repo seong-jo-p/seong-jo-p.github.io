@@ -9,6 +9,15 @@
     padding-bottom: 172px;
 }
 
+#container.sub p + p,
+#container.sub p + .list-type,
+#container.sub p + table {
+    margin-top: 15px;
+}
+.list-type + p {
+    margin-top: 15px;
+}
+
 /* 알림 */
 .notice-wrap {
     position: absolute;
@@ -51,170 +60,156 @@
     background: #cad4e5 no-repeat url("/public/assets/images/sub/ico-alert.svg") center;
 }
 
-/* 리트스 타입별 */
-/* Dot */
-.list-type-dot {
+/* 타입별 리스트 */
+.list-type {
     display: flex;
     flex-direction: column;
     gap: 10px 0;
 }
-.list-type-dot > li {
+
+.list-type + .list-type {
+    margin-top: 15px;
+}
+
+/* Dot */
+.list-type.dot > li {
     position: relative;
     padding-left: 10px;
     line-height: 22px;
 }
 
-.list-type-dot > li::before {
+.list-type.dot > li::before {
     content: "·";
     position: absolute;
     left: 0;
 }
 
 /* bar */
-.list-type-bar {
-    display: flex;
-    flex-direction: column;
-    gap: 10px 0;
-}
-.list-type-bar > li {
+.list-type.bar > li {
     position: relative;
     padding-left: 10px;
     line-height: 22px;
 }
 
-.list-type-bar > li::before {
+.list-type.bar > li::before {
     content: "-";
     position: absolute;
     left: 0;
 }
 
 /* 숫자타입 */
-.list-type-number {
-    display: flex;
-    flex-direction: column;
-    gap: 10px 0;
+.list-type.number {
     counter-reset: number-list;
 }
 
-.list-type-number > li {
+.list-type.number > li {
     position: relative;
     padding-left: 22px;
     line-height: 22px;
     counter-increment: number-list;
 }
 
-.list-type-number > li::before {
+.list-type.number > li::before {
     content: counter(number-list) ". ";
     position: absolute;
     left: 0;
 }
 
 /* 숫자타입 (특수문자) */
-.list-type-symbol {
-    display: flex;
-    flex-direction: column;
-    gap: 10px 0;
-}
-.list-type-symbol > li {
+.list-type.symbol > li {
     position: relative;
     padding-left: 18px;
     line-height: 22px;
 }
 
-.list-type-symbol > li::before {
+.list-type.symbol > li::before {
     position: absolute;
     left: 0;
 }
 
-.list-type-symbol > li:nth-child(1)::before {
+.list-type.symbol > li:nth-child(1)::before {
     content: "① ";
 }
-.list-type-symbol > li:nth-child(2)::before {
+.list-type.symbol > li:nth-child(2)::before {
     content: "② ";
 }
-.list-type-symbol > li:nth-child(3)::before {
+.list-type.symbol > li:nth-child(3)::before {
     content: "③ ";
 }
-.list-type-symbol > li:nth-child(4)::before {
+.list-type.symbol > li:nth-child(4)::before {
     content: "④ ";
 }
-.list-type-symbol > li:nth-child(5)::before {
+.list-type.symbol > li:nth-child(5)::before {
     content: "⑤ ";
 }
-.list-type-symbol > li:nth-child(6)::before {
+.list-type.symbol > li:nth-child(6)::before {
     content: "⑥ ";
 }
-.list-type-symbol > li:nth-child(7)::before {
+.list-type.symbol > li:nth-child(7)::before {
     content: "⑦ ";
 }
-.list-type-symbol > li:nth-child(8)::before {
+.list-type.symbol > li:nth-child(8)::before {
     content: "⑧ ";
 }
-.list-type-symbol > li:nth-child(9)::before {
+.list-type.symbol > li:nth-child(9)::before {
     content: "⑨ ";
 }
-.list-type-symbol > li:nth-child(10)::before {
+.list-type.symbol > li:nth-child(10)::before {
     content: "⑩ ";
 }
 
 /* 가나다 리스트 타입 */
-.list-type-kor {
-    display: flex;
-    flex-direction: column;
-    gap: 10px 0;
-}
-
-.list-type-kor > li {
+.list-type.kor > li {
     position: relative;
     padding-left: 18px;
     line-height: 22px;
 }
 
-.list-type-kor > li::before {
+.list-type.kor > li::before {
     position: absolute;
     left: 0;
 }
 
-.list-type-kor > li:nth-child(1)::before {
+.list-type.kor > li:nth-child(1)::before {
     content: "가";
 }
-.list-type-kor > li:nth-child(2)::before {
+.list-type.kor > li:nth-child(2)::before {
     content: "나";
 }
-.list-type-kor > li:nth-child(3)::before {
+.list-type.kor > li:nth-child(3)::before {
     content: "다";
 }
-.list-type-kor > li:nth-child(4)::before {
+.list-type.kor > li:nth-child(4)::before {
     content: "라";
 }
-.list-type-kor > li:nth-child(5)::before {
+.list-type.kor > li:nth-child(5)::before {
     content: "마";
 }
-.list-type-kor > li:nth-child(6)::before {
+.list-type.kor > li:nth-child(6)::before {
     content: "바";
 }
-.list-type-kor > li:nth-child(7)::before {
+.list-type.kor > li:nth-child(7)::before {
     content: "사";
 }
-.list-type-kor > li:nth-child(8)::before {
+.list-type.kor > li:nth-child(8)::before {
     content: "아";
 }
-.list-type-kor > li:nth-child(9)::before {
+.list-type.kor > li:nth-child(9)::before {
     content: "자";
 }
-.list-type-kor > li:nth-child(10)::before {
+.list-type.kor > li:nth-child(10)::before {
     content: "차";
 }
-.list-type-kor > li:nth-child(11)::before {
+.list-type.kor > li:nth-child(11)::before {
     content: "카";
 }
-.list-type-kor > li:nth-child(12)::before {
+.list-type.kor > li:nth-child(12)::before {
     content: "타";
 }
-.list-type-kor > li:nth-child(13)::before {
+.list-type.kor > li:nth-child(13)::before {
     content: "파";
 }
-.list-type-kor > li:nth-child(14)::before {
+.list-type.kor > li:nth-child(14)::before {
     content: "하";
 }
 
@@ -334,7 +329,7 @@
 }
 
 .sub-title4 {
-    margin: 30px 0 20px;
+    margin: 30px 0 17px;
     padding-left: 23px;
     background: no-repeat url("/public/assets/images/sub/ico-sub-title4.svg") left center;
     font-size: 16px;
@@ -359,7 +354,7 @@
 }
 
 .sub-title6 {
-    margin: 20px 0 10px;
+    margin: 20px 0 5px;
     padding-left: 11px;
     font-size: 16px;
     font-weight: 700;
@@ -1476,7 +1471,7 @@
     width: calc(100% - 310px);
 }
 
-.contents-info .contents-info-item .sub-title2:first-of-type {
+.contents-info .contents-info-item .sub-title2:first-child {
     margin-top: 0;
 }
 

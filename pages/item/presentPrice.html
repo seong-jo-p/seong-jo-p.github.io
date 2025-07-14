@@ -257,7 +257,9 @@
                         <h5 class="sub-title3">메가젠임플란트(102600)</h5>
 
                         <div class="badges">
-                            <span class="badge"><img src="/public/assets/images/sub/ico-company-badge1.svg" alt="" />등록기업</span>
+                            <span class="badge"
+                                ><img src="/public/assets/images/sub/ico-company-badge1.svg" alt="" />등록기업</span
+                            >
                         </div>
                     </div>
 
@@ -544,6 +546,64 @@
                                         header5: "23078",
                                     },
                                 ];
+                                /**
+                                 * tui 그리드 기본 설정
+                                 * 그리드 인스턴스 설정 전에 호출하여야함
+                                 */
+                                Grid.applyTheme("default", {
+                                    outline: {
+                                        border: "#DCDCDC", // 전체 테이블 외곽선 색상
+                                    },
+                                    selection: {
+                                        // body 영역 드래그 했을 때 색상
+                                        background: "transparent",
+                                        border: "transparent",
+                                    },
+                                    scrollbar: {
+                                        // 스크롤바
+                                        background: "#F6F6F8",
+                                        thumb: "#d9d9d9",
+                                    },
+                                    row: {
+                                        // 마우스 over 효과
+                                        hover: {
+                                            background: "#fff7f3",
+                                        },
+                                    },
+                                    cell: {
+                                        // body 기본 설정
+                                        normal: {
+                                            border: "#DCDCDC",
+                                            background: "#ffffff",
+                                            showVerticalBorder: true,
+                                        },
+                                        // header 기본 설정
+                                        header: {
+                                            background: "#F4F8FB",
+                                            border: "#DCDCDC",
+                                        },
+                                        // No 설정 ex) rowHeaders: [{ type: "rowNum", width: 80 }],
+                                        rowHeader: {
+                                            background: "F4F8FB",
+                                            border: "#DCDCDC",
+                                            showVerticalBorder: true,
+                                        },
+                                        // No 설정 ex) rowHeaders: [{ type: "rowNum", width: 80 }],
+                                        selectedRowHeader: {
+                                            background: "transparent",
+                                        },
+
+                                        // 헤더에 선택했을 때, 현재 배경색과 동일하게 맞춤
+                                        selectedHeader: {
+                                            background: "#F4F8FB",
+                                        },
+                                        // body cell 클릭했을 때
+                                        focused: {
+                                            background: "transparent",
+                                            border: "transparent",
+                                        },
+                                    },
+                                });
 
                                 const instance = new Grid({
                                     el: $("#grid01")[0],
