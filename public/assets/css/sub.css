@@ -6,7 +6,8 @@
     position: relative;
     width: 1200px;
     margin: 0 auto;
-    padding-bottom: 172px;
+    /* padding-bottom: 172px; */
+    padding-bottom: 20px;
 }
 
 #container.sub p + p,
@@ -1764,7 +1765,7 @@
 }
 
 #search-result .result-box a:hover::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     right: 0;
@@ -1821,4 +1822,44 @@
     border-radius: 50%;
     background-color: var(--color-primary-blue);
     transform: translateY(-50%);
+}
+#search-result .menu-list > ul {
+    padding-left: 15px;
+}
+
+/* ===============================
+    출처 목록
+   =============================== */
+.source-list {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    line-height: 25px;
+}
+
+.source-list dt {
+    position: relative;
+    padding-left: 15px;
+}
+
+.source-list dt::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 9px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: var(--color-primary-blue);
+}
+
+.source-list dd {
+    display: flex;
+    align-items: center;
+    gap: 0 13px;
+    padding-left: 5px;
+}
+
+.source-list dd img {
+    display: block;
 }

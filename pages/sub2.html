@@ -248,6 +248,14 @@
                             </div>
                         </div>
                     </div>
+                    <dl class="source-list">
+                        <dt>출처 :</dt>
+                        <dd>
+                            <a href="https://www.fss.or.kr/fss/main/main.do?menuNo=200000" target="_blank">금융감독원</a>
+                            <a href="https://dart.fss.or.kr/" target="_blank"><img src="/public/assets/images/sub/img-source-dart.png" alt="전자공시시스템 DART"></a>
+                            <a href="https://seibro.or.kr/websquare/control.jsp?w2xPath=/IPORTAL/user/index.xml" target="_blank"><img src="/public/assets/images/sub/img-source-seibro.png" alt="예탁원 증권정보포털 SEIBRO"></a>
+                        </dd>
+                    </dl>
 
                     <script>
                         const Grid = tui.Grid;
@@ -358,7 +366,7 @@
                                 // 스크롤바
                                 background: "#F6F6F8",
                                 thumb: "#d9d9d9",
-                                border: "transparent"
+                                border: "transparent",
                             },
                             row: {
                                 // 마우스 over 효과
@@ -408,7 +416,12 @@
                             rowHeaders: [{ type: "rowNum", width: 80 }],
                             columnOptions: { resizable: true, frozenCount: 2 },
                             columns: [
-                                { header: "텍스트 왼쪽 정렬 (기본)", name: "header1" },
+                                {
+                                    header: "텍스트 왼쪽 정렬 (기본)",
+                                    name: "header1",
+                                    sortingType: "asc",
+                                    sortable: true,
+                                },
                                 { header: "텍스트 가운데 정렬", name: "header2", align: "center" },
                                 { header: "텍스트 오른쪽 정렬", name: "header3", align: "right" },
                                 { header: "숫자 업/다운1 (삼각형)", name: "header4", align: "center" },
@@ -521,13 +534,13 @@
                         동 사항 중 안내사항공시(K-OTC시장 운영규정 제 53조)이외에 공시의무가 없는 지정기업의 경우는
                         DART, SEIBro 등 공개된 자료에 의해 일부 투자 참고사항을 안내하고 있습니다.
                     </p>
-                    <div class="notice-wrap">
+                    <!-- <div class="notice-wrap">
                         <p>
                             본회가 제공하는 정보는 투자 참고 사항이며, 불가피한 오류 또는 누락이 발생하거나 지연 제공될
                             수 있습니다.
                         </p>
                         <p>제공된 정보에 의한 투자결과에 대하여 법적인 책임을 지지 않습니다.</p>
-                    </div>
+                    </div> -->
                 </div>
                 <!-- // .container-wrap -->
             </main>

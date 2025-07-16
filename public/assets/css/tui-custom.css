@@ -92,6 +92,21 @@
 }
 
 /* =========================
+   헤더 정렬 아이콘 - sort
+========================= */
+.tui-grid-btn-sorting {
+    background: no-repeat url("/public/assets/images/sub/ico-sorting.svg");
+}
+
+.tui-grid-btn-sorting-up {
+    background: no-repeat url("/public/assets/images/sub/ico-sorting-up.svg");
+}
+
+.tui-grid-btn-sorting-down {
+    background: no-repeat url("/public/assets/images/sub/ico-sorting-down.svg");
+}
+
+/* =========================
    셀 포커스 나갔을 때 border 생겨서 없앰
 ========================= */
 .tui-grid-layer-focus-deactive {
@@ -99,7 +114,7 @@
 }
 
 /* =========================
-   헤더 우측에 여백 남는 부분 헤더랑 동일한 스타일로 덮음
+   헤더 우측에 여백 남는 부분 - 헤더랑 동일한 스타일로 덮음
 ========================= */
 .tui-grid-scrollbar-right-top {
     display: block;
@@ -107,9 +122,21 @@
     background-color: var(--color-light-blue) !important;
     border-top: var(--border-style-02);
     border-left: 1px solid var(--color-light-blue) !important;
-    border-bottom: none;
-    border-left: 0px;
-    border-right: 0px;
+    border-bottom: 0;
+    border-right: 0;
+}
+
+.tui-grid-scrollbar-right-top::before {
+    content: "";
+    position: absolute;
+    left: -1px;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: var(--color-light-gray);
+}
+.tui-grid-scrollbar-right-bottom {
+    border-color: var(--color-light-gray);
 }
 
 /* =========================

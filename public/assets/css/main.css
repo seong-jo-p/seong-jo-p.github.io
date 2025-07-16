@@ -59,14 +59,17 @@
 }
 
 .main-visual .slick-slide a {
-    display: block;
+    display: flex;
+    justify-content: center;
     position: relative;
     width: 100%;
     height: 100%;
 }
 
-.main-visual .slick-slide img {
-    margin: 0 auto;
+.main-visual .slick-slide img{
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* 슬라이드 버튼들 */
